@@ -1,13 +1,13 @@
 <?php
 /**
-	Descriptionn: CRYPTEX Admin Settings Page
-	Plugin URI: http://www.a3non.org/go/cryptex
-	Version: 1.5
+	Descriptionn: Enlighter Admin Settings Page
+	Plugin URI: http://www.a3non.org/go/enlighterjs
+	Version: 1.2
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
 	License: MIT X11-License
 	
-	Copyright (c) 2010-2012, Andi Dittrich
+	Copyright (c) 2013, Andi Dittrich
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 	
@@ -20,194 +20,196 @@
 
 <div class="wrap">
 <div id="icon-options-general" class="icon32"><br /></div>
-<h2><?php _e('Cryptex - Advanced EMail Obfuscator+Protector'); ?></h2>
+<h2><?php _e('Cryptex | E-Mail-Address Protection'); ?></h2>
 
-<!-- usage !-->
-<p><?php _e('Just insert a cryptex shortcode within the email-address into your posts/pages. Example: <strong>[cryptex]emailaddress@example.com[/cryptex]</strong>'); ?></p>
 
-<!-- info !-->
-<h2><?php _e('System Info') ?></h2>
-<?php include('info.phtml');?>
+<!-- Breadcrumb -->
+<?php add_thickbox(); ?>
+<div id='setting-error-settings_updated' class='updated settings-error'> 
+<p><strong><?php _e('Cryptex related:'); ?> </strong>
+	<a href="#TB_inline?height=500&width=800&inlineId=CryptexHelp" class="thickbox" rel="Cryptex Help"><?php _e('View Help'); ?></a> | 
+	<a href="https://github.com/AndiDittrich/WordPress.Cryptex"><?php _e('Cryptex on GitHub'); ?></a> | 
+	<a href="http://wordpress.org/plugins/cryptex/"><?php _e('Cryptex on WordPress.org'); ?></a> | 
+	<a href="https://github.com/AndiDittrich/WordPress.Cryptex/issues"><?php _e('Report a Bug'); ?></a>
+</p>
+<p><strong><?php _e('Howto:'); ?> </strong><?php _e('Just insert a email-address surrounded by cryptex shortcode into your post! Example: <strong>'); ?>[email]your.address@yourdomain.tld[/email]</strong></p>
+</div>
 
+<!-- Help Overlay Content -->
+<?php require('Help.phtml'); ?>
 
 <!-- settings !-->
 <form method="post" action="options.php">
-    <?php settings_fields( 'cryptex-settings-group' ); ?>
+    <?php settings_fields('cryptex-settings-group' ); ?>
     
-    <h2><?php _e('Settings'); ?></h2>
-    <h4><?php _e('System font path'); ?></h4>
-    <p><?php _e('You have to choose a directory with TrueTypeFonts (.ttf) as source for image creation. The default values for linux systems are <strong>/usr/share/fonts/</strong>, <strong>/usr/share/fonts/truetype/</strong> - for windows systems <strong>C:\Windows\Fonts\</strong>. If there are no TrueTypeFonts avaible, the plugin will use the embedded fonts of GD libraray as fallback.'); ?> 
-    <?php printf(__('If you don`t know the path, please ask your hosting provider or upload the fonts manually into the cryptex-plugin-directory <strong>%s</strong> and use this as path.'), CRYPTEX_PLUGIN_PATH.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR); ?>
-    </p>
-    <p><?php _e('<strong>Note: </strong>During security restrictions this pathes, depending on your hosting environment, could be unaccessable'); ?>. <br />
-    	<?php printf(__('In this case you have to upload the font files from your system into the cryptex-plugin-directory <strong>%s</strong>'), CRYPTEX_PLUGIN_PATH.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR); ?>
-    </p>
+    <!-- System Info -->
+    <h3><?php _e('System Info'); ?></h3>
+    <div class="CryptexBlockcontent">
+    <ul> 
+    	<?php 
+    	// PHP version
+    	if (version_compare(phpversion(), '5.3', '>=')){
+    		echo '<li>', __('PHP Version:'), ' <span class="CryptexTRUE">', phpversion() , '</span></li>';
+    	}else{
+    		echo '<li>', __('PHP Version:'), ' <span class="CryptexFALSE">', phpversion() ,'</span></li>';
+    	}
+    	
+    	// server os
+    	echo '<li>', __('Server Software:'), ' <span class="CryptexTRUE">', PHP_OS, '</span></li>';
+    	
+    	// cryptex version
+    	echo '<li>', __('Cryptex Plugin Version:'), ' <span class="CryptexTRUE">', CRYPTEX_VERSION, '</span></li>';
+    	
+    	// check for gdlib
+    	if (function_exists('gd_info')){
+    		echo '<li>', __('GD library installed:'), ' <span class="CryptexTRUE">', __('true'), '</span></li>';
+    		$info = gd_info(); 
 
-	<!-- some util scripts !-->
-    <script type="text/javascript">
-		jQuery(document).ready(function(){
-			// restore default plugin path onclick
-			jQuery('#cryptex_restore_default_path').click(function(){
-				jQuery('#cryptex_path').attr('value', '<?php echo str_replace('"', '', json_encode(CRYPTEX_DEFAULT_FONT_PATH)) ?>');
-			});
-			
-			// colorpicker
-			jQuery('#cryptex-font-color').ColorPicker({				
-				onSubmit: function(hsb, hex, rgb, el){
-					jQuery(el).val('0x'+hex);
-					jQuery(el).ColorPickerHide();
-				},
-				onBeforeShow: function(){
-					jQuery(this).ColorPickerSetColor(this.value);
-				}	
-			});
-		});
-    </script>
-
-
-	<!-- font path !-->
-    <table class="form-table">
-        <tr valign="top">
-        <th scope="row"><?php _e('Font path'); ?></th>
-        <td>
-        <input name="cryptex-font-path" type="text" value="<?php echo get_option('cryptex-font-path', CRYPTEX_DEFAULT_FONT_PATH)?>" class="regular-text" id="cryptex_path"/>
-		<label for="cryptex-font-path"><?php _e('with trailing slash!'); ?></label>
-        <input type="button" value="<?php _e('restore default path'); ?>" id="cryptex_restore_default_path" />
-        </td>
-        </tr>
-    </table>
-
-	<!-- hyperlinks !-->    
-    <h4><?php _e('Hyperlinks'); ?></h4>
-    <p><?php _e('Should EMail-Addresses linkable ? (mailto:youremail@example.com)'); ?>
-    <br /><?php _e('<strong>Note:</strong> Cryptex provides an integrated key-shifting based encryption/decryption of hyperlinks to ensure maximum protection.'); ?></p>
-    <table class="form-table">
-        <tr valign="top">
-        <th scope="row"><?php _e('Enabled'); ?></th>
-        <td>
-		<?php
-			if (get_option('cryptex-enable-hyperlink', true)){ 
-				$checked = ' checked="checked" '; 
-			}
-			echo "<input ".$checked." name='cryptex-enable-hyperlink' type='checkbox' />";
-		?>        
-        </td>
-        </tr>
-    </table>
+    		// check GD lib version
+   			echo '<li>', __('GD version:'), ' <span class="CryptexTRUE">',  $info['GD Version'], __(' (supported)'), '</span></li>';
+    		
+    		// check png support
+    		if ($info['PNG Support']){
+    			echo '<li>', __('PNG support:'), ' <span class="CryptexTRUE">', __('true'), '</span></li>';
+    		}else{
+    			echo '<li>', __('PNG support:'), ' <span class="CryptexFALSE">', __('false'), '</span></li>';
+    		}
+    		
+    	}else{
+    		echo '<li>', __('GD library installed:'), ' <span class="CryptexFALSE">', __('false'), '</span></li>';
+    	}
+    	
+    	// check for available fonts
+    	if (count($fontlist)>0){    	
+    		echo '<li>', 'Fonts available (within selected directory): <span class="CryptexTRUE">', __('true'), '</span></li>';	
+    	}else{
+    		echo '<li>', 'Fonts available (within selected directory): <span class="CryptexFALSE">', __('false'), '</span></li>';
+    	}
+    	
+    	// plugin cache path writeable ?
+    	$cachePath = CRYPTEX_PLUGIN_PATH.DIRECTORY_SEPARATOR.'cache';
+    	if (is_dir($cachePath) && is_writable($cachePath)){
+    		echo '<li>', __('Cache writeable'),' (<code>', $cachePath ,'</code>): <span class="CryptexTRUE">', __('true'), '</span></li>';
+    	}else{
+    		echo '<li>', __('Cache writeable'),' (<code>', $cachePath ,'</code>): <span class="CryptexFALSE">', __('false'), '</span></li>';
+    	}
+    	?>
+    </ul>	
+    </div>
     
-    <!-- @sign replacement !-->
-    <h4><?php _e('@ Sign'); ?></h4>
-    <p><?php _e('Instead of using the @ sign for emails, you can choose between some options - this could increase the protection level against spiders/bots using OCR.'); ?>				
-    <br /><?php _e('<strong>Note:</strong> Use ALWAYS the @ sign in the cryptex shortcode!'); ?></p>
-    <table class="form-table">
-        <tr valign="top">
-        <th scope="row"><?php _e('Replacements'); ?></th>
-        <td>
-        <select name="cryptex-email-divider">
-		<?php
-			$replacements = array('@', '(at)', '[at]', '{at}', '/AT/');
-			
-			foreach ($replacements as $rpl){
-				$selected = ($rpl == get_option('cryptex-email-divider', '@')) ? 'selected="selected"' : '';
-				echo '<option value="'.$rpl.'" '.$selected.'>'.$rpl.'</option>';
-			}
-			?> 
-        </select>       
-        </td>
-        </tr>
-    </table>
-
-    <!-- appearance !-->
+    <!-- System Font Source -->
+    <h3><?php _e('Font Source'); ?></h3>
+    <div class="CryptexBlockcontent">
+        <p><?php _e('Cryptex requires server-side stored TrueTypeFonts to generate the images. Select the font location which should be used - only <strong>.ttf</strong> files are supported! The location will be recursivly scanned by the plugin (including all subdirectories).'); ?></p>
+   		<p>
+		<?php _e('<strong>System Fonts</strong> - the default font location of your server'); ?> (<code><?php echo implode(';', Cryptex\FontManager::$WindowsFontPaths); ?></code> <?php _e('on Windows'); ?>; <code><?php echo implode(';', Cryptex\FontManager::$LinuxFontPaths); ?></code> <?php _e('on Linux'); ?><br />
+		<?php _e('<strong>Plugin Directory</strong> - the <code>fonts</code> directory within the cryptex plugin path'); ?> (<code><?php echo CRYPTEX_DEFAULT_FONT_PATH ?></code>)<br />
+		<?php _e('<strong>Custom Directory</strong> - enter a custom directory of your choice'); ?>
+		</p>
+		<!-- Font Source -->
+		<?php $this->_settingsUtility->displaySelect('Font-Source', 'font-source', array('System Fonts' => 'system', 'Plugin Directory' => 'plugin', 'Custom Directory' => 'custom')); ?>
+		
+		<!-- Custom Font Path -->
+		<div id="CryptexCustomFontpath">
+		<?php $this->_settingsUtility->displayInput('Font-Path', 'custom-font-path', 'e.g. <code>/usr/share/fonts</code>'); ?>
+		</div>
+		
+		<input name="submit" id="CryptexApplyChanges" class="button button-primary" value="Apply Changes" type="submit" />
+	</div>
+    
+	<!-- appearance !-->
     <h3><?php _e('Appearance'); ?></h3>
-    <p><?php _e('Change these settings to your current theme styles'); ?> <br />
-    <?php _e('<strong>Note: </strong>It`s strongly recommend to use standard fonts only - otherwise it could cause problems by displaying them on clients which have not installed these fonts yet.'); ?>
-    </p>
-    <table class="form-table">
-        <tr valign="top">
-        <th scope="row"><?php _e('Font Family'); ?></th>
-        <td>
-        <select name="cryptex-font">
-		<?php			
-			foreach ($fonts as $font){
-				$selected = ($font == get_option('cryptex-font', '')) ? 'selected="selected"' : '';
-				echo '<option value="'.$font.'" '.$selected.'>'.$font.'</option>';
-			}
-			?> 
-        </select>       
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        <th scope="row"><?php _e('Font Color'); ?></th>
-        <td>
-        <input id="cryptex-font-color" name="cryptex-font-color" type="text" value="<?php echo get_option('cryptex-font-color', '0x000000')?>" class="text" />
-        <label for="cryptex-font-color"><?php _e('hex e.g. 0xff0102,<strong> six digits!'); ?></strong></label>
-        </td>
-        </tr>
-        
-         <tr valign="top">
-        <th scope="row"><?php _e('Font Size'); ?></th>
-        <td>
-        <input name="cryptex-font-size" type="text" value="<?php echo get_option('cryptex-font-size', '12')?>" class="text" />
-        <label for="cryptex-font-size"><?php _e('in'); ?> <?php echo Cryptex_ImageGenerator::getFontSizeFormat(); ?></label>
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        <th scope="row"><?php _e('Embed CSS') ?></th>
-        <td>
-		<?php
-			if(get_option('cryptex-embed-css', true)){ 
-				$checked = ' checked="checked" '; 
-			}
-			echo "<input ".$checked." name='cryptex-embed-css' type='checkbox' />";
-		?>        
-        </td>
-        </tr>
-    </table>
-    
-    <!-- advanced !-->
-    <h3><?php _e('Advanced'); ?></h3>
-    <p><?php _e('For advanced users only!'); ?> <br />
-    </p>
-    <table class="form-table">
-        <tr valign="top">
-        <th scope="row"><?php _e('Security Level'); ?></th>
-        <td>
-        <?php $selected = ($font == get_option('cryptex-security-level', '1')) ? 'selected="selected"' : ''; ?>
-        <select name="cryptex-security-level">
-        	<?php
-			$options = array(
-				'1' => __('Normal (Single Image)'),
-				'2' => __('High (Hybrid Image for EMail Addresses)')
-			);
-			foreach ($options as $key => $value ){
-				$selected = ($key == get_option('cryptex-security-level', $key)) ? 'selected="selected"' : '';
-				echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
-			}
-			?>
-            </select>       
-        </td>
-        </tr>
-        
-        <tr valign="top">
-        <th scope="row"><?php _e('CSS Prefix'); ?></th>
-        <td>
-        <input id="cryptex-css-prefix" name="cryptex-css-prefix" type="text" value="<?php echo get_option('cryptex-css-prefix', '')?>" class="text" />
-        <label for="cryptex-css-prefix"><?php _e('e.g. #content, .mycontentarea'); ?></label>
-        </td>
-        </tr>
-        
-    </table>
+    <div class="CryptexBlockcontent">
+		<p><?php _e('Change these settings to match your current theme styles.'); ?> <br />
+		<?php _e('<strong>Note: </strong>It`s strongly recommend to use standard fonts only - otherwise it could cause problems by displaying them on clients which have not installed these custom fonts yet.'); ?>
+		</p>
 
-    
+		<!-- Font List -->
+		<?php $this->_settingsUtility->displaySelect('Font-Family', 'font-file', $fontlist); ?>
+		
+		<!-- Font Size -->
+		<?php $this->_settingsUtility->displayInput('Font-Size (px)', 'font-size', 'e.g. 12'); ?>
+		
+		<!-- Font Color -->
+		<?php $this->_settingsUtility->displayInput('Font-Color', 'font-color', 'e.g. #000000, #ff00c1', 'CryptexColorChooser'); ?>
+		
+		<!-- @ replacement -->
+    	<p><?php _e('Instead of using the @ sign for emails, you can choose between some options - this could increase the protection level against spiders/bots using OCR.'); ?>				
+  	 	<br /><?php _e('<strong>Note:</strong> Use ALWAYS the @ sign in the cryptex shortcode!'); ?></p>
+		<?php $this->_settingsUtility->displaySelect('@Sign-Replacement', 'email-divider', array('@' => '@', '(at)' => '(at)', '[at]' => '[at]', '{at}' => '{at}', '/AT/' => '/AT/')); ?>
+		
+		<!-- hyperlinks !-->
+		<p><?php _e('Should E-Mail-Addresses clickable ? (mailto:youremail@example.com)'); ?><br />
+		<?php _e('Cryptex provides an integrated key-shifting based encryption/decryption of hyperlinks to ensure maximum protection.'); ?>
+		</p>
+		<?php $this->_settingsUtility->displayCheckbox('Enable-Hyperlinks', 'enable-hyperlink'); ?>
+		
+		<!-- EMail Security Level -->
+		<p><?php _e('E-Mail-Addresses can be displayed as an single image or in case of higher security as an hybrid-image.'); ?><br />
+		<?php _e('The address will be splitted into 2 parts (before and after the @ sign). Each part is displayed as a single image, the at sign as plain text. This feature provides an improved protection against ocr-grabbing spambot, which will analyze single page images. '); ?><br />
+		<?php _e('Note: This option will only influence E-Mail-Addresses, other content will be still displayed as a single image!'); ?>
+		</p>
+		<?php $this->_settingsUtility->displaySelect('E-Mail Security Level', 'security-level', array('Single Image' => '1', 'Hybrid Image (2 Images, seperated by @ sign)' => '2')); ?>
+		
+	</div>
+	
+	<!-- offsets !-->
+    <h3><?php _e('Image Offsets'); ?></h3>
+    <div class="CryptexBlockcontent">
+ 		<!-- Image Offsets -->
+		<p><?php _e('Sometimes the generated text, depending on the selected font family, won`t fit into his image box - it is possible to configure the following offsets (in px) to fix this issue:')?><br />
+		<?php _e('Offsets can also be used to adjust the font baseline (use OffsetA and OffsetB).'); ?>
+		</p>
+		<p><img src="<?php echo plugins_url('/cryptex/resources/admin/offsets.png'); ?>" alt="offsets" /></p>
+		<?php $this->_settingsUtility->displayInput('OffsetX (width)', 'offset-x', 'e.g. 5'); ?>
+		<?php $this->_settingsUtility->displayInput('OffsetY (height)', 'offset-y', 'e.g. 5'); ?>
+		<?php $this->_settingsUtility->displayInput('OffsetA (font position x)', 'offset-a', 'e.g. 2'); ?>
+		<?php $this->_settingsUtility->displayInput('OffsetB (font position y)', 'offset-b', 'e.g. 2'); ?>   
+    </div>
+	
+	<!-- CDN SETTINGS -->
+	<h3><?php _e('CDN (Content Delivery Network)'); ?></h3>
+	<div class="CryptexBlockcontent">		
+		<p><?php _e('These options might be required when using a Content-Delivery-Network (CDN) or another server/location which outsources your CSS+Javascript files.'); ?><br />
+		<?php _e('In this case you have to manually include Cryptex.js and Cryptex.css into your page!'); ?><br />
+		<?php _e('The generated styles are'); ?> <a href="<?php echo plugins_url('/cryptex/cache/Cryptex.css') ?>"><?php _e('available here'); ?></a> (cryptex/cache/Cryptex.css).</p>
+		
+		<!-- embed css !-->
+		<?php $this->_settingsUtility->displayCheckbox('Include Cryptex-CSS', 'embed-css') ?>
+	
+		<!-- embed JS !-->
+		<?php $this->_settingsUtility->displayCheckbox('Include Cryptex-Javascript', 'embed-js'); ?>
+
+	</div>
+	
+	<!-- ADVANCED SETTINGS -->
+	<h3><?php _e('Advanced'); ?></h3>
+	<p><strong><?php _e('Warning: These options are for advanced users only!'); ?></strong></p>
+	<div class="CryptexBlockcontent">
+		<p><?php _e('Should the shortcode [email] added as alias for cryptex ? This may can influence other plugins because of identical names!'); ?></p>
+		<!-- email shortcode !-->
+		<?php $this->_settingsUtility->displayCheckbox('Use [email] Shortcode', 'shortcode-email') ?>
+	
+		<!-- css prefix -->
+		<p><?php _e('An optional prefix added to the generated css classes to match your content-container and retain cryptex styles.'); ?></p>
+		<?php $this->_settingsUtility->displayInput('CSS Prefix', 'css-prefix', 'e.g. #content, .mycontentarea'); ?>
+		
+		<!-- css classes -->
+		<p><?php _e('Additional css classes added to the outer span-tag - maybe used to add icons.')?></p>
+		<?php $this->_settingsUtility->displayInput('Additional Classes', 'css-classes', 'e.g. email mailicon'); ?>
+		
+		<!-- font filenames -->
+		<p><?php _e('Should the full font-paths be displayed on this settings page or only their filenames ?')?></p>
+		<?php $this->_settingsUtility->displayCheckbox('Show full font-paths', 'show-full-paths') ?>
+
+	</div>
+	
+	
 	<!-- submit !-->
-    <p class="submit">
-    <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
-    </p>
+    <?php submit_button(); ?>
 
 </form>
 
-<h2><?php _e('Credits') ?></h2>
+<h3><?php _e('Credits') ?></h3>
 <p><a href="http://www.a3non.org/go/cryptex">Cryptex</a> is developed by <a href="http://andidittrich.de">Andi Dittrich</a>. It's release under the MIT X11 License. Includes: <a href="http://www.eyecon.ro/colorpicker/">Colorpicker</a> by <a href="http://www.eyecon.ro">Stefan Petre</a> - MIT/GPL License</p>
 </div>

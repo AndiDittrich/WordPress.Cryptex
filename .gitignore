@@ -1,2 +1,5 @@
 .settings*
 .project
+gfx/*
+build.xml
+.buildpath

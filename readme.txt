@@ -1,74 +1,96 @@
-=== Cryptex - EMail Obfuscator+Protector ===
+=== Cryptex | E-Mail Address Protection ===
 Contributors: Andi Dittrich
-Tags: email, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses
-Requires at least: 3.0
-Tested up to: 3.2.1
-Stable tag: 2.0
-
-Cryptex protects EMail addresses on your website by displaying them as an (hybrid) images.
+Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses
+Requires at least: 3.5
+Tested up to: 3.8
+Stable tag: 3.0
+ 
+Cryptex protects E-Mail-Addresses on your website by displaying them as an image
 
 == Description ==
 
-The Cryptex plugin for WordPress is used to display email addresses - that are normally expressed in plain text - as an (hybrid) image automatically. Hybrid means, that the generated addresses, which are displayed on your website, consists of images and text simultanous - simple bots/spiders using image recognition (OCR) of single generated images of addresses have no chance - they have to capture and analyze a screenshot of the whole website to grab the addresses, but this is to performance-heavy and your email addresses are protected ;) It works with telephone numbers, postal addresses also.
+The Cryptex plugin for WordPress is used to display email addresses - that are normally expressed in plain text - as an (hybrid) image automatically. Hybrid means, that the generated addresses consists of images and text simultanous - spambots/spiders using image recognition (OCR) of single generated images have no chance - they have to capture and analyze a screenshot of the whole website to grab the addresses, but this is to performance-heavy and your email addresses are protected ;) It works with telephone numbers, postal addresses also.
 Just insert a shortcode like `[cryptex]youraddress@example.com[/cryptex]` to your post - that's it.
-
-= Important Notice when upgrading to 2.0 =
-Some caching funtions changed - after upgrading you have to *goto the cryptex settings page and click "save changes"* to trigger an cache update!
 
 = Plugin Features =
 * Fully customizable appearance: you can configure font-family, font-size and font-color - everything looks like your theme style
-* Protects also EMail hyperlinks by using key-shifting-based encryption/decryption with dynamic keys
-* Suitable for high traffic sites - automated caching of dynamic generated images+css
-* Native support for MooTools and jQuery is given - also all other frameworks are supported by generic code
+* Protects also E-Mail hyperlinks by using javascript based key-shifting encryption/decryption with dynamic keys - but you can use images only
+* Suitable for high traffic sites - automated caching of dynamic generated images and CSS
+* Native support for MooTools and jQuery is given - all other frameworks/browsers are supported by generic javascript code
+* Also useable to protect postal-addresses, telephone-numbers, names and other sensitive informations
+* Automatic font-search on standard system font-paths
+* Supports the new modern UI style of WordPress 3.8
+
+= UPGRADE NOTICE to 3.x =
+Most of your custom **cryptex plugin settings** get lost on upgrading to the 3.x branch beacause of the new plugin backend structure - please backup them on your own.
     
 == Installation ==
 
 = System requirements =
-* PHP 5
-* GD library (v1 or v2)
+* PHP 5.3 or greater
+* GD library (v2.0.28 or greater)
 * GD PNG support
 
 = Installation =
 1. Upload the complete `cryptex` folder (Wordpress Plugin) to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Go to Settings -> Cryptex Obfuscator. In the System Info section the first 3 items should be green (*GD Lib installed*, *GD Version*, *PNG Support*) - if not, you cannot use cryptex until you or your hosting provider install the GD library with enabled PNG support. At this time it is normal that *fonts avaible* and *system font path* are marked red.
-4. After checking your environment (GD installed) you have to set your systems font path - save these changes. if the path is invalid try another one or upload fonts into the `/wp-content/plugins/cryptex/fonts/` directory and use this as font path
-5. Now - all items should be marked green, this means cryptex is ready for use.
+3. Go to Settings -> Cryptex and check all items.
+4. After checking your environment (GD installed) you have to set your font-source. If the source is invalid try another one or upload fonts into the `/wp-content/plugins/cryptex/fonts/` directory and use **Plugin Directory** as font-source
+5. Now - all items should be marked green, this means Cryptex is ready for use.
 6. Go to the bottom of cryptex settings page and select the *font-family*, *font-color* and *font-size* like the styles in your theme
-7. You can also use your own/special fonts uploading them into the `/wp-content/plugins/cryptex/fonts/` directory and use this as font path
+7. You can also use your own/special fonts uploading them into the `/wp-content/plugins/cryptex/fonts/` directory and use this as font-source
 8. That's it! You're done. You can now enter the following code into a post or page to protect email addresses: [cryptex]youraddress@example.com[/cryptex]
 
 == Frequently Asked Questions ==
 
-= I get an error using the system font pathes, which are shown by the settings page =
+= I get an error using the system font paths, which are shown by the settings page =
 
-This pathes are depending on your hosting environment and can be different - if you don't know the path, please ask your hosting provider or upload the fonts manually into the cryptex-plugin-directory `\wp-content\plugins\cryptex\fonts\` and use this as path. 
+This pathes - depending on your hosting environment - can be different - if you don't know the path, please ask your hosting provider or upload the fonts manually into the cryptex-plugin-directory `\wp-content\plugins\cryptex\fonts\` and use **Plugin Directory** as font source.
 
-= I get an" file permission" error changing the font path =
+= I get a "file permission" error changing the font source to **Custom Directoy** =
 
-During security restrictions this pathes, depending on your hosting environment, could be unaccessable. In this case you have to upload TrueTypeFonts (.ttf) into the cryptex-plugin-directory `\wp-content\plugins\cryptex\fonts\` and use this as path. 
+During security restrictions your system font paths could be unaccessable. In this case you have to upload TrueTypeFonts (.ttf) into the cryptex-plugin-directory `\wp-content\plugins\cryptex\fonts\` and use **Plugin Directory** as font source.
 
 = I get an "file permission" php error in my blog =
 
-The directory `/wp-content/plugins/cryptex/cache/` must be writeable - the images will be stored there
+The directory `/wp-content/plugins/cryptex/cache/` must be writeable - the images as well as the generated css file will be stored there
 
-= I wanna have bold/italic font styles =
-Please use the italic/bold font of your font family you selected. For example there is an verdana.ttf(normal) and verdanai.ttf(italic) file!
+= I need bold/italic font styles =
+Please use the italic/bold font of the font family you've selected. For example there is an verdana.ttf(normal) and verdanai.ttf(italic) file!
 
 = Is it possible to use Cryptex directly in my wordpress template ? shortcode does not work yet =
 Of course! you can simply use `<?php Cryptex::crypt('yourtext'); ?>` to display 'yourtext' as crypted version
 
 = I miss some features / I found a bug =
-Well..write a email to Andi Dittrich (andi DOT dittrich AT a3non DOT org)
+Well..write a email to Andi Dittrich (andi DOT dittrich AT a3non DOT org) or or open a [New Issue on GitHub](https://github.com/AndiDittrich/WordPress.Cryptex/issues)
 
 == Screenshots ==
 
-1. Environment informations
-2. Plugin appearance configuration
-3. Demo post using cryptex
-4. Demo post with marked hybrid components (images+text simultanous)
+1. Cryptex Website Appearance
+2. Single vs. Hybrid Image Mode highlighted
+3. Settings Page - Environment Informations + Font Settings
+4. Settings Page - Crypex Appearance
+5. Settings Page - Configurable Image-Offsets
+6. Settings Page - CDN & Advanced Options
 
 == Changelog ==
+
+= 3.0 =
+* New plugin backend structure
+* PHP Namespaces used to isolate plugin (PHP >= 5.3 required!)
+* Improved settings page, new design
+* Improved E-Mail-Address detection
+* Many performance optimizations
+* Removed support for GD library version 1.x (>= v2.0.38 required)
+* Added: Support for new WordPress backend UI style
+* Added: Automated Font Search/Detection
+* Added: Shortcode-Alias [email] to be compatible with other plugins
+* Added: User defined dimension offsets for generated images
+* Added: FULL I18n support (internationalization)
+* Bugfix: Cache not cleared on activating plugin (required for updates)
+* Bugfix: Closed possible attack vector on image filenames by decoding the used sha1 hashes - now a unique salt is used to prevent it
+* Bugfix: Invalid px/pt transformation used for GD1/2 interoperability
+* Bugfix: Wrong css cursor was used for divider (@ sign) using hybrid mode
 
 = 2.0 =
 * Complete rewritten version of the plugin. Completly cleaned, strict OOP coding style
@@ -82,7 +104,7 @@ Well..write a email to Andi Dittrich (andi DOT dittrich AT a3non DOT org)
 * Added: if you wanna use cryptex directly in your wordpress template, you can simply use `Cryptex::crypt('yourtext');` to display 'yourtext' as crypted version
 
 = 1.3.5 =
-* Bugfix: (websites without JQuery or MooTools) using Cryptex on more than one e-mail address per page failed: when any of the e-mail addresses are clicked, the address from the last address gets applied to all of the links. (Thanks to Kory S.)
+* Bugfix: (websites without JQuery or MooTools) using Cryptex on more than one e-mail address per page failed: when any of the e-mail addresses getting clicked, the address from the last address gets applied to all of the links. (Thanks to **Kory S.**)
 
 = 1.3.4 =
 * Bugfix: by some misunderstanding of the WordPress API the update/upgrade/installation of **any plugins** triggered the restore/backup events of cryptex - this may be cause a "permission denied" error message during the installation of **any** plugin. *I apologize for this inconvenience*

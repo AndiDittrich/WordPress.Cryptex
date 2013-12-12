@@ -1,0 +1,39 @@
+/**
+ * Settings Page Design for WordPress >= v3.8
+*/
+.CryptexBlockcontent{
+	padding: 5px 10px 10px 15px;
+	margin: 0px 0px 20px 0px;
+	background-color: #fff;
+	border-left: 4px solid #333c45;
+	-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+	max-width: 1500px;
+}
+.CryptexBlockcontent img{
+	padding-left: 15px;
+}
+
+.CryptexSetting{
+	display: block;
+	padding: 6px 10px 6px 15px;
+}
+.CryptexSettingTitle{
+	float: left;
+	width: 200px;
+	font-weight: bold;
+}
+.CryptexSettingItem{
+	float: left;
+}
+.CryptexSettingClear{
+	clear: left;
+}
+.CryptexTRUE{
+	font-weight: bold;
+	color: #7ad03a;
+}
+.CryptexFALSE{
+	font-weight: bold;
+	color: #d03a3a;
+}

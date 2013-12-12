@@ -15,10 +15,15 @@
 	
 	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED');
+namespace Cryptex;
 
-
-class Cryptex_KeyShiftingEncoder{
+class KeyShiftingEncoder{
+	
+	/**
+	 * Session based crypt key
+	 * @var String
+	 */
+	private static $_key;
 	
 	/**
 	 * Generate dynamic cryptey key
@@ -30,7 +35,11 @@ class Cryptex_KeyShiftingEncoder{
 		for ($i=0;$i<32;$i++){
 			$key .= chr(rand(48, 90));
 		}
-		return $key;
+		self::$_key = $key;
+	}
+	
+	public static function getKey(){
+		return self::$_key;
 	}
 
 	/**
@@ -39,9 +48,9 @@ class Cryptex_KeyShiftingEncoder{
 	 * @param String $ckey Key
 	 * @return String encrypted message
 	 */	
-	public static function encode($txt, $ckey){
+	public static function encode($txt){
 		// expand key on same length
-		$key = str_repeat($ckey, strlen($txt)/strlen($ckey) + 1);
+		$key = str_repeat(self::$_key, strlen($txt)/strlen(self::$_key) + 1);
 		
 		// split strings
 		$data = str_split($txt);
@@ -89,10 +98,5 @@ class Cryptex_KeyShiftingEncoder{
 		return $hex;
 	}
 }
-
-
-
-
-
 
 ?>

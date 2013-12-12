@@ -2,13 +2,12 @@
 	Plugin Name: CRYPTEX
 	Plugin URI: http://www.a3non.org/go/cryptex
 	Description: EMAIL OBFUSCATOR
-	Version: 1.4
+	Version: 3.0
 	Author: Andi Dittrich
 	Author URI: http://www.a3non.org
-	Copryright 2010-2011, Andi Dittrich
 	License: MIT X11-License
 	
-	Copyright (c) 2010-2011, Andi Dittrich
+	Copyright (c) 2010-2013, Andi Dittrich
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 	
@@ -67,10 +66,9 @@ if (typeof MooTools!="undefined"){
 			}
 		});
 	});
-};
-
-// jquery
-if (typeof jQuery!="undefined"){
+	
+// jquery	
+}else if (typeof jQuery!="undefined"){
 	jQuery(document).ready(function(){
 		jQuery('span.cryptex').click(function(){
 			if (jQuery(this).attr('rel')){
@@ -78,18 +76,19 @@ if (typeof jQuery!="undefined"){
 			}
 		});
 	});
-};
+	
+
 
 // generic fallback
-if (typeof MooTools=="undefined" && typeof jQuery=="undefined"){
+}else if (typeof MooTools=="undefined" && typeof jQuery=="undefined"){
 	window.setTimeout(function(){
 		var els = document.getElementsByTagName('span');
 		for (var i=0;i<els.length;i++){
 			if (els[i].getAttribute('class') && els[i].getAttribute('class').indexOf('cryptex') != -1){
 				if (els[i].getAttribute('rel')){
-					els[i].onclick = function(){
+					els[i].onclick = (function(){
 						cryptex_action_handler(this.getAttribute('rel'));
-					}
+					});
 				}
 			}
 		}
