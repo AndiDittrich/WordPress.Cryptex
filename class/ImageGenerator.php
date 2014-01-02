@@ -101,7 +101,7 @@ class ImageGenerator{
 		}
 				
 		// generate filename
-		$filename = sha1($salt.sha1($txt.$this->_salt)).'.png';
+		$filename = sha1($this->_salt.sha1($txt.$this->_salt)).'.png';
 		
 		// generate storage path
 		$storagePath = CRYPTEX_PLUGIN_PATH.'/cache/'.$filename;

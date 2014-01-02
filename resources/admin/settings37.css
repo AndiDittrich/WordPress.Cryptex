@@ -1,6 +1,3 @@
-/**
- * Settings Page Design for WordPress < v3.8
-*/
 .CryptexBlockcontent{
 	padding: 5px 10px 10px 10px;
 	margin: 0px 0px 20px 0px;
@@ -8,18 +5,25 @@
 	border-radius: 5px;
 	background-color: #f9f9f9;
 }
+.CryptexBlockcontent h4{
+	color: #0074a2;
+	displa: block;
+	border-bottom: dotted 2px #c0c0c0;
+}
 .CryptexBlockcontent img{
 	padding-left: 15px;
 }
 
 .CryptexSetting{
 	display: block;
-	padding: 6px 10px 6px 15px;
+	padding: 5px 10px 5px 15px;
 }
 .CryptexSettingTitle{
 	float: left;
-	width: 200px;
+	width: 250px;
 	font-weight: bold;
+	hieght: 30px;
+	line-height: 30px;
 }
 .CryptexSettingItem{
 	float: left;
@@ -29,9 +33,9 @@
 }
 .CryptexTRUE{
 	font-weight: bold;
-	color: #54950d;
+	color: #7ad03a;
 }
 .CryptexFALSE{
 	font-weight: bold;
-	color: #950d0d;
+	color: #d03a3a;
 }

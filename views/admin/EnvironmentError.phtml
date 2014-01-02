@@ -1,0 +1,80 @@
+<?php
+/**
+	Descriptionn: Cryptex Admin Settings Page
+	Plugin URI: http://www.a3non.org/go/cryptex
+	Version: 1.0
+	Author: Andi Dittrich
+	Author URI: http://andidittrich.de
+	License: MIT X11-License
+	
+	Copyright (c) 2014, Andi Dittrich
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+	
+	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+	
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+?>
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+
+<div class="wrap">
+<h2><?php _e('Cryptex | E-Mail-Address Protection'); ?></h2>
+
+<!-- Breadcrumb -->
+<?php add_thickbox(); ?>
+<div id='setting-error-settings_updated' class='updated settings-error'> 
+	<p><strong><?php _e('Cryptex related:'); ?> </strong>
+		<a href="https://github.com/AndiDittrich/WordPress.Cryptex"><?php _e('Cryptex on GitHub'); ?></a> | 
+		<a href="http://wordpress.org/plugins/cryptex/"><?php _e('Cryptex on WordPress.org'); ?></a> | 
+		<a href="https://github.com/AndiDittrich/WordPress.Cryptex/issues"><?php _e('Report a Bug'); ?></a>
+	</p>
+</div>
+
+<!-- System Info -->
+<h3><?php _e('Environment Error'); ?></h3>
+<div id='setting-error-settings_updated' class='updated settings-error'> 
+    <ul> 
+    	<?php 
+    	// PHP version
+    	if (version_compare(phpversion(), '5.3', '>=')){
+    		echo '<li>', __('PHP Version:'), ' <strong style="color: #00cc00">', phpversion() , '</strong></li>';
+    	}else{
+    		echo '<li>', __('PHP Version:'), ' <strong style="color: #cc0a00">', phpversion() ,'</strong> <strong>(PHP >= 5.3 is required to run this plugin)</strong></li>';
+    	}
+    	
+    	// server os
+    	echo '<li>', __('Server Software:'), ' <strong style="color: #00cc00">', PHP_OS, '</strong></li>';
+    	
+    	// cryptex version
+    	echo '<li>', __('Cryptex Plugin Version:'), ' <strong style="color: #00cc00">', CRYPTEX_VERSION, '</strong></li>';
+    	
+    	// check for gdlib
+    	if (function_exists('gd_info')){
+    		echo '<li>', __('GD library installed:'), ' <strong style="color: #00cc00">', __('true'), '</strong></li>';
+    		$info = gd_info(); 
+
+    		// check GD lib version
+   			echo '<li>', __('GD version:'), ' <strong style="color: #00cc00">',  $info['GD Version'], __(' (supported)'), '</strong></li>';
+    		
+    		// check png support
+    		if ($info['PNG Support']){
+    			echo '<li>', __('PNG support:'), ' <strong style="color: #00cc00">', __('true'), '</strong></li>';
+    		}else{
+    			echo '<li>', __('PNG support:'), ' <strong style="color: #cc0a00">', __('false'), '</strong></li>';
+    		}
+    		
+    	}else{
+    		echo '<li>', __('GD library installed:'), ' <strong style="color: #cc0a00">', __('false'), '</strong></li>';
+    	}
+    	
+    	// plugin cache path writeable ?
+    	$cachePath = CRYPTEX_PLUGIN_PATH.DIRECTORY_SEPARATOR.'cache';
+    	if (is_dir($cachePath) && is_writable($cachePath)){
+    		echo '<li>', __('Cache writeable'),' (<code>', $cachePath ,'</code>): <strong style="color: #00cc00">', __('true'), '</strong></li>';
+    	}else{
+    		echo '<li>', __('Cache writeable'),' (<code>', $cachePath ,'</code>): <strong style="color: #cc0a00">', __('false'), '</strong></li>';
+    	}
+    	?>
+    </ul>	
+</div>

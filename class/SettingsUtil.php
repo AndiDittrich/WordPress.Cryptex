@@ -1,10 +1,10 @@
 <?php
 /**
-	Global Plugin Settings Management
+	Admin Settings Page Utility Class
 	Version: 1.0
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
-	Plugin URI: http://www.a3non.org/go/cryptex
+	Plugin URI: http://www.a3non.org/go/Cryptexjs
 	License: MIT X11-License
 	
 	Copyright (c) 2013, Andi Dittrich
@@ -18,7 +18,7 @@
 namespace Cryptex;
 
 class SettingsUtil{
-
+	
 	// local config storage
 	private $_config = array();
 	
@@ -27,9 +27,9 @@ class SettingsUtil{
 	
 	// initialize global plugin config
 	public function __construct($prefix, $defaultConfig=array()){
-		// store settings prefix		
+		// store settings prefix
 		$this->_optionsPrefix = $prefix;
-		
+	
 		// load plugin config
 		foreach ($defaultConfig as $key=>$value){
 			// get option by key
@@ -44,7 +44,7 @@ class SettingsUtil{
 			register_setting($this->_optionsPrefix.'settings-group', $this->_optionsPrefix.$key);
 		}
 	}
-		
+	
 	// update option
 	public function setOption($key, $value){
 		update_option($this->_optionsPrefix.$key, $value);
@@ -68,66 +68,68 @@ class SettingsUtil{
 	 */
 	public function displayCheckbox($title, $optionName){
 		?>
-<!-- SETTING [<?php echo $optionName ?>] -->
-<div class="CryptexSetting">	
-	<div class="CryptexSettingTitle"><?php _e($title); ?></div>
-	<div class="CryptexSettingItem">
-		<?php
-	if ($this->_config[$optionName]){ 
-		$checked = ' checked="checked" '; 
-	}
-	echo '<input '.$checked.' name="'.$this->_optionsPrefix.$optionName.'" type="checkbox" value="1" />';
-?>
-	</div>
-	<div class="CryptexSettingClear"></div>
-</div>
-		<?php 
-	}
-	
-	/**
-	 * Generates a selectform  based on settings-name
-	 * @param String $title
-	 * @param String $optionName
-	 * @param Array $values
-	 */
-	public function displaySelect($title, $optionName, $values){
-		?>
-<!-- SETTING [<?php echo $optionName ?>] -->			
-<div class="CryptexSetting">	
-	<div class="CryptexSettingTitle"><?php _e($title); ?></div>
-	<div class="CryptexSettingItem">
-        <select name="<?php echo $this->_optionsPrefix.$optionName ?>" id="<?php echo $this->_optionsPrefix.$optionName ?>">
-		<?php
-		
-		foreach ($values as $key=>$value){
-			$selected = ($this->_config[$optionName] == $value) ? 'selected="selected"' : '';
-			echo '<option value="'.$value.'" '.$selected.'>'. esc_html($key).'</option>';
+	<!-- SETTING [<?php echo $optionName ?>] -->
+	<div class="CryptexSetting">	
+		<div class="CryptexSettingTitle"><?php echo esc_html($title); ?></div>
+		<div class="CryptexSettingItem">
+			<?php
+		$checked = '';	
+		if ($this->_config[$optionName]){ 
+			$checked = ' checked="checked" '; 
 		}
-		?> 
-        </select>       
+		echo '<input '.$checked.' name="'.$this->_optionsPrefix.$optionName.'" type="checkbox" value="1" />';
+	?>
+		</div>
+		<div class="CryptexSettingClear"></div>
 	</div>
-	<div class="CryptexSettingClear"></div>
-</div>
-		<?php
-	}
-	
-	/**
-	 * Generates a input-form
-	 * @param String $title
-	 * @param String $optionName
-	 * @param String $label
-	 */
-	public function displayInput($title, $optionName, $label, $cssClass=''){
-	?>	
-<div class="CryptexSetting">
-	<div class="CryptexSettingTitle"><?php _e($title); ?></div>
-	<div class="CryptexSettingItem">
-		<input id="<?php echo $this->_optionsPrefix.$optionName; ?>" name="<?php echo $this->_optionsPrefix.$optionName;?>" type="text" value="<?php echo esc_attr($this->_config[$optionName]); ?>" class="text <?php echo $cssClass; ?>" />
-		<label for="<?php echo $this->_optionsPrefix.$optionName; ?>"><?php _e($label); ?></label>
-   	</div>
-   	<div class="CryptexSettingClear"></div>
-</div>
-      <?php
-	}
-	
+			<?php 
+		}
+		
+		/**
+		 * Generates a selectform  based on settings-name
+		 * @param String $title
+		 * @param String $optionName
+		 * @param Array $values
+		 */
+		public function displaySelect($title, $optionName, $values){
+			?>
+	<!-- SETTING [<?php echo $optionName ?>] -->			
+	<div class="CryptexSetting">	
+		<div class="CryptexSettingTitle"><?php echo esc_html($title); ?></div>
+		<div class="CryptexSettingItem">
+	        <select name="<?php echo $this->_optionsPrefix.$optionName ?>" id="<?php echo $this->_optionsPrefix.$optionName ?>">
+			<?php
+			
+			foreach ($values as $key=>$value){
+				$selected = ($this->_config[$optionName] == $value) ? 'selected="selected"' : '';
+				echo '<option value="'.$value.'" '.$selected.'>'. esc_html($key).'</option>';
+			}
+			?> 
+	        </select>       
+		</div>
+		<div class="CryptexSettingClear"></div>
+	</div>
+			<?php
+		}
+		
+		/**
+		 * Generates a input-form
+		 * @param String $title
+		 * @param String $optionName
+		 * @param String $label
+		 */
+		public function displayInput($title, $optionName, $label, $cssClass=''){
+		?>	
+	<div class="CryptexSetting">
+		<div class="CryptexSettingTitle"><?php echo esc_html($title); ?></div>
+		<div class="CryptexSettingItem">
+			<input id="<?php echo $this->_optionsPrefix.$optionName; ?>" name="<?php echo $this->_optionsPrefix.$optionName;?>" type="text" value="<?php echo esc_attr($this->_config[$optionName]); ?>" class="text <?php echo $cssClass; ?>" />
+			<label for="<?php echo $this->_optionsPrefix.$optionName; ?>"><?php echo esc_html($label); ?></label>
+	   	</div>
+	   	<div class="CryptexSettingClear"></div>
+	</div>
+	      <?php
+		}
 }
+
+?>

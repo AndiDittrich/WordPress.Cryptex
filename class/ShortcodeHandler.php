@@ -112,3 +112,5 @@ class ShortcodeHandler{
 		return array_merge($shortcodes, $this->_registeredShortcodes);
 	}	
 }
+
+?>

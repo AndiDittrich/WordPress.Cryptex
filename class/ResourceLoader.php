@@ -81,6 +81,6 @@ class ResourceLoader{
 		wp_register_script('cryptex-settings-init', plugins_url('/cryptex/resources/admin/settings.js'), array('jquery'));
 		wp_enqueue_script('cryptex-settings-init');
 	}
-	
-	
 }
+
+?>

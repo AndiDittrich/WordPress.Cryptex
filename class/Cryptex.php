@@ -1,13 +1,13 @@
 <?php
 /**
 	Cryptex Class
-	Version: 3.0
+	Version: 3.1
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
 	Plugin URI: http://www.a3non.org/go/cryptex
 	License: MIT X11-License
 	
-	Copyright (c) 2010-2013, Andi Dittrich
+	Copyright (c) 2010-2014, Andi Dittrich
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 	
@@ -57,6 +57,8 @@ class Cryptex{
 			'offset-b' => '2',
 			'offset-x' => '5',
 			'offset-y' => '2',
+			'translation-enabeled' => true,
+			'email-autodetect' => false
 	);
 	
 	// shortcode handler instance
@@ -71,6 +73,9 @@ class Cryptex{
 	// font manager instance
 	private $_fontManager;
 	
+	// email address regex autodetect
+	private $_autodetectFilter;
+	
 	public function __construct(){
 		// generate session based key
 		Cryptex\KeyShiftingEncoder::generateKey();
@@ -80,7 +85,12 @@ class Cryptex{
 		
 		// create new settings utility class
 		$this->_settingsUtility = new Cryptex\SettingsUtil('cryptex-', $this->_defaultConfig);
-	
+		
+		// load language files
+		if ($this->_settingsUtility->getOption('translation-enabeled')){
+			load_plugin_textdomain('cryptex', null, 'cryptex/lang/');
+		}
+
 		// create new resource loader
 		$this->_resourceLoader = new Cryptex\ResourceLoader($this->_settingsUtility);
 		
@@ -92,9 +102,6 @@ class Cryptex{
 	
 		// frontend or admin area ?
 		if (is_admin()){
-			// i18n domain handler
-			add_action('plugins_loaded', array($this, 'initializeI18n'));
-				
 			// add admin menu handler
 			add_action('admin_menu', array($this, 'setupBackend'));
 		}else{
@@ -109,6 +116,12 @@ class Cryptex{
 				add_shortcode('email', array($this->_shortcodeHandler, 'cryptex'));
 			}
 			
+			// autodetect emails ?
+			if ($this->_settingsUtility->getOption('email-autodetect')){
+				$this->__autodetectFilter = new Cryptex\AutodetectFilter($this->_shortcodeHandler);
+				add_filter('the_content', array($this->__autodetectFilter, 'filter'), 50, 1);
+			}
+			
 			// load frontend css+js
 			add_action('wp_enqueue_scripts', array($this->_resourceLoader, 'appendCSS'), 50);
 			add_action('wp_enqueue_scripts', array($this->_resourceLoader, 'appendJS'), 50);
@@ -118,14 +131,9 @@ class Cryptex{
 		}
 	}
 	
-	public function initializeI18n(){
-		// load language files
-		load_plugin_textdomain('cryptex', null, CRYPTEX_PLUGIN_PATH.'/lang');
-	}
-	
 	public function setupBackend(){
 		// add options page
-		$optionsPage = add_options_page(__('Cryptex | E-Mail-Address Protection'), __('Cryptex'), 'administrator', __FILE__, array($this, 'settingsPage'));
+		$optionsPage = add_options_page(__('Cryptex | E-Mail-Address Protection', 'cryptex'), 'Cryptex', 'administrator', __FILE__, array($this, 'settingsPage'));
 	
 		// load jquery stuff
 		add_action('admin_print_scripts-'.$optionsPage, array($this->_resourceLoader, 'appendAdminJS'));
@@ -204,3 +212,5 @@ class Cryptex{
 	}
 	
 }
+
+?>

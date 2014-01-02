@@ -10,18 +10,24 @@
 	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 	max-width: 1500px;
 }
+.CryptexBlockcontent h4{
+	color: #0074a2;
+	displa: block;
+	border-bottom: dotted 2px #c0c0c0;
+}
 .CryptexBlockcontent img{
 	padding-left: 15px;
 }
-
 .CryptexSetting{
 	display: block;
-	padding: 6px 10px 6px 15px;
+	padding: 5px 10px 5px 15px;
 }
 .CryptexSettingTitle{
 	float: left;
-	width: 200px;
+	width: 250px;
 	font-weight: bold;
+	hieght: 30px;
+	line-height: 30px;
 }
 .CryptexSettingItem{
 	float: left;

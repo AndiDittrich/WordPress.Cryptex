@@ -197,3 +197,5 @@ class FontManager{
 		return $fileList;
 	}
 }
+
+?>
