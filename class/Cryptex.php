@@ -1,7 +1,7 @@
 <?php
 /**
 	Cryptex Class
-	Version: 3.2
+	Version: 3.2.1
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
 	Plugin URI: http://www.a3non.org/go/cryptex
@@ -105,6 +105,9 @@ class Cryptex{
 		
 		// update cache on install
 		add_action('activate_plugin', array($this, 'pluginActivate'), 10, 1);
+		
+		// update cache on upgrade
+		add_action('upgrader_post_install', array($this, 'generateCSS'), 10, 0);
 	
 		// frontend or admin area ?
 		if (is_admin()){
@@ -210,7 +213,7 @@ class Cryptex{
 	}
 	
 	// generate dynamic css file
-	private function generateCSS(){
+	public function generateCSS(){
 		// load css template
 		$cssTPL = new Cryptex\SimpleTemplate(CRYPTEX_PLUGIN_PATH.'/resources/Cryptex.css');
 		

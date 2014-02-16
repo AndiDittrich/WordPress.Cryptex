@@ -3,7 +3,7 @@ Contributors: Andi Dittrich
 Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses, filter, automatically
 Requires at least: 3.5
 Tested up to: 3.8.1
-Stable tag: 3.2
+Stable tag: 3.2.1
  
 Cryptex transforms plain-text E-Mail-Addresses into Images - automatically
 
@@ -31,6 +31,7 @@ The @-sign as well as dot's within the e-mail-addresses can be automatically rep
 
 ### Security Modes ###
 Cryptex provides various obfuscation modes for E-Mail-Addresses:
+
 * Plain Text - only text-transformations are applied - no use of images
 * Single Image - the e-mail-address is expressed as a single image 
 * Multipart Image - the e-mail-address is splitted into two images, seperated by the @-sign in plain text
@@ -92,10 +93,13 @@ Well..write a email to Andi Dittrich (andi DOT dittrich AT a3non DOT org) or or 
 
 ## Changelog ##
 
+### 3.2.1 ###
+* Bugfix: CSS files doesn't get generated on upgrading the plugin - you have to click "save settings" to force the creation on previuos versions 
+
 ### 3.2 ###
 * Added: Autodetection filters for `get_the_excerpt`, `get_comment_text` and `get_comment_excerpt`
 * Added: New Security-Mode "Advanced Multipart Image" - each part of the email-address (seperated by dot's and @ sign) is displayed as an image, the dividers as plain text
-* Added: New Security-Mode "Test" - not recommended but usefull if you don't want to use images (e.g. screenreaders required) - this setting will only modify the @sign of the text and adds mailto
+* Added: New Security-Mode "Text" - not recommended but usefull if you don't want to use images (e.g. screenreaders required) - this setting will only modify the @sign of the text and adds mailto
 * Added: Option to enable/disable `the_excerpt`, `the_content`, `get_comment_text` and `get_comment_excerpt` autodetect filters
 * Added: Text-Replacement for the **dot (.)** within E-Mail-Addresses
 * Improved: Increased the robustness of the Font-Manager (font detection)
