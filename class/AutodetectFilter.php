@@ -22,15 +22,41 @@ class AutodetectFilter{
 	// shortcode handler is used to process the filtered results
 	private $_shortcodeHandler;
 	
-	public function __construct($shorcodeHandler){
+	// post/page IDs to exclude from filtering
+	private $_excludeIDs = array();
+	
+	// the email address detection pattern
+	private $_detectionPattern = '/([a-z0-9_\.-]+@[\da-z\.-]+\.[a-z\.]{2,6}?)/Ui';
+	
+	public function __construct($settingsUtil, $shorcodeHandler){
+		// get IDs to exclude
+		$eID = $settingsUtil->getOption('email-autodetect-excludeid');
+		
+		// filter non numeric chars
+		$eID = preg_replace('/[^0-9,]/', '', $eID);
+				
+		// convert it into array (split by "," speraator)
+		$this->_excludeIDs = explode(',', $eID); 
+		
 		// store shortcode handler instance
 		$this->_shortcodeHandler = $shorcodeHandler;
 	}
 	
-	// wp the_content callback
+	// wp the_content/the_excerpt callback
 	public function filter($content){
+		// exclude post/page from filtering ?
+		if (in_array(get_the_ID(), $this->_excludeIDs)){
+			return $content;
+		}else{
+			// regex to detect emails
+			return preg_replace_callback($this->_detectionPattern, array($this, 'filterMatchCallback'), $content);
+		}
+	}
+	
+	// wp comment callback (no id exclusion!)
+	public function filterNoExclusion($content){
 		// regex to detect emails
-		return preg_replace_callback('/([a-z0-9_\.-]+@[\da-z\.-]+\.[a-z\.]{2,6}?)/Ui', array($this, 'filterMatchCallback'), $content);
+		return preg_replace_callback($this->_detectionPattern, array($this, 'filterMatchCallback'), $content);
 	}
 	
 	// regex callback

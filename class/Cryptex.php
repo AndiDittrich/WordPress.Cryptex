@@ -1,7 +1,7 @@
 <?php
 /**
 	Cryptex Class
-	Version: 3.1
+	Version: 3.2
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
 	Plugin URI: http://www.a3non.org/go/cryptex
@@ -41,6 +41,7 @@ class Cryptex{
 			'custom-font-path' => '',
 			'enable-hyperlink' => true,
 			'email-divider' => '@',
+			'email-replacement-dot' => '.',
 			'embed-css' => true,
 			'embed-js' => true,
 			'font-file' => 'Arial.ttf',
@@ -58,7 +59,12 @@ class Cryptex{
 			'offset-x' => '5',
 			'offset-y' => '2',
 			'translation-enabeled' => true,
-			'email-autodetect' => false
+			'email-autodetect' => false,
+			'email-autodetect-content' => true,
+			'email-autodetect-excerpt' => true,
+			'email-autodetect-comments' => true,
+			'email-autodetect-comments-excerpt' => true,
+			'email-autodetect-excludeid' => ''
 	);
 	
 	// shortcode handler instance
@@ -118,8 +124,27 @@ class Cryptex{
 			
 			// autodetect emails ?
 			if ($this->_settingsUtility->getOption('email-autodetect')){
-				$this->__autodetectFilter = new Cryptex\AutodetectFilter($this->_shortcodeHandler);
-				add_filter('the_content', array($this->__autodetectFilter, 'filter'), 50, 1);
+				$this->_autodetectFilter = new Cryptex\AutodetectFilter($this->_settingsUtility, $this->_shortcodeHandler);
+				
+				// filter content ?
+				if ($this->_settingsUtility->getOption('email-autodetect-content')){
+					add_filter('the_content', array($this->_autodetectFilter, 'filter'), 50, 1);
+				}
+				
+				// filter excerpt ?
+				if ($this->_settingsUtility->getOption('email-autodetect-excerpt')){
+					add_filter('get_the_excerpt', array($this->_autodetectFilter, 'filter'), 50, 1);
+				}
+				
+				// filter comment text ?
+				if ($this->_settingsUtility->getOption('email-autodetect-comments')){
+					add_filter('get_comment_text', array($this->_autodetectFilter, 'filterNoExclusion'), 50, 1);
+				}
+				
+				// filter comment excerpt ?
+				if ($this->_settingsUtility->getOption('email-autodetect-comments-excerpt')){
+					add_filter('get_comment_excerpt', array($this->_autodetectFilter, 'filterNoExclusion'), 50, 1);
+				}
 			}
 			
 			// load frontend css+js

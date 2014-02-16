@@ -18,9 +18,9 @@
 		<copy file="readme.txt" tofile="README.md"/>
 	
 		<!-- replace headings !-->
-		<replaceregexp file="README.md" match="===(.*)===" replace="#\1#" byline="true"	/>
-		<replaceregexp file="README.md" match="==(.*)==" replace="##\1##" byline="true"	/>
-		<replaceregexp file="README.md" match="=(.*)=" replace="###\1###" byline="true"	/>
+		<replaceregexp file="README.md" match="^===(.*)===" replace="#\1#" byline="true"	/>
+		<replaceregexp file="README.md" match="^==(.*)==" replace="##\1##" byline="true"	/>
+		<replaceregexp file="README.md" match="^=(.*)=" replace="###\1###" byline="true"	/>
 	</target>
 	
 	

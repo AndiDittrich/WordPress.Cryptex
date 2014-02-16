@@ -77,7 +77,7 @@ class SettingsUtil{
 		if ($this->_config[$optionName]){ 
 			$checked = ' checked="checked" '; 
 		}
-		echo '<input '.$checked.' name="'.$this->_optionsPrefix.$optionName.'" type="checkbox" value="1" />';
+		echo '<input '.$checked.' name="'.$this->_optionsPrefix.$optionName.'" id="'.$this->_optionsPrefix.$optionName.'" type="checkbox" value="1" />';
 	?>
 		</div>
 		<div class="CryptexSettingClear"></div>

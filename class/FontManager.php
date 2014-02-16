@@ -56,6 +56,11 @@ class FontManager{
 			}
 		}
 		
+		// alphabetical sort
+		uasort($fontlist, function($s1, $s2){
+			return strnatcmp(strtolower($s1), strtolower($s2));
+		});
+		
 		return $fontlist;
 	}
 	
@@ -156,6 +161,11 @@ class FontManager{
 	 * @return array
 	 */
 	public static function scandir($dirname){
+		// require minimum path size
+		if (strlen($dirname)<4){
+			return array();
+		}
+		
 		// remove trailing slash
 		$dirname = untrailingslashit($dirname);
 		
@@ -164,33 +174,51 @@ class FontManager{
 			return array();
 		}
 		
+		// number of total dirs pushed to the stack
+		$totalStackSize = 0;
+		
 		// stack of scanning directories
 		$dirStack = array($dirname);
 	
 		// output file list
 		$fileList = array();
 	
-		// iterative walk through
-		while (count($dirStack)>0){
-			// get current dir (first element of stack)
-			$currentDir = \array_shift($dirStack);
-	
-			// get file list of current dir
-			$currentFiles = \scandir($currentDir);
-	
-			// iterate over current files
-			foreach ($currentFiles as $file){
-				if ($file != '.' && $file != '..'){
-					// check if current file is a directory
-					if (\is_dir($currentDir.DIRECTORY_SEPARATOR.$file)){
-						// push it on stack
-						$dirStack[] = $currentDir.DIRECTORY_SEPARATOR.$file;
-					}else{
-						// store it into output file list
-						$fileList[] = $currentDir.DIRECTORY_SEPARATOR.$file;
+		try{
+			// iterative walk through
+			while (count($dirStack)>0){
+				// get current dir (first element of stack)
+				$currentDir = \array_shift($dirStack);
+		
+				// get file list of current dir
+				$currentFiles = \scandir($currentDir);
+		
+				// iterate over current files
+				foreach ($currentFiles as $file){
+					// build current path
+					$currentPath = $currentDir.DIRECTORY_SEPARATOR.$file;
+					
+					if ($file != '.' && $file != '..' && is_readable($currentPath)){
+						// check if current file is a directory
+						if (\is_dir($currentPath)){
+							// push it on stack
+							$dirStack[] = $currentPath;
+							
+							// increment counter
+							$totalStackSize++;
+						}else{
+							// store it into output file list
+							$fileList[] = $currentPath;
+						}
 					}
 				}
+				
+				// limit total number of scanned diretories (100)
+				if ($totalStackSize > 100){
+					break;
+				}
 			}
+		}catch(\Exception $exc){
+			return $filelist;
 		}
 	
 		// return filelist

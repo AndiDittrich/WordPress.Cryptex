@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2014-01-02 00:30:38+00:00\n"
+"POT-Creation-Date: 2014-02-16 00:32:21+00:00\n"
 "PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
-"Project-Id-Version: Cryptex  3.1\n"
+"Project-Id-Version: Cryptex  3.2\n"
 "Report-Msgid-Bugs-To: andi DOT dittrich AT a3non DOT org\n"
 "Last-Translator:  Andi Dittrich\n"
 
@@ -196,7 +196,7 @@ msgid "Change these settings to match your current theme styles."
 msgstr ""
 
 #: views/admin/Settings.phtml:127
-msgid "<strong>Note: </strong>It`s strongly recommend to use standard fonts only - otherwise it could cause problems by displaying them on clients which have not installed these custom fonts yet."
+msgid "<strong>Note: </strong>It`s strongly recommend to use standard fonts only"
 msgstr ""
 
 #: views/admin/Settings.phtml:131
@@ -220,209 +220,281 @@ msgid "e.g. #000000, #ff00c1"
 msgstr ""
 
 #: views/admin/Settings.phtml:139
-msgid "General Settings"
+msgid "E-Mail Text Transformations"
 msgstr ""
 
-#: views/admin/Settings.phtml:141
-msgid "Instead of using the @ sign for emails, you can choose between some options - this could increase the protection level against spiders/bots using OCR."
-msgstr ""
-
-#: views/admin/Settings.phtml:142
-msgid "<strong>Note:</strong> Use ALWAYS the @ sign in the cryptex shortcode!"
+#: views/admin/Settings.phtml:140
+msgid "These replacements are only applied to E-Mail-Addresses"
 msgstr ""
 
 #: views/admin/Settings.phtml:143
+msgid "Instead of using the @ sign for emails, you can choose between some options - this could increase the protection level against spiders/bots using OCR."
+msgstr ""
+
+#: views/admin/Settings.phtml:144
+msgid "<strong>Note:</strong> Use ALWAYS the @ sign in the cryptex shortcode!"
+msgstr ""
+
+#: views/admin/Settings.phtml:145
 msgid "@Sign-Replacement"
 msgstr ""
 
-#: views/admin/Settings.phtml:146
-msgid "Should E-Mail-Addresses clickable ? (mailto:youremail@example.com)"
+#: views/admin/Settings.phtml:145 views/admin/Settings.phtml:148
+msgid "No Replacement"
 msgstr ""
 
 #: views/admin/Settings.phtml:147
-msgid "Cryptex provides an integrated key-shifting based encryption/decryption of hyperlinks to ensure maximum protection."
+msgid "<strong>Note:</strong> Use ALWAYS the . in the cryptex shortcode!"
 msgstr ""
 
-#: views/admin/Settings.phtml:149
-msgid "Enable-Hyperlinks"
+#: views/admin/Settings.phtml:148
+msgid "Dot-Replacement"
 msgstr ""
 
-#: views/admin/Settings.phtml:152
-msgid "E-Mail-addresses can be displayed as a single image or, in case of higher security, as a multipart-image."
+#: views/admin/Settings.phtml:151
+msgid "General Settings"
 msgstr ""
 
 #: views/admin/Settings.phtml:153
-msgid "The address will be splitted into 2 parts (before and after the @ sign). Each part is displayed as a single image, the @ sign as plain text. This feature provides an improved protection against ocr-grabbing spambots, which will analyze page images."
+msgid "Should E-Mail-Addresses clickable ? (mailto:youremail@example.com)"
 msgstr ""
 
 #: views/admin/Settings.phtml:154
-msgid "Note: This option will only influence E-Mail-addresses, other content will be still displayed as a single image!"
+msgid "Cryptex provides an integrated key-shifting based encryption/decryption of hyperlinks to ensure maximum protection."
 msgstr ""
 
 #: views/admin/Settings.phtml:156
-msgid "E-Mail Security Level"
-msgstr ""
-
-#: views/admin/Settings.phtml:156
-msgid "Single Image"
-msgstr ""
-
-#: views/admin/Settings.phtml:156
-msgid "Multipart Image (2 Images, seperated by @ sign)"
+msgid "Enable-Hyperlinks"
 msgstr ""
 
 #: views/admin/Settings.phtml:159
-msgid "Should E-Mail-Addresses automatically transformed into images ? No need for shortcode!"
+msgid "E-Mail-addresses can be displayed as a single image or, in case of higher security, as a multipart-image."
 msgstr ""
 
 #: views/admin/Settings.phtml:160
-msgid "Note: <strong>ALL</strong> E-Mail-Addresses on your page will be transformed. This will be a usefull functionality on most blogs but can cause problems when posting sourcecode."
+msgid "The address will be splitted into 2 parts (before and after the @ sign). Each part is displayed as a single image, the @ sign as plain text. This feature provides an improved protection against ocr-grabbing spambots, which will analyze page images."
 msgstr ""
 
-#: views/admin/Settings.phtml:162
-msgid "E-Mail Autotransform"
+#: views/admin/Settings.phtml:161
+msgid "Note: This option will only influence E-Mail-addresses, other content will be still displayed as a single image!"
+msgstr ""
+
+#: views/admin/Settings.phtml:163
+msgid "E-Mail Security Level"
+msgstr ""
+
+#: views/admin/Settings.phtml:163
+msgid "Text (not recommended)"
+msgstr ""
+
+#: views/admin/Settings.phtml:163
+msgid "Single Image"
+msgstr ""
+
+#: views/admin/Settings.phtml:163
+msgid "Multipart Image (2 Images, seperated by @ sign)"
+msgstr ""
+
+#: views/admin/Settings.phtml:163
+msgid "Advanced Multipart Image (Multiple Images, seperated by dot AND @ sign)"
 msgstr ""
 
 #: views/admin/Settings.phtml:167
-msgid "Image Offsets"
+msgid "E-Mail-Address Autodetction"
+msgstr ""
+
+#: views/admin/Settings.phtml:169
+msgid "Should E-Mail-Addresses automatically transformed into images ? No need for shortcode!"
 msgstr ""
 
 #: views/admin/Settings.phtml:170
-msgid "Sometimes the generated text, depending on the selected font family, won`t fit into his image box - it is possible to configure the following offsets (in px) to fix this issue:"
-msgstr ""
-
-#: views/admin/Settings.phtml:171
-msgid "Offsets can also be used to adjust the font baseline (use Offset A and Offset B)."
+msgid "Note: <strong>ALL</strong> E-Mail-Addresses on your page will be transformed. This will be a usefull functionality on most blogs but can cause problems when posting sourcecode."
 msgstr ""
 
 #: views/admin/Settings.phtml:174
-msgid "Offset X (width)"
+msgid "Enable Autodetection"
 msgstr ""
 
-#: views/admin/Settings.phtml:175
-msgid "Offset Y (height)"
+#: views/admin/Settings.phtml:178
+msgid "You can exclude several post/pages from beeing autodetected by adding their IDs to the following list (comma sperated)"
 msgstr ""
 
-#: views/admin/Settings.phtml:176
-msgid "Offset A (font position x)"
+#: views/admin/Settings.phtml:179
+msgid "Exclude Post/Pages"
 msgstr ""
 
-#: views/admin/Settings.phtml:177
-msgid "Offset B (font position y)"
+#: views/admin/Settings.phtml:179
+msgid "e.g. 17, 18, 45"
 msgstr ""
 
 #: views/admin/Settings.phtml:181
-msgid "CDN (Content Delivery Network)"
+msgid "Filter Targets"
 msgstr ""
 
-#: views/admin/Settings.phtml:183
-msgid "These options might be required when using a Content-Delivery-Network (CDN) or another server/location which outsources your CSS+Javascript files."
+#: views/admin/Settings.phtml:182
+msgid "Choose the content-sections to which the autodetect-filter should be applied."
 msgstr ""
 
 #: views/admin/Settings.phtml:184
-msgid "In this case you have to manually include Cryptex.js and Cryptex.css into your page!"
+msgid "Transform the_content"
 msgstr ""
 
-#: views/admin/Settings.phtml:185
-msgid "The generated styles are"
+#: views/admin/Settings.phtml:187
+msgid "Transform the_excerpt"
 msgstr ""
 
-#: views/admin/Settings.phtml:185
-msgid "available here"
+#: views/admin/Settings.phtml:190
+msgid "Transform comments"
 msgstr ""
 
-#: views/admin/Settings.phtml:188
-msgid "Include Cryptex-CSS"
+#: views/admin/Settings.phtml:193
+msgid "Transform comments-excerpt"
 msgstr ""
 
-#: views/admin/Settings.phtml:191
-msgid "Include Cryptex-Javascript"
+#: views/admin/Settings.phtml:198
+msgid "Image Offsets"
 msgstr ""
 
-#: views/admin/Settings.phtml:196
-msgid "Advanced"
-msgstr ""
-
-#: views/admin/Settings.phtml:197
-msgid "Warning: These options are for advanced users only!"
-msgstr ""
-
-#: views/admin/Settings.phtml:199
-msgid "Miscellaneous"
-msgstr ""
-
-#: views/admin/Settings.phtml:200
-msgid "Should the shortcode [email] added as alias for cryptex? Kindly note that this can influence other plugins because of identical names!"
+#: views/admin/Settings.phtml:201
+msgid "Sometimes the generated text, depending on the selected font family, won`t fit into his image box - it is possible to configure the following offsets (in px) to fix this issue:"
 msgstr ""
 
 #: views/admin/Settings.phtml:202
-msgid "Use [email] Shortcode"
+msgid "Offsets can also be used to adjust the font baseline (use Offset A and Offset B)."
 msgstr ""
 
 #: views/admin/Settings.phtml:205
-msgid "Should the full font-paths be displayed on this settings page or only their file names ?"
+msgid "Offset Values"
 msgstr ""
 
 #: views/admin/Settings.phtml:206
-msgid "Show the full font-paths."
+msgid "Offset X (width)"
+msgstr ""
+
+#: views/admin/Settings.phtml:207
+msgid "Offset Y (height)"
 msgstr ""
 
 #: views/admin/Settings.phtml:208
-msgid "CSS Options"
+msgid "Offset A (font position x)"
 msgstr ""
 
-#: views/admin/Settings.phtml:210
-msgid "An optional prefix added to the generated css classes to match your content-container and retain cryptex styles."
+#: views/admin/Settings.phtml:209
+msgid "Offset B (font position y)"
 msgstr ""
 
-#: views/admin/Settings.phtml:211
-msgid "CSS Prefix"
-msgstr ""
-
-#: views/admin/Settings.phtml:211
-msgid "e.g. #content, .mycontentarea"
-msgstr ""
-
-#: views/admin/Settings.phtml:214
-msgid "Additional css classes added to the outer span-tag - maybe used to add icons."
+#: views/admin/Settings.phtml:213
+msgid "CDN (Content Delivery Network)"
 msgstr ""
 
 #: views/admin/Settings.phtml:215
-msgid "Additional Classes"
+msgid "These options might be required when using a Content-Delivery-Network (CDN) or another server/location which outsources your CSS+Javascript files."
 msgstr ""
 
-#: views/admin/Settings.phtml:215
-msgid "e.g. email mailicon"
+#: views/admin/Settings.phtml:216
+msgid "In this case you have to manually include Cryptex.js and Cryptex.css into your page!"
 msgstr ""
 
-#: views/admin/Settings.phtml:218
-msgid "I18n (Internationalization)"
+#: views/admin/Settings.phtml:217
+msgid "The generated styles are"
 msgstr ""
 
-#: views/admin/Settings.phtml:219
-msgid "Should the plugin load the language files (if available) to translate the settings page ?"
+#: views/admin/Settings.phtml:217
+msgid "available here"
 msgstr ""
 
 #: views/admin/Settings.phtml:220
+msgid "Include Cryptex-CSS"
+msgstr ""
+
+#: views/admin/Settings.phtml:223
+msgid "Include Cryptex-Javascript"
+msgstr ""
+
+#: views/admin/Settings.phtml:228
+msgid "Advanced"
+msgstr ""
+
+#: views/admin/Settings.phtml:229
+msgid "Warning: These options are for advanced users only!"
+msgstr ""
+
+#: views/admin/Settings.phtml:231
+msgid "Miscellaneous"
+msgstr ""
+
+#: views/admin/Settings.phtml:232
+msgid "Should the shortcode [email] added as alias for cryptex? Kindly note that this can influence other plugins because of identical names!"
+msgstr ""
+
+#: views/admin/Settings.phtml:234
+msgid "Use [email] Shortcode"
+msgstr ""
+
+#: views/admin/Settings.phtml:237
+msgid "Should the full font-paths be displayed on this settings page or only their file names ?"
+msgstr ""
+
+#: views/admin/Settings.phtml:238
+msgid "Show the full font-paths."
+msgstr ""
+
+#: views/admin/Settings.phtml:240
+msgid "CSS Options"
+msgstr ""
+
+#: views/admin/Settings.phtml:242
+msgid "An optional prefix added to the generated css classes to match your content-container and retain cryptex styles."
+msgstr ""
+
+#: views/admin/Settings.phtml:243
+msgid "CSS Prefix"
+msgstr ""
+
+#: views/admin/Settings.phtml:243
+msgid "e.g. #content, .mycontentarea"
+msgstr ""
+
+#: views/admin/Settings.phtml:246
+msgid "Additional css classes added to the outer span-tag - maybe used to add icons."
+msgstr ""
+
+#: views/admin/Settings.phtml:247
+msgid "Additional Classes"
+msgstr ""
+
+#: views/admin/Settings.phtml:247
+msgid "e.g. email mailicon"
+msgstr ""
+
+#: views/admin/Settings.phtml:250
+msgid "I18n (Internationalization)"
+msgstr ""
+
+#: views/admin/Settings.phtml:251
+msgid "Should the plugin load the language files (if available) to translate the settings page ?"
+msgstr ""
+
+#: views/admin/Settings.phtml:252
 msgid "Enable I18n"
 msgstr ""
 
-#: views/admin/Settings.phtml:229
+#: views/admin/Settings.phtml:261
 msgid "is developed by"
 msgstr ""
 
-#: views/admin/Settings.phtml:229
+#: views/admin/Settings.phtml:261
 msgid "It`s released under the terms of the MIT X11 License."
 msgstr ""
 
-#: views/admin/Settings.phtml:229
+#: views/admin/Settings.phtml:261
 msgid "Includes:"
 msgstr ""
 
-#: views/admin/Settings.phtml:229
+#: views/admin/Settings.phtml:261
 msgid "by"
 msgstr ""
 
-#: views/admin/Settings.phtml:229
+#: views/admin/Settings.phtml:261
 msgid "License"
 msgstr ""
