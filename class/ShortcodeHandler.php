@@ -4,10 +4,10 @@
 	Version: 1.0
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
-	Plugin URI: http://www.a3non.org/go/enlighterjs
+	Plugin URI: http://andidittrich.de/go/cryptex
 	License: MIT X11-License
 	
-	Copyright (c) 2013, Andi Dittrich
+	Copyright (c) 2013-2014, Andi Dittrich
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 	
@@ -26,8 +26,7 @@ class ShortcodeHandler{
 	private $_registeredShortcodes;
 	
 	// image generator instance
-	private $_imageGenerator;
-	
+	private $_imageGenerator;	
 	
 	public function __construct($settingsUtil, $registeredShortcodes){
 		// store local plugin config
@@ -45,15 +44,20 @@ class ShortcodeHandler{
 	
 	// handle cryptex shortcode
 	public function cryptex($atts=NULL, $content='', $code=''){
+		// process nested shortcodes ?
+		if ($this->_config['nestedShortcodes']){
+			$content = do_shortcode($content);
+		}
+		
+		// remove leading+trailing whitespaces!
+		$content = trim($content);
+		
 		// email address ?
 		$isEmail = (filter_var($content, FILTER_VALIDATE_EMAIL) !== false);
-	
+		
 		// return value
 		$html = '';
-		
-		// remove whitespaces!
-		$content = trim($content);
-	
+			
 		// get rel attribute - used to store encrypted email address
 		$rel = ($this->_config['enable-hyperlink'] ? KeyShiftingEncoder::encode($content) : '');
 

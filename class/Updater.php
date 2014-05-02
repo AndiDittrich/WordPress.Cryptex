@@ -4,7 +4,7 @@
 	Version: 1.0
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
-	Plugin URI: http://www.a3non.org/go/cryptex
+	Plugin URI: http://andidittrich.de/go/cryptex
 	License: MIT X11-License
 	
 	Copyright (c) 2010-2012, Andi Dittrich

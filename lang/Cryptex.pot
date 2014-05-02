@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2014-02-16 00:32:21+00:00\n"
+"POT-Creation-Date: 2014-05-02 22:32:07+00:00\n"
 "PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
-"Project-Id-Version: Cryptex  3.2\n"
+"Project-Id-Version: Cryptex  3.3\n"
 "Report-Msgid-Bugs-To: andi DOT dittrich AT a3non DOT org\n"
 "Last-Translator:  Andi Dittrich\n"
 
@@ -468,33 +468,45 @@ msgid "e.g. email mailicon"
 msgstr ""
 
 #: views/admin/Settings.phtml:250
-msgid "I18n (Internationalization)"
+msgid "Nested Shortcodes"
 msgstr ""
 
 #: views/admin/Settings.phtml:251
-msgid "Should the plugin load the language files (if available) to translate the settings page ?"
+msgid "In some cases it can be necessary to process nested-shortcodes (shortcodes within a cryptex/email tag) - maybe the inner shortcode fetches some content from your database, etc. Only enable this option if you exactly know what your doing!"
 msgstr ""
 
 #: views/admin/Settings.phtml:252
+msgid "Enable Nested-Shortcodes"
+msgstr ""
+
+#: views/admin/Settings.phtml:255
+msgid "I18n (Internationalization)"
+msgstr ""
+
+#: views/admin/Settings.phtml:256
+msgid "Should the plugin load the language files (if available) to translate the settings page ?"
+msgstr ""
+
+#: views/admin/Settings.phtml:257
 msgid "Enable I18n"
 msgstr ""
 
-#: views/admin/Settings.phtml:261
+#: views/admin/Settings.phtml:266
 msgid "is developed by"
 msgstr ""
 
-#: views/admin/Settings.phtml:261
+#: views/admin/Settings.phtml:266
 msgid "It`s released under the terms of the MIT X11 License."
 msgstr ""
 
-#: views/admin/Settings.phtml:261
+#: views/admin/Settings.phtml:266
 msgid "Includes:"
 msgstr ""
 
-#: views/admin/Settings.phtml:261
+#: views/admin/Settings.phtml:266
 msgid "by"
 msgstr ""
 
-#: views/admin/Settings.phtml:261
+#: views/admin/Settings.phtml:266
 msgid "License"
 msgstr ""

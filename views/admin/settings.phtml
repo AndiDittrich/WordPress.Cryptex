@@ -1,13 +1,13 @@
 <?php
 /**
-	Descriptionn: Enlighter Admin Settings Page
-	Plugin URI: http://www.a3non.org/go/enlighterjs
+	Descriptionn: Cryptex Admin Settings Page
+	Plugin URI: http://andidittrich.de/go/cryptex
 	Version: 1.2
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
 	License: MIT X11-License
 	
-	Copyright (c) 2013, Andi Dittrich
+	Copyright (c) 2013-2014, Andi Dittrich
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 	
@@ -245,6 +245,11 @@
 		<!-- css classes -->
 		<p><?php _e('Additional css classes added to the outer span-tag - maybe used to add icons.', 'cryptex')?></p>
 		<?php $this->_settingsUtility->displayInput(__('Additional Classes', 'cryptex'), 'css-classes', __('e.g. email mailicon', 'cryptex')); ?>
+		
+		<!-- Nested Shortcodes -->
+		<h4><?php _e('Nested Shortcodes', 'cryptex'); ?></h4>
+		<p><?php _e('In some cases it can be necessary to process nested-shortcodes (shortcodes within a cryptex/email tag) - maybe the inner shortcode fetches some content from your database, etc. Only enable this option if you exactly know what your doing!', 'cryptex'); ?></p>
+		<?php $this->_settingsUtility->displayCheckbox(__('Enable Nested-Shortcodes', 'cryptex'), 'nestedShortcodes'); ?>
 	
 		<!-- I18n -->
 		<h4><?php _e('I18n (Internationalization)', 'cryptex'); ?></h4>

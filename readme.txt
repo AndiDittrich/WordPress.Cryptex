@@ -2,15 +2,15 @@
 Contributors: Andi Dittrich
 Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses, filter, automatically
 Requires at least: 3.5
-Tested up to: 3.8.1
-Stable tag: 3.2.1
+Tested up to: 3.9
+Stable tag: 3.3
  
 Cryptex transforms plain-text E-Mail-Addresses into Images - automatically
 
 == Description ==
 
 The Cryptex plugin for WordPress is used to display email addresses - that are normally expressed in plain text - as an image automatically.
-It works with telephone numbers, postal addresses also.
+It works with emails, telephone numbers, postal addresses or any other text-content. This will stop harvesters and crawlers from gathering sensentive data from your website.
 Just wrap your E-Mail-Address into a shortcode like `[email]youraddress@example.com[/email]` - that's it. Or use the **Autodetect** filter to transform every E-Mail-Address on your page automatically into an image!
 
 = Plugin Features =
@@ -92,6 +92,10 @@ Well..write a email to Andi Dittrich (andi DOT dittrich AT a3non DOT org) or or 
 7. Settings Page - Autodetect Filter Options
 
 == Changelog ==
+
+= 3.3 =
+* Added: Option to enable processing of "Nested-Shortcodes" within cryptex/email tags - this might be useful if your using inner shortcode which fetches some content from your database, etc. (disabled by default) 
+* Bugfix: E-Mail-Address-Autodetection doesn't recognize subdomains (e.g. test.name@sub1.example.com)
 
 = 3.2.1 =
 * Bugfix: CSS files doesn't get generated on upgrading the plugin - you have to click "save settings" to force the creation on previuos versions 

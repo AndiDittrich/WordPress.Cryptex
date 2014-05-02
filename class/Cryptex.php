@@ -1,10 +1,10 @@
 <?php
 /**
 	Cryptex Class
-	Version: 3.2.1
+	Version: 3.3
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
-	Plugin URI: http://www.a3non.org/go/cryptex
+	Plugin URI: http://andidittrich.de/go/cryptex
 	License: MIT X11-License
 	
 	Copyright (c) 2010-2014, Andi Dittrich
@@ -64,7 +64,8 @@ class Cryptex{
 			'email-autodetect-excerpt' => true,
 			'email-autodetect-comments' => true,
 			'email-autodetect-comments-excerpt' => true,
-			'email-autodetect-excludeid' => ''
+			'email-autodetect-excludeid' => '',
+			'nestedShortcodes' => false
 	);
 	
 	// shortcode handler instance
@@ -194,6 +195,11 @@ class Cryptex{
 	// direct static crypt (shortcode passthrough)
 	public static function crypt($content){
 		echo self::getInstance()->_shortcodeHandler->cryptex(NULL, $content, '');
+	}
+	
+	// direct static crypt (shortcode passthrough)
+	public static function getEncryptedAddress($content){
+		return self::getInstance()->_shortcodeHandler->cryptex(NULL, $content, '');
 	}
 	
 	// drop cache items

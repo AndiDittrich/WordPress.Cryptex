@@ -1,10 +1,10 @@
 <?php
 /**
 	 EMail Address Autodetect Filter
-	 Version: 1.0
+	 Version: 1.1
 	 Author: Andi Dittrich
 	 Author URI: http://andidittrich.de
-	 Plugin URI: http://www.a3non.org/go/cryptex
+	 Plugin URI: http://andidittrich.de/go/cryptex
 	 License: MIT X11-License
 	
 	 Copyright (c) 2014, Andi Dittrich
@@ -25,8 +25,8 @@ class AutodetectFilter{
 	// post/page IDs to exclude from filtering
 	private $_excludeIDs = array();
 	
-	// the email address detection pattern
-	private $_detectionPattern = '/([a-z0-9_\.-]+@[\da-z\.-]+\.[a-z\.]{2,6}?)/Ui';
+	// the email address detection pattern	
+	private $_detectionPattern = '/([a-z0-9_\.-]+@[\da-z\.-]+\.[a-z\.]{2,6})[\w\b]/i';
 	
 	public function __construct($settingsUtil, $shorcodeHandler){
 		// get IDs to exclude
