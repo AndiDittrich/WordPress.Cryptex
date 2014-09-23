@@ -1,0 +1,90 @@
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+	<!-- Appearance !-->
+	<div class="postbox">
+	<h3 class="hndle"><span><?php _e('Appearance', 'cryptex'); ?></span></h3>
+	<div class="inside CryptexBlockcontent">
+    	<h4><?php _e('Font Styles', 'cryptex'); ?></h4>
+		<p><?php _e('Change these settings to match your current theme styles.', 'cryptex'); ?> <br />
+		<?php _e('<strong>Note: </strong>It`s strongly recommend to use standard fonts only', 'cryptex'); ?>
+		</p>
+
+		<!-- Font List -->
+		<?php $this->_settingsUtility->displaySelect(__('Font-Family', 'cryptex'), 'font-file', $fontlist); ?>
+		
+		<!-- Font Size -->
+		<?php $this->_settingsUtility->displayInput(__('Font-Size (px or pt)', 'cryptex'), 'font-size', __('e.g. 12px, 14pt', 'cryptex')); ?>
+		
+		<!-- Font Color -->
+		<?php $this->_settingsUtility->displayInput(__('Font-Color', 'cryptex'), 'font-color', __('e.g. #000000, #ff00c1', 'cryptex'), 'CryptexColorChooser'); ?>
+		
+		<!-- Line-Height -->
+		<?php $this->_settingsUtility->displayInput(__('Image-Height (px)', 'cryptex'), 'line-height', __('e.g. 12px - use 0 for auto', 'cryptex')); ?>
+		
+		<h4><?php _e('E-Mail Text Transformations', 'cryptex'); ?></h4>
+		<p><?php _e('These replacements are only applied to E-Mail-Addresses', 'cryptex'); ?></p>
+		
+		<!-- @ replacement -->
+    	<p><?php _e('Instead of using the @ sign for emails, you can choose between some options - this could increase the protection level against spiders/bots using OCR.', 'cryptex'); ?>				
+  	 	<br /><?php _e('<strong>Note:</strong> Use ALWAYS the @ sign in the cryptex shortcode!', 'cryptex'); ?></p>
+		<?php $this->_settingsUtility->displaySelect(__('@Sign-Replacement', 'cryptex'), 'email-divider', array(__('No Replacement',  'cryptex') => '@', '(at)' => '(at)', '[at]' => '[at]', '{at}' => '{at}', '/AT/' => '/AT/')); ?>
+		
+		<br /><?php _e('<strong>Note:</strong> Use ALWAYS the . in the cryptex shortcode!', 'cryptex'); ?></p>
+		<?php $this->_settingsUtility->displaySelect(__('Dot-Replacement', 'cryptex'), 'email-replacement-dot', array(__('No Replacement',  'cryptex') => '.', '(dot)' => '(dot)', '[dot]' => '[dot]', '{dot}' => '{dot}', '(.)' => '(.)', '[.]' => '[.]')); ?>
+		
+				
+		<h4><?php _e('E-Mail Settings', 'cryptex'); ?></h4>
+		<!-- hyperlinks !-->
+		<p><?php _e('Should E-Mail-Addresses clickable ? (mailto:youremail@example.com)', 'cryptex'); ?><br />
+		<?php _e('Cryptex provides an integrated key-shifting based encryption/decryption of hyperlinks to ensure maximum protection.', 'cryptex'); ?>
+		</p>
+		<?php $this->_settingsUtility->displayCheckbox(__('Enable-Hyperlinks', 'cryptex'), 'enable-hyperlink'); ?>
+		
+		<!-- EMail Security Level -->
+		<p><?php _e('E-Mail-addresses can be displayed as a single image or, in case of higher security, as a multipart-image.', 'cryptex'); ?><br />
+		<?php _e('The address will be splitted into 2 parts (before and after the @ sign). Each part is displayed as a single image, the @ sign as plain text. This feature provides an improved protection against ocr-grabbing spambots, which will analyze page images.', 'cryptex'); ?><br />
+		<?php _e('Note: This option will only influence E-Mail-addresses, other content will be still displayed as a single image!', 'cryptex'); ?>
+		</p>
+		<?php $this->_settingsUtility->displaySelect(__('E-Mail Security Level', 'cryptex'), 'security-level', array(__('Text (not recommended)', 'cryptex') => '0', __('Single Image', 'cryptex') => '1', __('Multipart Image (2 Images, seperated by @ sign)', 'cryptex') => '2', __('Advanced Multipart Image (Multiple Images, seperated by dot AND @ sign)', 'cryptex') => '3')); ?>
+	
+	<!-- // Appearance !-->
+	</div></div>
+	
+	<!-- Offsets !-->
+	<div class="postbox">
+	<h3 class="hndle"><span><?php _e('Image Offsets', 'cryptex'); ?></span></h3>
+	<div class="inside CryptexBlockcontent">
+ 		<!-- Image Offsets -->
+		<p><?php _e('Sometimes the generated text, depending on the selected font family, won`t fit into his image box - it is possible to configure the following offsets (in px) to fix this issue:', 'cryptex')?><br />
+		<?php _e('Offsets can also be used to adjust the font baseline (use Offset A and Offset B).', 'cryptex'); ?>
+		</p>
+		<p><img src="<?php echo plugins_url('/cryptex/resources/admin/offsets.png'); ?>" alt="offsets" /></p>
+		<h4><?php _e('Offset Values', 'cryptex'); ?></h4>
+		<?php $this->_settingsUtility->displayInput(__('Offset X (width)', 'cryptex'), 'offset-x', 'e.g. 5'); ?>
+		<?php $this->_settingsUtility->displayInput(__('Offset Y (height)', 'cryptex'), 'offset-y', 'e.g. 5'); ?>
+		<?php $this->_settingsUtility->displayInput(__('Offset A (font position x)', 'cryptex'), 'offset-a', 'e.g. 2'); ?>
+		<?php $this->_settingsUtility->displayInput(__('Offset B (font position y)', 'cryptex'), 'offset-b', 'e.g. 2'); ?>   
+    
+    <!-- // Offsets !-->
+    </div></div>
+        
+    <!-- HDPI !-->
+	<div class="postbox">
+	<h3 class="hndle"><span><?php _e('High DPI/Retina Support', 'cryptex'); ?></span></h3>
+	<div class="inside CryptexBlockcontent">
+ 		<p><?php _e('Several modern devices like tablets, smartphones or notebooks using high-dpi screens better known as "retina displays" which results in blurred E-Mail-Addresses.', 'cryptex'); ?>
+ 		<?php _e('The High-DPI mode will generate optional high-resolution, css-based images to fix such issues. High-Dpi devices will automatically access these images.', 'cryptex'); ?>
+ 		</p>
+		<p><?php printf(__('Note: This mode requires that your theme supports the %s action - this is a widely supported theme hook, it should work!', 'cryptex'), '<a href="http://codex.wordpress.org/Plugin_API/Action_Reference/wp_footer">wp_footer</a>'); ?>
+		<p><strong><?php _e('Remark: Because of the currently missing browser support of the picture-element and srcset attribute, cryptex is using css-based images which are based on inline styles in the html-body - this is not valid html5 but will perfectly work in all common browsers!', 'cryptey'); ?></strong></p>
+		
+		<?php $this->_settingsUtility->displayCheckbox(__('Enable High DPI/Retina', 'cryptex'), 'hdpi-enabled'); ?>
+    
+    	<div id="CryptexHdpiSettings">
+    		<h4><?php _e('Hdpi Options', 'cryptex'); ?></h4>
+    		<p><?php _e('The scaling factor is multiplied with the image-parameters (width, height, font-size, ..) to create high-resolution images - e.g. a value of 2 will double the image dimensions.', 'cryptex'); ?><br />
+    		<?php _e('A value of 3 is good choice and provides great looking results on an iPad4 (Retina, 2048x1536) or Sony-Tablet (FullHD, 1920x1080).', 'cryptex'); ?> <a href="http://andidittrich.de/2014/09/cryptex-4-0-with-retinahighdpi-support.html"><?php _e('Scaling Factor Comparision', 'cryptex'); ?></a>
+    		</p>
+    		<?php $this->_settingsUtility->displaySelect(__('Hdpi scaling factor', 'cryptex'), 'hdpi-factor', array('Factor 2' => '2', 'Factor 3' => '3', 'Factor 4' => '4')); ?>
+    	</div>
+    <!-- // HDPI !-->
+    </div></div>

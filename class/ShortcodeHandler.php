@@ -25,157 +25,52 @@ class ShortcodeHandler{
 	// store registered shortcodes
 	private $_registeredShortcodes;
 	
-	// image generator instance
-	private $_imageGenerator;	
+	// renderer
+	private $_renderer;
 	
-	public function __construct($settingsUtil, $registeredShortcodes){
+	public function __construct($settingsUtil, $registeredShortcodes, $imageGenerator){
 		// store local plugin config
 		$this->_config = $settingsUtil->getOptions();
 		
 		// store registered shortcodes
 		$this->_registeredShortcodes = $registeredShortcodes;
 		
-		// create new generator instance
-		$this->_imageGenerator = new ImageGenerator($this->_config);
-		
 		// add texturize filter
 		add_filter('no_texturize_shortcodes', array($this, 'texturizeHandler'));
+		
+		// initialize renderer
+		if ($this->_config['hdpi-enabled']){
+			$this->_renderer = new HdpiCssRenderer($settingsUtil, $imageGenerator);
+		}else{
+			$this->_renderer = new ClassicRenderer($settingsUtil, $imageGenerator);
+		}
 	}
 	
 	// handle cryptex shortcode
-	public function cryptex($atts=NULL, $content='', $code=''){
-		// process nested shortcodes ?
-		if ($this->_config['nestedShortcodes']){
-			$content = do_shortcode($content);
-		}
+	public function cryptex($shortcodeAttributes=NULL, $content='', $code=''){
+		// default attribute settings
+		$options = shortcode_atts(
+				array(
+					'font' => null,
+					'size' => null,
+					'color' => null,
+					'offset' => null,
+					'security' => null	
+				), $shortcodeAttributes);
 		
-		// remove leading+trailing whitespaces!
-		$content = trim($content);
-		
-		// email address ?
-		$isEmail = (filter_var($content, FILTER_VALIDATE_EMAIL) !== false);
-		
-		// return value
-		$html = '';
+		// offset available ?
+		if ($options['offset'] != null){
+			$e = explode(',', $options['offset']);
 			
-		// get rel attribute - used to store encrypted email address
-		$rel = ($this->_config['enable-hyperlink'] ? KeyShiftingEncoder::encode($content) : '');
-
-		// rel attribute available ? - add it
-		// add additional css classes
-		if (strlen($rel)>0 && $isEmail){
-			$html  = sprintf('<span class="cryptex %s" rel="%s">', esc_attr($this->_config['css-classes']), esc_attr($rel));
-		}else{
-			$html  = sprintf('<span class="cryptex %s">', esc_attr($this->_config['css-classes']));
-		}
-		
-		// email address ?
-		if ($isEmail){
-			// which security level should be used ?		
-			switch ($this->_config['security-level']){
-				// direct output text - not recommended
-				case '0':
-					// replace @sign & dot
-					$content = str_replace('@', $this->_config['email-divider'], $content);
-					$content = str_replace('.', $this->_config['email-replacement-dot'], $content);
-					
-					$html .= esc_html($content);
-					break;
-
-				// single image	
-				case '1':
-					// replace @sign
-					$content = str_replace('@', $this->_config['email-divider'], $content);
-					$content = str_replace('.', $this->_config['email-replacement-dot'], $content);
-					
-					// single image cryptex
-					$html .= sprintf(
-							'<img src="%s" alt="hidden" />',
-							esc_attr($this->_imageGenerator->getImage($content))
-					);
-					break;
-
-				// multiple images, seperated by DOT and AT
-				case '3':
-					// split email
-					$parts = explode('@', $content);
-					
-					// split parts by dots
-					$p0 = explode('.', $parts[0]);
-					$p1 = explode('.', $parts[1]);
-					
-					// generate images before @
-					for ($i=0;$i<count($p0);$i++){
-						// more than 1 image available ?
-						if ($i+1<count($p0)){
-							$html .= sprintf(
-									'<img src="%s" alt="hidden" /><span class="divider">%s</span>',
-									esc_attr($this->_imageGenerator->getImage($p0[$i])),
-									$this->_config['email-replacement-dot']);
-						// last element ?	
-						}else{
-							$html .= sprintf('<img src="%s" alt="hidden" />', esc_attr($this->_imageGenerator->getImage($p0[$i])));
-						}
-					}
-					
-					// add @ sign
-					$html .= sprintf('<span class="divider">%s</span>',	$this->_config['email-divider']);
-					
-					// generate images after @
-					for ($i=0;$i<count($p1);$i++){
-						// more than 1 image available ?
-						if ($i+1<count($p1)){
-							$html .= sprintf(
-									'<img src="%s" alt="hidden" /><span class="divider">%s</span>',
-									esc_attr($this->_imageGenerator->getImage($p1[$i])),
-									$this->_config['email-replacement-dot']);
-							// last element ?
-						}else{
-							$html .= sprintf('<img src="%s" alt="hidden" />', esc_attr($this->_imageGenerator->getImage($p1[$i])));
-						}
-					}
-
-					break;
-				
-				// default : multipart image (2)
-				case '2':
-				default:
-					// split email
-					$content = str_replace('.', $this->_config['email-replacement-dot'], $content);
-					$parts = explode('@', $content);
-					
-					// hybrid image
-					$html .= sprintf(
-							'<img src="%s" alt="hidden" /><span class="divider">%s</span><img src="%s" alt="hidden" />',
-							esc_attr($this->_imageGenerator->getImage($parts[0])),
-							$this->_config['email-divider'],
-							esc_attr($this->_imageGenerator->getImage($parts[1]))
-					);
-					break;					
-			}
-		}else{
-			switch ($this->_config['security-level']){
-				// direct output text - not recommended
-				case '0':
-					$html .= esc_html($content);
-					break;
-
-				// generate single image	
-				default:
-					// single image cryptex
-					$html .= sprintf(
-							'<img src="%s" alt="hidden" />',
-							esc_attr($this->_imageGenerator->getImage($content))
-					);
-					break;
+			// 4 values provided ?
+			if (count($e) == 4){
+				$options['offset'] = $e;
+			}else{
+				$options['offset'] = null;
 			}
 		}
 		
-		// add closing span tag
-		$html .= '</span>';
-	
-		// return rendered shortcode
-		return $html;
+		return $this->_renderer->render($content, $options);
 	}
 	
 	/**

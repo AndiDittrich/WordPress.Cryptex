@@ -25,7 +25,7 @@ class HtmlUtil{
 		
 		// generate html attributes
 		foreach ($htmlAttributes as $key=>$value){
-			$html .= ' '.$key.'="'.$value.'"';
+			$html .= ' '.$key.'="'.esc_attr($value).'"';
 		}
 		
 		// generate closing bracket

@@ -1,11 +1,11 @@
-=== Cryptex | E-Mail Address Protection ===
+=== Cryptex HD | E-Mail Address Protection ===
 Contributors: Andi Dittrich
-Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses, filter, automatically
-Requires at least: 3.5
-Tested up to: 3.9
-Stable tag: 3.3
- 
-Cryptex transforms plain-text E-Mail-Addresses into Images - automatically
+Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, retina, highdpi, responsive, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses, filter, automatically
+Requires at least: 3.8
+Tested up to: 4.0
+Stable tag: 4.0
+
+Cryptex transforms plain-text E-Mail-Addresses into Images - automatically! No scrapers. No harvesters. No spambots.
 
 == Description ==
 
@@ -15,9 +15,10 @@ Just wrap your E-Mail-Address into a shortcode like `[email]youraddress@example.
 
 = Plugin Features =
 * Fully customizable appearance: you can configure font-family, font-size and font-color - everything looks like your theme style
+* Retina/HD/High-Dpi Images - best appearance on all devices (2x, 3x or 4x resolution enhancement)
 * Shortcode and/or Autodetection usage!
 * Build-In E-Mail-Address-Autodetection - all addresses on your page are protected automatically (if you want it - you can also just use shortcodes!)
-* Autodetection filters configurable for **the_content**, **the_excerpt**, **comments**, **comments_excerpt**
+* Autodetection filters configurable for **the_content**, **the_excerpt**, **comments**, **comments_excerpt**, **text-widget**
 * Reversible Address-Autodetection Process - your content is modified aslong the plugin is activated
 * Also useable to protect postal-addresses, telephone-numbers, names and other sensitive informations
 * Protects E-Mail hyperlinks (mailto) by using javascript based key-shifting encryption/decryption with dynamic keys - but you can use images only
@@ -37,28 +38,28 @@ Cryptex provides various obfuscation modes for E-Mail-Addresses:
 * Multipart Image - the e-mail-address is splitted into two images, seperated by the @-sign in plain text
 * Advanced Multipart Image - the craziest one: each part (divided by dot's and @ sign) is displayed as a seperate image, the dividers as plain text
 
-
-= UPGRADE NOTICE to 3.x =
-Most of your custom **cryptex plugin settings** get lost on upgrading to the 3.x branch beacause of the new plugin backend structure - please backup them on your own.
-    
 == Installation ==
 
 = System requirements =
 * PHP 5.3 or greater
 * GD library (v2.0.28 or greater)
 * GD PNG support
+* FreeType2 (optional, required for OpenType fonts)
+* Accessable cache directory (`/wp-content/plugins/cryptex/cache/` or a custom one)
 
 = Installation =
 1. Upload the complete `cryptex` folder (Wordpress Plugin) to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Go to Settings -> Cryptex and check all items.
-4. After checking your environment (GD installed) you have to set your font-source. If the source is invalid try another one or upload fonts into the `/wp-content/plugins/cryptex/fonts/` directory and use **Plugin Directory** as font-source
-5. Now - all items should be marked green, this means Cryptex is ready for use.
-6. Go to the appearance section and select the *font-family*, *font-color* and *font-size* like the styles in your theme
-7. You can also use your own/special fonts uploading them into the `/wp-content/plugins/cryptex/fonts/` directory and use this as font-source
-8. That's it! You're done. You can now enter the following code into a post or page to protect email addresses: [email]youraddress@example.com[/email]
+3. Go to Settings -> Cryptex and check all items into the sidebar.
+4. In case that there are no font available on your server you can use own/special fonts by uploading them into the `/wp-content/plugins/cryptex/fonts/` directory 
+5. Go to the appearance section and select the *font-family*, *font-color* and *font-size* like the styles in your theme
+6. That's it! You're done. You can now enter the following code into a post or page to protect email addresses: [email]youraddress@example.com[/email]. Or use the Autodetect feature
 
 == Frequently Asked Questions ==
+
+= Cryptex Shortcode doesn't work in Text-Widgets =
+
+Generally, WordPress does not process any shortcodes used in text-widgets. You can add the following code to your template `functions.php` file to enable shortcode processing: `add_filter('widget_text', 'do_shortcode');`
 
 = I get an error using the system font paths, which are shown by the settings page =
 
@@ -70,7 +71,7 @@ During security restrictions your system font paths could be unaccessable. In th
 
 = I get an "file permission" php error in my blog =
 
-The directory `/wp-content/plugins/cryptex/cache/` must be writeable - the images as well as the generated css file will be stored there
+The directory `/wp-content/plugins/cryptex/cache/` must be writeable - the images as well as the generated css file will be stored there. Try to set chmod to `0644` or `0770`
 
 = I need bold/italic font styles =
 Please use the italic/bold font of the font family you've selected. For example there is an verdana.ttf(normal) and verdanai.ttf(italic) file!
@@ -79,19 +80,44 @@ Please use the italic/bold font of the font family you've selected. For example 
 Of course! you can simply use `<?php Cryptex::crypt('yourtext'); ?>` to display 'yourtext' as crypted version
 
 = I miss some features / I found a bug =
-Well..write a email to Andi Dittrich (andi DOT dittrich AT a3non DOT org) or or open a [New Issue on GitHub](https://github.com/AndiDittrich/WordPress.Cryptex/issues)
+Send an email to Andi Dittrich (andi _D0T dittrich At a3non .dOT org) or or open a [New Issue on GitHub](https://github.com/AndiDittrich/WordPress.Cryptex/issues)
 
 == Screenshots ==
 
 1. Cryptex Website Appearance
-2. Single vs. Hybrid Image Mode highlighted
-3. Settings Page - Environment Informations + Font Settings
-4. Settings Page - Crypex Appearance
-5. Settings Page - Configurable Image-Offsets
-6. Settings Page - CDN & Advanced Options
-7. Settings Page - Autodetect Filter Options
+2. Settings Page - Contextual Help Menu
+3. Settings Page - Appearance
+4. Settings Page - Autodetect Filters & CDN Options
+5. Settings Page - System Informations
+6. Settings Page - Image Offsets & Retina/HighDpi Options
 
 == Changelog ==
+
+= 4.0 =
+* Added: Retina/High-DPI image support
+* Added: Option to set the line-height (image-height) manually
+* Added [FreeType2](http://en.wikipedia.org/wiki/FreeType) support, including .otc and .otf fonts - enabled by default
+* Added: Font-size can be set in px or pt - px value will be forced as default
+* Added: Autodetect filter to text-widget content (optional)
+* Added: Custom cache path/url settings like WordPress' media options (advancved settings)
+* Added: Option to disable Antialiasing (advancved settings)
+* Added: New html+image rendering engines
+* Added: Width+Height attributes to generated image-tags (including server side caching)
+* Added: Additional user-role check (administrator + `manage_options` required)
+* Added: Tab-Panels to the settings page (Appearance, Options, Advanced)
+* Added: [Contextual Help](http://codex.wordpress.org/Adding_Contextual_Help_to_Administration_Menus) based help/informations
+* Added: Shortcode options to override the global cryptex-settings - feature requested on [WordPress.org Forums](https://wordpress.org/support/topic/local-font-styles-instead-of-global-choice)
+* Added: Option to load stylesheet as inline content (style tag displayed in `wp_footer`)
+* Added: Option to include javascript, required for hyperlink-decoding, as inline content (script tag displayed in `wp_head` or `wp_footer`)
+* Added: Cleanup of generated stylesheets
+* Added: New Screenshots
+* Added: License Informations to settings-page footer
+* Updated: MooTools Javascript code now uses `document.getElements()` instaed of leagcy `$$()` selector
+* Modified: Cryptex javascript file uses UglifyJS for minification
+* New settings page - now matches WordPress corporate UI style
+* Removed WordPress <= 3.7 compatibility mode/legacy UI style
+* Bugfix: Added some missing I18n namespaces
+* Many internal changes/improvements
 
 = 3.3 =
 * Added: Option to enable processing of "Nested-Shortcodes" within cryptex/email tags - this might be useful if your using inner shortcode which fetches some content from your database, etc. (disabled by default) 
@@ -178,5 +204,5 @@ Well..write a email to Andi Dittrich (andi DOT dittrich AT a3non DOT org) or or 
 
 == Upgrade Notice ==
 
-= 3.2.1 =
-After upgrading, go to the Cryptex settings page and click "Apply Settings" to force an update of the generated CSS files!
+= 4.0 =
+After upgrading, go to the Cryptex settings page, check all options and click "Apply Settings" to force an update of the generated CSS files!

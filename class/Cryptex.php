@@ -44,28 +44,39 @@ class Cryptex{
 			'email-replacement-dot' => '.',
 			'embed-css' => true,
 			'embed-js' => true,
+			'css-type' => 'external',
+			'js-type' => 'external',
 			'font-file' => 'Arial.ttf',
-			'font-size' => 12,
+			'font-size' => '12px',
+			'line-height' => '16px',
 			'font-color' => '#000000',
+			'font-antialiasing' => true,
+			'font-renderer' => 'freetype',
 			'security-level' => '2',
+			'hdpi-enabled' => false,
+			'hdpi-factor' => '3',
 			'css-prefix' => '',
 			'salt' => 'ABCDEF1234567890',
 			'css-classes' => '',
-			'font-source' => 'system',
+			'font-source' => 'system+plugin',
 			'shortcode-email' => true,
 			'show-full-paths' => false,
 			'offset-a' => '2',
 			'offset-b' => '2',
-			'offset-x' => '5',
-			'offset-y' => '2',
-			'translation-enabeled' => true,
+			'offset-x' => '2',
+			'offset-y' => '0',
+			'translation-enabled' => true,
 			'email-autodetect' => false,
 			'email-autodetect-content' => true,
 			'email-autodetect-excerpt' => true,
 			'email-autodetect-comments' => true,
 			'email-autodetect-comments-excerpt' => true,
+			'email-autodetect-widget-text' => true,
 			'email-autodetect-excludeid' => '',
-			'nestedShortcodes' => false
+			'nestedShortcodes' => false,
+			'cache-custom' => false,
+			'cache-path' => null,
+			'cache-url' => null
 	);
 	
 	// shortcode handler instance
@@ -83,6 +94,12 @@ class Cryptex{
 	// email address regex autodetect
 	private $_autodetectFilter;
 	
+	// cache management
+	private $_cacheManager;
+	
+	// image generator instance
+	private $_imageGenerator;
+		
 	public function __construct(){
 		// generate session based key
 		Cryptex\KeyShiftingEncoder::generateKey();
@@ -94,12 +111,18 @@ class Cryptex{
 		$this->_settingsUtility = new Cryptex\SettingsUtil('cryptex-', $this->_defaultConfig);
 		
 		// load language files
-		if ($this->_settingsUtility->getOption('translation-enabeled')){
+		if ($this->_settingsUtility->getOption('translation-enabled')){
 			load_plugin_textdomain('cryptex', null, 'cryptex/lang/');
 		}
-
+		
+		// initialize cache-managemet
+		$this->_cacheManager = new Cryptex\CacheManager($this->_settingsUtility);
+		
+		// create new image generator instance
+		$this->_imageGenerator = new Cryptex\ImageGenerator($this->_settingsUtility, $this->_cacheManager);
+		
 		// create new resource loader
-		$this->_resourceLoader = new Cryptex\ResourceLoader($this->_settingsUtility);
+		$this->_resourceLoader = new Cryptex\ResourceLoader($this->_settingsUtility, $this->_cacheManager);
 		
 		// create new font manager
 		$this->_fontManager = new Cryptex\FontManager($this->_settingsUtility);
@@ -116,7 +139,7 @@ class Cryptex{
 			add_action('admin_menu', array($this, 'setupBackend'));
 		}else{
 			// create new shortcode handler, register all used shortcodes
-			$this->_shortcodeHandler = new Cryptex\ShortcodeHandler($this->_settingsUtility, array('cryptex', 'email'));
+			$this->_shortcodeHandler = new Cryptex\ShortcodeHandler($this->_settingsUtility, array('cryptex', 'email'), $this->_imageGenerator);
 				
 			// add shotcode handlers
 			add_shortcode('cryptex', array($this->_shortcodeHandler, 'cryptex'));
@@ -149,29 +172,37 @@ class Cryptex{
 				if ($this->_settingsUtility->getOption('email-autodetect-comments-excerpt')){
 					add_filter('get_comment_excerpt', array($this->_autodetectFilter, 'filterNoExclusion'), 50, 1);
 				}
+				
+				// filter widget text ? 
+				if ($this->_settingsUtility->getOption('email-autodetect-widget-text')){
+					add_filter('widget_text', array($this->_autodetectFilter, 'filterNoExclusion'), 50, 1);
+				}
 			}
 			
-			// load frontend css+js
-			add_action('wp_enqueue_scripts', array($this->_resourceLoader, 'appendCSS'), 50);
-			add_action('wp_enqueue_scripts', array($this->_resourceLoader, 'appendJS'), 50);
-				
-			// display frontend config (as javascript or metadata)
-			add_action('wp_head', array($this->_resourceLoader, 'appendJavascriptConfig'));
+			// apply frontend resource loading hooks
+			$this->_resourceLoader->frontend();
 		}
 	}
 	
 	public function setupBackend(){
-		// add options page
-		$optionsPage = add_options_page(__('Cryptex | E-Mail-Address Protection', 'cryptex'), 'Cryptex', 'administrator', __FILE__, array($this, 'settingsPage'));
-	
-		// load jquery stuff
-		add_action('admin_print_scripts-'.$optionsPage, array($this->_resourceLoader, 'appendAdminJS'));
-		add_action('admin_print_styles-'.$optionsPage, array($this->_resourceLoader, 'appendAdminCSS'));
-	
-		// call register settings function
-		add_action('admin_init', array($this->_settingsUtility, 'registerSettings'));
+		if (current_user_can('manage_options')){
+			// add options page
+			$optionsPage = add_options_page(__('Cryptex | E-Mail-Address Protection', 'cryptex'), 'Cryptex', 'administrator', __FILE__, array($this, 'settingsPage'));
+		
+			// load jquery stuff
+			add_action('admin_print_scripts-'.$optionsPage, array($this->_resourceLoader, 'appendAdminJS'));
+			add_action('admin_print_styles-'.$optionsPage, array($this->_resourceLoader, 'appendAdminCSS'));
+		
+			// call register settings function
+			add_action('admin_init', array($this->_settingsUtility, 'registerSettings'));
+			
+			// contextual help
+			$ch = new Cryptex\ContextualHelp($this->_settingsUtility);
+			add_filter('load-'.$optionsPage, array($ch, 'contextualHelp'));
+		}
 	}
 	
+
 	// options page
 	public function settingsPage(){
 		// well...is there no action hook for updating settings in wp ?
@@ -180,48 +211,33 @@ class Cryptex{
 			$this->_settingsUtility->setOption('salt', sha1(mt_rand().mt_rand().time()));
 			
 			// clear cache
-			$this->clearCache();
+			$this->_cacheManager->clearCache();
 			
 			// recreate css file
 			$this->generateCSS();
 		}
 		
+		// fetch system fontlist
 		$fontlist = $this->_fontManager->getFontlist();
-					
+							
 		// render settings view
-		include(CRYPTEX_PLUGIN_PATH.'/views/admin/Settings.phtml');
+		include(CRYPTEX_PLUGIN_PATH.'/views/admin/SettingsPage.phtml');
 	}
 	
 	// direct static crypt (shortcode passthrough)
-	public static function crypt($content){
-		echo self::getInstance()->_shortcodeHandler->cryptex(NULL, $content, '');
+	public static function crypt($content, $options=NULL){
+		echo self::getInstance()->_shortcodeHandler->cryptex($options, $content, '');
 	}
 	
 	// direct static crypt (shortcode passthrough)
-	public static function getEncryptedAddress($content){
-		return self::getInstance()->_shortcodeHandler->cryptex(NULL, $content, '');
-	}
-	
-	// drop cache items
-	private function clearCache(){
-		// cache dir
-		$dir = CRYPTEX_PLUGIN_PATH.'/cache/';
-		
-		// remove cached files
-		if (is_dir($dir)){
-			$files = scandir($dir);
-			foreach ($files as $file){
-				if ($file!='.' && $file!='..'){
-					unlink($dir.$file);
-				}
-			}
-		}
+	public static function getEncryptedAddress($content, $options=NULL){
+		return self::getInstance()->_shortcodeHandler->cryptex($options, $content, '');
 	}
 	
 	// generate dynamic css file
 	public function generateCSS(){
 		// load css template
-		$cssTPL = new Cryptex\SimpleTemplate(CRYPTEX_PLUGIN_PATH.'/resources/Cryptex.css');
+		$cssTPL = new Cryptex\CssTemplate(CRYPTEX_PLUGIN_PATH.'/resources/Cryptex.css');
 		
 		// get config
 		$config = $this->_settingsUtility->getOptions();
@@ -233,18 +249,17 @@ class Cryptex{
 		$cssTPL->assign('HREF.CURSOR', ($config['enable-hyperlink'] ? 'pointer' : 'auto'));
 		
 		// render template and store it (caching)
-		$cssTPL->store(CRYPTEX_PLUGIN_PATH.'/cache/Cryptex.css');
+		$cssTPL->store($this->_cacheManager->getCachePath().'Cryptex.css');
 	}
 	
 	// plugin activation action
 	public function pluginActivate($plugin){
 		// update cache (generate css file) on plugin activation
 		if (strripos($plugin, 'cryptex')){
-			$this->clearCache();
+			$this->_cacheManager->clearCache();
 			$this->generateCSS();
 		}
 	}
-	
 }
 
 ?>

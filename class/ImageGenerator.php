@@ -1,7 +1,7 @@
 <?php
 /**
 	GD lib based Image Generator
-	Version: 1.0
+	Version: 2.0
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
 	Plugin URI: http://andidittrich.de/go/cryptex
@@ -25,8 +25,8 @@ class ImageGenerator{
 	// selected fontsize in px
 	private $_fontsize;
 	
-	// calculated fontsize (pt)
-	private $_ptFontsize;
+	// selected lineheight
+	private $_lineheight = 0;
 	
 	// fontcolor - decimal value!
 	private $_fontcolor;
@@ -37,122 +37,165 @@ class ImageGenerator{
 	// current used salt
 	private $_salt;
 	
-	// image offsets
-	// width offset
-	private $_offsetX = 0;
+	// use freetype rendering
+	private $_useFreetype = false;
 	
-	// height offset
-	private $_offsetY = 0;
-
-	// text position x offset
-	private $_offsetA = 0;
+	// image offsets A,B,X,Y
+	// X:width offset
+	// Y:height offset
+	// A:text position x offset
+	// B:text position y offset
+	private $_offsets = array(0, 0, 0, 0);
 	
-	// text position y offset
-	private $_offsetB = 0;
+	// cache url + path
+	private $_cachePath;
+	private $_cacheURL;
 	
-	public function __construct($options){
-		$this->_options = $options;
+	// image size storage
+	private $_imageSizeCache;
+	
+	public function __construct($settingsUtil, $cacheManager){
+		$this->_options = $settingsUtil->getOptions();
 		
-		// populate options
+		// extract cahce pathes
+		$this->_cachePath = $cacheManager->getCachePath();
+		$this->_cacheURL = $cacheManager->getCacheUrl();
+		
+		// populate global options
 		$this->_fontsize = $this->_options['font-size'];
-		$this->_fontcolor = hexdec($this->_options['font-color']);
+		$this->_fontcolor = $this->_options['font-color'];
 		$this->_salt = $this->_options['salt'];
 		$this->_fontfile = $this->_options['font-file'];
-		$this->_offsetA = intval($this->_options['offset-a']);
-		$this->_offsetB = intval($this->_options['offset-b']);
-		$this->_offsetX = intval($this->_options['offset-x']);
-		$this->_offsetY = intval($this->_options['offset-y']);
+		$this->_offsets[0] = intval($this->_options['offset-x']);
+		$this->_offsets[1] = intval($this->_options['offset-y']);
+		$this->_offsets[2] = intval($this->_options['offset-a']);
+		$this->_offsets[3] = intval($this->_options['offset-b']);
 		
-		// pt to px lookup table
-		// @source http://reeddesign.co.uk/test/points-pixels.html
-		$PTtoPX = array(
-				'6' => 8,
-				'7' => 9,
-				'8' => 11,
-				'9' => 12,
-				'10' => 13,
-				'11' => 15,
-				'12' => 16,
-				'13' => 17,
-				'14' => 19,
-				'15' => 21,
-				'16' => 22,
-				'17' => 23,
-				'18' => 24,
-				'19' => 25,
-				'20' => 26,
-				'21' => 28,
-				'22' => 29
-		);		
-		
-		// if using GD2 -> pt settings, convert pt height in px using lookup table
-		if (($ptValue = array_search($this->_fontsize, $PTtoPX)) !== false){
-			$this->_ptFontsize = $ptValue;
+		// manual line-height ?
+		if (strlen(trim($this->_options['line-height'])) > 0){
+			$this->_lineheight = intval($this->_options['line-height']);
 		}else{
-			// fallback
-			$this->_ptFontsize = $this->_fontsize;
+			$this->_lineheight = 0;
+		}		
+		
+		// load dimension cache
+		$this->_imageSizeCache = new ObjectCache($cacheManager->getInternalCachePath().'imgs.php');
+		
+		// GD lib installed ? prevent errors
+		if (function_exists('gd_info')){
+			$info = gd_info();
+			
+			// freetype enabled ?
+			$this->_useFreetype = ($this->_options['font-renderer'] == 'freetype') && $info['FreeType Support'];
 		}
 	}
+
 	
-	public function getImage($txt){
+	public function isFreeTypeEnabled(){
+		return $this->_useFreetype;
+	}
+	
+	/**
+	 * Store Image Dimensions
+	 */
+	public function __destruct(){
+		$this->_imageSizeCache->store();
+	}
+	
+	public function getImage($txt, $font=null, $fontsize=null, $fontcolor=null, $offset=null, $scale=1){
 		// check for gd lib
 		if (!function_exists('gd_info')){
-			return null;	
+			return null;
 		}
-				
+		
+		// merge global options
+		$font = ($font === null ? $this->_fontfile : $font);
+		$fontsize = $this->parseFontSize($fontsize === null ? $this->_fontsize : $fontsize);
+		$fontcolor = ($fontcolor === null ? $this->_fontcolor : $fontcolor);
+		$offset = (($offset === null || count($offset) != 4) ? $this->_offsets : $offset);
+		
+		// parse font color
+		$fontcolor = hexdec($fontcolor);
+		
+		// antialiasing
+		$fontcolor = ($this->_options['font-antialiasing'] ? $fontcolor : -$fontcolor);
+		
+		// high-dpi scaling
+		$fontsize = $fontsize*$scale;
+		$offset = array_map(function($o) use ($scale){
+			return $o*$scale;
+		}, $offset);
+		
 		// generate filename
-		$filename = sha1($this->_salt.sha1($txt.$this->_salt)).'.png';
+		$configHash = sha1($scale.$font.$fontsize.$fontcolor.implode('.', $offset));
+		$imagehash = sha1($this->_salt.sha1($txt.$this->_salt.$configHash));
+		$filename = $imagehash.'.png';
 		
 		// generate storage path
-		$storagePath = CRYPTEX_PLUGIN_PATH.'/cache/'.$filename;
+		$storagePath = $this->_cachePath.$filename;
+
+		// try to load image dimensions
+		$dim = $this->_imageSizeCache->getValue($imagehash);
 		
-		// cached version available ?
-		if (!file_exists($storagePath)){
+		// cached version not available ? // generate new image	
+		if (!file_exists($storagePath) || $dim==null){
+		
 			// ttf font file available ?
-			if (is_file($this->_fontfile) && is_readable($this->_fontfile)){
+			if (is_file($font) && is_readable($font)){
 				// use ttf based image
-				$this->generateTTFImage($txt, $storagePath);
+				$dim = $this->generateTTFImage($txt, $storagePath, $font, $fontsize, $fontcolor, $offset, $scale);
 			}else{
 				// use gd fallback font
-				$this->generateFallbackImage($txt, $storagePath);
+				$dim = $this->generateFallbackImage($txt, $storagePath, $fontcolor, $offset, $scale);
 			}
+			
+			// store dimension
+			$this->_imageSizeCache->setValue($imagehash, $dim);
 		}
-				
-		// return cache file url
-		return plugins_url('/cryptex/cache/').$filename;
+			
+		// return cache file url and dimensions
+		return array($this->_cacheURL.$filename, $dim[0]/$scale, $dim[1]/$scale, $imagehash);
 	}
 
 	// gd embedded image
-	private function generateFallbackImage($txt, $filename){			
+	private function generateFallbackImage($txt, $filename, $fontcolor, $offset, $scale){			
 		// FALLBACK
-		$width = (imagefontwidth(3)*strlen($txt)) +2+$this->_offsetX;
-		$height = imagefontheight(3) + 7 + $this->_offsetY;
+		$width = (imagefontwidth(3)*strlen($txt)) + 2 + $offset[0];
+		$height = imagefontheight(3) + 7 + $offset[1];
 		
 		// create new image
 		$im = imagecreatetruecolor($width, $height);
 		
 		// transparent background
-		$color = imagecolorallocatealpha($im, 0, 0, 0, 127);
-		imagefill($im, 0, 0, $color);
+		$tcolor = imagecolorallocatealpha($im, 0, 0, 0, 127);
+		imagefill($im, 0, 0, $tcolor);
 		imagesavealpha($im, true);
 		
 		// enable AA
 		imageantialias($im, true);
 		
 		// create text
-		imagestring($im, 3, $this->_offsetA, $this->_offsetB, $txt, $this->_fontcolor);
+		imagestring($im, 3, $offset[2], $offset[3], $txt, $fontcolor);
 		
 		// store image
 		imagepng($im, $filename);
 		
 		// destroy
 		imagedestroy($im);
+		
+		// return image dimensions
+		return array($width, $height);
 	}
 	
 	// true type font based image
-	private function generateTTFImage($txt, $filename){
+	private function generateTTFImage($txt, $filename, $font, $fontsize, $fontcolor, $offset, $scale){
 		// calculate size
-		$boundaries = imagettfbbox($this->_ptFontsize, 0, $this->_fontfile, $txt);
+		$boundaries = array(0, 0, 0, 0, 0, 0, 0, 0);
+		if ($this->_useFreetype){
+			$boundaries = imageftbbox($fontsize, 0, $font, $txt);
+		}else{
+			$boundaries = imagettfbbox($fontsize, 0, $font, $txt);
+		}
 		
 		// calculate boundaries
 		$min_x = min( array($boundaries[0], $boundaries[2], $boundaries[4], $boundaries[6]) );
@@ -162,19 +205,19 @@ class ImageGenerator{
 		// $max_y = max( array($boundaries[1], $boundaries[3], $boundaries[5], $boundaries[7]) );
 		// $height = ( $max_y - $min_y );
 
-		// height based on font size ! - this can cause problems using big fonts -> pt<>px drift, but solves problems with font base lines..
-		$height = $this->_fontsize;
+		// manual height or automatic height based on font size ! - solves problems with font base lines..
+		$height = ($this->_lineheight == 0 ? $this->pt2px($fontsize) : $this->_lineheight* $scale);
 		
 		// dimension offsets
-		$width = $width+$this->_offsetX;
-		$height = $height+$this->_offsetY;
+		$width = $width + $offset[0];
+		$height = $height + $offset[1];
 		
 		// create new image
 		$im = imagecreatetruecolor($width, $height);
 		
 		// transparent background
-		$color = imagecolorallocatealpha($im, 0, 0, 0, 127);
-		imagefill($im, 0, 0, $color);
+		$tcolor = imagecolorallocatealpha($im, 0, 0, 0, 127);
+		imagefill($im, 0, 0, $tcolor);
 		imagesavealpha($im, true);
 		
 		// enable AA
@@ -182,13 +225,49 @@ class ImageGenerator{
 		
 		// create text - use calculated pt fontsize value
 		// calculate font-baseline includung offset
-		imagettftext($im, $this->_ptFontsize, 0, $this->_offsetA, $height-$this->_offsetB, $this->_fontcolor, $this->_fontfile, $txt);
+		if ($this->_useFreetype){
+			imagefttext($im, $fontsize, 0, $offset[2], $height - $offset[3], $fontcolor, $font, $txt);
+		}else{
+			imagettftext($im, $fontsize, 0, $offset[2], $height - $offset[3], $fontcolor, $font, $txt);
+		}
 		
 		// store image
 		imagepng($im, $filename);
 		
 		// destroy
 		imagedestroy($im);
+		
+		// return image dimensions
+		return array($width, $height);
+	}
+	
+	/**
+	 * GD2 Requires font-size in pt
+	 * @param unknown $pxValue
+	 */
+	private function parseFontSize($v){
+		// strip whitespaces
+		$v = trim($v);
+		
+		// pt or px given ?
+		$isPtValue = (substr($v, -2) === 'pt');
+		
+		// pt value ?
+		if ($isPtValue){
+			return floatval($v);
+		}else{
+			// convert px value to pt
+			return (floatval($v)/1.333);
+		}
+	}
+	
+	/**
+	 * Convert PT to PX value
+	 * @param String/Float $v
+	 * @return number
+	 */
+	private function pt2px($v){
+		return intval(floatval($v)*1.333);
 	}
 }
 

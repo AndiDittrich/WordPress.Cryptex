@@ -30,13 +30,40 @@ class FontManager{
 		'/usr/share/fonts/X11/truetype',
 		'/usr/lib/X11/fonts/truetype'				
 	);
+	
+	// allowed ttf extensions
+	public static $ttfExtensions = array(
+		'ttf',
+		'ttc'
+	);
+	
+	// allowed freetype extensions
+	public static $freeTypeExtensions = array(
+		// truetype
+		'ttf',
+			
+		// opentype
+		'otf',
+		'ttc'		
+	);
 		
 	// local plugin config
 	private $_config;
 	
+	// use freetye renderer ?
+	private $_useFreetype = false;
+	
 	public function __construct($settingsUtil){
 		// store local plugin config
-		$this->_config = $settingsUtil->getOptions();		
+		$this->_config = $settingsUtil->getOptions();
+		
+		// GD lib installed ? prevent errors
+		if (function_exists('gd_info')){
+			$info = gd_info();
+				
+			// freetype enabled ?
+			$this->_useFreetype = ($this->_config['font-renderer'] == 'freetype') && $info['FreeType Support'];
+		}
 	}
 	
 	// get formated fontlist
@@ -52,7 +79,10 @@ class FontManager{
 			if ($this->_config['show-full-paths']){
 				$fontlist[$item] = $item;
 			}else{
-				$fontlist[basename($item)] = $item;
+				// common name
+				$cname = preg_replace('/\.[^.]+$/','', basename($item));
+				
+				$fontlist[$cname] = $item;
 			}
 		}
 		
@@ -78,6 +108,10 @@ class FontManager{
 			case 'plugin':	
 				$list = $this->getPluginFonts();
 				break;
+				
+			case 'system+plugin':
+				$list = array_merge($this->getPluginFonts(),  $this->getSystemFonts());
+				break;
 
 			case 'system':
 			default:
@@ -88,9 +122,12 @@ class FontManager{
 		// filtered fontlist
 		$fontlist = array();
 		
+		// get allowed extensions
+		$allowedExtensions = ($this->_useFreetype ? self::$freeTypeExtensions : self::$ttfExtensions);
+		
 		// check fonts for accessibility and ttf extension
 		foreach ($list as $font){
-			if (is_readable($font) && self::getExtension($font) == 'ttf'){
+			if (is_readable($font) && in_array(self::getExtension($font), $allowedExtensions)){
 				$fontlist[] = $font;
 			}
 		}

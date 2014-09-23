@@ -1,9 +1,9 @@
 <?php
 /**
 	Plugin Name: Cryptex - E-Mail Address Protection
-	Plugin URI: http://www.a3non.org/go/cryptex
+	Plugin URI: http://andidittrich.de/go/cryptex
 	Description: Advanced Graphical EMail Obfuscator which provides image based email address protection using wordpress shortcode and integrated encryption/decryption of addresses
-	Version: 3.3
+	Version: 4.0
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
 	License: MIT X11-License
@@ -18,11 +18,10 @@
 */
 
 /*
-*	BOOTSTRAP FILE
+*	BOOTSTRAP OPERATION
 */
-
 define('CRYPTEX_INIT', true);
-define('CRYPTEX_VERSION', '3.3');
+define('CRYPTEX_VERSION', '4.0');
 define('CRYPTEX_PLUGIN_PATH', dirname(__FILE__));
 define('CRYPTEX_DEFAULT_FONT_PATH', CRYPTEX_PLUGIN_PATH.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR);
 
@@ -35,11 +34,16 @@ if (version_compare(phpversion(), '5.3', '>=')){
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/SettingsUtil.php');
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/KeyShiftingEncoder.php');
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/ImageGenerator.php');
-	require_once(CRYPTEX_PLUGIN_PATH.'/class/SimpleTemplate.php');
+	require_once(CRYPTEX_PLUGIN_PATH.'/class/CssTemplate.php');
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/Updater.php');	
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/ShortcodeHandler.php');
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/FontManager.php');
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/AutodetectFilter.php');
+	require_once(CRYPTEX_PLUGIN_PATH.'/class/ObjectCache.php');
+	require_once(CRYPTEX_PLUGIN_PATH.'/class/ClassicRenderer.php');
+	require_once(CRYPTEX_PLUGIN_PATH.'/class/HdpiCssRenderer.php');
+	require_once(CRYPTEX_PLUGIN_PATH.'/class/ContextualHelp.php');
+	require_once(CRYPTEX_PLUGIN_PATH.'/class/CacheManager.php');
 	
 	// bootstrap startup
 	Cryptex::run();

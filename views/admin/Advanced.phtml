@@ -1,0 +1,91 @@
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+	
+	<!-- ADVANCED SETTINGS -->
+	<div class="postbox">
+	<h3 class="hndle"><span><?php _e('Advanced', 'cryptex'); ?></span></h3>
+	<div class="inside CryptexBlockcontent">
+		<p class="CryptexFALSE"><strong><?php _e('Warning: These options are for advanced users only!', 'cryptex'); ?></strong></p>
+	
+		<h4><?php _e('Miscellaneous', 'cryptex'); ?></h4>
+		<p><?php _e('Should the shortcode [email] added as alias for cryptex? Kindly note that this can influence other plugins because of identical names!', 'cryptex'); ?></p>
+		<!-- email shortcode !-->
+		<?php $this->_settingsUtility->displayCheckbox(__('Use [email] Shortcode', 'cryptex'), 'shortcode-email') ?>
+	
+		<!-- font filenames -->
+		<p><?php _e('Should the full font-paths be displayed on this settings page or only their file names ?', 'cryptex')?></p>
+		<?php $this->_settingsUtility->displayCheckbox(__('Show the full font-paths.', 'cryptex'), 'show-full-paths') ?>
+	
+		<h4><?php _e('CSS Options', 'cryptex'); ?></h4>
+		<!-- css prefix -->
+		<p><?php _e('An optional prefix added to the generated css classes to match your content-container and retain cryptex styles.', 'cryptex'); ?></p>
+		<?php $this->_settingsUtility->displayInput(__('CSS Prefix', 'cryptex'), 'css-prefix', __('e.g. #content, .mycontentarea', 'cryptex')); ?>
+		
+		<!-- css classes -->
+		<p><?php _e('Additional css classes added to the outer span-tag - maybe used to add icons.', 'cryptex')?></p>
+		<?php $this->_settingsUtility->displayInput(__('Additional Classes', 'cryptex'), 'css-classes', __('e.g. email mailicon', 'cryptex')); ?>
+		
+		<!-- Nested Shortcodes -->
+		<h4><?php _e('Nested Shortcodes', 'cryptex'); ?></h4>
+		<p><?php _e('In some cases it can be necessary to process nested-shortcodes (shortcodes within a cryptex/email tag) - maybe the inner shortcode fetches some content from your database, etc. Only enable this option if you exactly know what your doing!', 'cryptex'); ?></p>
+		<?php $this->_settingsUtility->displayCheckbox(__('Enable Nested-Shortcodes', 'cryptex'), 'nestedShortcodes'); ?>
+	
+		<!-- I18n -->
+		<h4><?php _e('I18n (Internationalization)', 'cryptex'); ?></h4>
+		<p><?php _e('Should the plugin load the language files (if available) to translate the settings page ?', 'cryptex'); ?></p>
+		<?php $this->_settingsUtility->displayCheckbox(__('Enable I18n', 'cryptex'), 'translation-enabled'); ?>
+	
+	<!-- // ADVANCED SETTINGS -->
+	</div></div>
+	
+	<!-- FONT RENDERING -->
+	<div class="postbox">
+	<h3 class="hndle"><span><?php _e('Font Rendering', 'cryptex'); ?></span></h3>
+	<div class="inside CryptexBlockcontent">
+	
+		<h4><?php _e('Rendering', 'cryptex'); ?></h4>
+		<p><?php _e('Anti-aliasing is enabled by default to provide smooth font-edges.', 'cryptex'); ?></p>
+		<!-- Enable Antialiasing -->
+		<?php $this->_settingsUtility->displayCheckbox(__('Enable Anti-aliasing', 'cryptex'), 'font-antialiasing'); ?>		
+	
+		<!-- Font Rendering Lib -->
+		<p><?php _e('Which library should be used to render the fonts ? FreeType2 supports TrueType + OpenType fonts, GD-Lib just TrueType. This option influences the file extension filter of the fontlist.', 'cryptex'); ?></p>
+		<?php $this->_settingsUtility->displaySelect(__('Font-Renderer', 'cryptex'), 'font-renderer', array(__('FreeType2 (if available)',  'cryptex') => 'freetype', __('GD-Lib TTF',  'cryptex') => 'gdttf')); ?>
+	
+	<!-- FONT RENDERING -->	
+	</div></div>
+	
+	<!-- CACHE SETTINGS -->
+	<div class="postbox">
+	<h3 class="hndle"><span><?php _e('Cache Settings', 'cryptex'); ?></span></h3>
+	<div class="inside CryptexBlockcontent">
+		<p><?php _e('You can define a custom cache-directory which should be used to store the generated images and css files. This directory has to be web-accessable!', 'cryptex'); ?><br />
+		<?php _e('In case of invalid path settings/unaccesable cache, the default values will be used!', 'cryptex'); ?></p>
+		
+		<!-- Enable Custom Path settings -->
+		<?php $this->_settingsUtility->displayCheckbox(__('Enable custom cache', 'cryptex'), 'cache-custom'); ?>		
+			
+		<h4><?php _e('Public-Accessable-Cache', 'cryptex'); ?></h4>
+		<p><?php _e('Path: ', 'cryptex'); ?><code><?php echo $this->_cacheManager->getCachePath();?></code>
+		<p><?php _e('Url: ', 'cryptex'); ?><code><?php echo $this->_cacheManager->getCacheURL();?></code>
+	
+	
+		<div id="CryptexCustomCachePath">
+			<h4><?php _e('Custom cache path/url', 'cryptex'); ?></h4>
+			<p class="CryptexFALSE"><strong><?php _e('Attention:', 'cryptex'); ?></strong> <?php _e('All files within the cache-path will be removed each time you update cryptex-settings!', 'cryptex'); ?>
+			
+			<!-- local cache directory !-->
+			<p><?php _e('Default: ', 'cryptex'); ?><code><?php echo CRYPTEX_PLUGIN_PATH.'/cache/'; ?></code></p>
+			<?php 
+				$customCachePath = $this->_settingsUtility->getOption('cache-path');
+				if (!is_dir($customCachePath) || !is_writable($customCachePath)){
+					echo '<p class="CryptexFALSE">', __('Warning: cache-path is not accessable!'), '</p>';
+				}
+			?>
+			<?php $this->_settingsUtility->displayInput(__('Store files in this directory', 'cryptex'), 'cache-path', __('e.g. /home/user/wordpress/cache/', 'cryptex')); ?>
+		
+			<!-- cache URL !-->
+			<p><?php _e('Default: ', 'cryptex'); ?><code><?php echo plugins_url('/cryptex/cache/'); ?></code></p>
+			<?php $this->_settingsUtility->displayInput(__('Full URL path to files', 'cryptex'), 'cache-url', __('e.g. http://cache.yourdomain.tld/i/', 'cryptex')); ?>
+		</div>
+	<!-- // CACHE SETTINGS -->	
+	</div></div>

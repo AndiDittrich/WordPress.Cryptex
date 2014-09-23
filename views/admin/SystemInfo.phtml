@@ -1,0 +1,73 @@
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+
+<div class="postbox">
+<h3 class="hndle"><?php _e('System Info', 'cryptex'); ?></h3>
+<div class="inside">
+<!-- Metabox-Content -->
+   <ul> 
+    	<?php 
+   		echo '<li>', __('PHP Version:', 'cryptex'), ' <span class="CryptexTRUE">', phpversion() , '</span></li>';
+    	
+    	// server os
+    	echo '<li>', __('Server Software:', 'cryptex'), ' <span class="CryptexTRUE">', PHP_OS, '</span></li>';
+    	
+    	// cryptex version
+    	echo '<li>', __('Cryptex Plugin Version:', 'cryptex'), ' <span class="CryptexTRUE">', CRYPTEX_VERSION, '</span></li>';
+    	
+    	// check for gdlib
+    	if (function_exists('gd_info')){
+    		echo '<li>', __('GD library:', 'cryptex'), ' <span class="CryptexTRUE">', __('installed', 'cryptex'), '</span></li>';
+    		$info = gd_info(); 
+
+    		// check GD lib version
+   			echo '<li>', __('GD version:', 'cryptex'), ' <span class="CryptexTRUE">',  $info['GD Version'], __(' (supported)', 'cryptex'), '</span></li>';
+    		
+    		// check png support
+    		if ($info['PNG Support']){
+    			echo '<li>', __('PNG support:', 'cryptex'), ' <span class="CryptexTRUE">', __('available', 'cryptex'), '</span></li>';
+    		}else{
+    			echo '<li>', __('PNG support:', 'cryptex'), ' <span class="CryptexFALSE">', __('not installed', 'cryptex'), '</span></li>';
+    		}
+    		
+    		// check freetype support
+    		if ($info['FreeType Support']){
+    			echo '<li>', __('FreeType:', 'cryptex'), ' <span class="CryptexTRUE">', __('available', 'cryptex'), '</span></li>';
+    		}else{
+    			echo '<li>', __('FreeType:', 'cryptex'), ' <span class="CryptexFALSE">', __('not installed', 'cryptex'), '</span></li>';
+    		}
+    		
+    	}else{
+    		echo '<li>', __('GD library:', 'cryptex'), ' <span class="CryptexFALSE">', __('not installed', 'cryptex'), '</span></li>';
+    	}
+    	
+    	// used font renderer
+    	if ($this->_imageGenerator->isFreeTypeEnabled()){
+    		echo '<li>', __('Font Renderer:', 'cryptex'),' <span class="CryptexTRUE">FreeType 2</span></li>';
+    	}else{
+    		echo '<li>', __('Font Renderer:', 'cryptex'),' <span class="CryptexTRUE">GD-TTF</span></li>';
+    	}
+    	
+    	// check for available fonts
+    	if (count($fontlist)>0){    	
+    		echo '<li>', __('Fonts:', 'cryptex'),' <span class="CryptexTRUE"><strong>', count($fontlist), '</strong> ', __('fonts found', 'cryptex'), '</span></li>';	
+    	}else{
+    		echo '<li>', __('Fonts:', 'cryptex'),' <span class="CryptexFALSE">', __('not found', 'cryptex'), '</span></li>';
+    	}
+    	
+    	// plugin cache path writeable ?
+    	$cachePath = $this->_cacheManager->getCachePath();
+    	if (is_dir($cachePath) && is_writable($cachePath)){
+    		echo '<li>', __('Cache writeable', 'cryptex'),': <span class="CryptexTRUE">', __('true', 'cryptex'), '</span></li>';
+    	}else{
+    		echo '<li>', __('Cache writeable', 'cryptex'),': <span class="CryptexFALSE">', __('false', 'cryptex'), '</span></li>';
+    	}
+    	
+    	// image or hdpi css renderer used ?
+  
+
+    	?>
+    </ul>	
+
+
+<!-- // Metabox-Content -->
+</div></div>

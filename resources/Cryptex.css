@@ -1,9 +1,9 @@
 /**
 	Cryptex CSS Template
-	Version: 1.0
+	Version: 4.0
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
-	Plugin URI: http://www.a3non.org/go/cryptex
+	Plugin URI: http://andidittrich.de/go/cryptex
 	License: MIT X11-License
 	
 	Copyright (c) 2010-2014, Andi Dittrich
@@ -21,7 +21,7 @@ $(CSSPREFIX) .cryptex, $(CSSPREFIX) .cryptex .divider{
 	margin: 0px;
 	background-color: transparent;
 	cursor: auto;
-	font-size: $(FONT.SIZE)px;
+	font-size: $(FONT.SIZE);
 	font-weight: normal;
 	font-style: normal;
 	text-align: left;
@@ -31,7 +31,7 @@ $(CSSPREFIX) .cryptex, $(CSSPREFIX) .cryptex .divider{
 $(CSSPREFIX) .cryptex[rel], $(CSSPREFIX) .cryptex[rel] span.divider {
 	cursor: $(HREF.CURSOR);
 }
-$(CSSPREFIX) .cryptex img{
+$(CSSPREFIX) .cryptex img, $(CSSPREFIX) .CryptexImg{
 	margin: 0px;
 	padding: 0px;
 	border: solid 0px #ffffff;
@@ -41,4 +41,10 @@ $(CSSPREFIX) .cryptex img{
 	vertical-align: middle;
 	float: none;
 	clear: none;
+}
+$(CSSPREFIX) .CryptexImg{
+	display: inline-block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
 }

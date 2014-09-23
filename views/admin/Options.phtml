@@ -1,0 +1,95 @@
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+
+	<!-- System Font Source -->
+    <div class="postbox">
+	<h3 class="hndle"><span><?php _e('Font Source', 'cryptex'); ?></span></h3>
+	<div class="inside CryptexBlockcontent">
+        <p><?php _e('Cryptex requires server-side stored TrueType/OpenType Fonts to generate the images. Select the font location which should be used. The location will be recursivly scanned by the plugin, including all subdirectories.', 'cryptex'); ?></p>
+   		<p>
+		<?php _e('<strong>System Fonts</strong> - the default font location of your server', 'cryptex'); ?> (<code><?php echo implode(';', Cryptex\FontManager::$WindowsFontPaths); ?></code> <?php _e('on Windows', 'cryptex'); ?>; <code><?php echo implode(';', Cryptex\FontManager::$LinuxFontPaths); ?></code> <?php _e('on Linux', 'cryptex'); ?><br />
+		<?php _e('<strong>Plugin Directory</strong> - the <code>fonts</code> directory within the cryptex plugin path', 'cryptex'); ?> (<code><?php echo CRYPTEX_DEFAULT_FONT_PATH ?></code>)<br />
+		<?php _e('<strong>Custom Directory</strong> - enter a custom directory of your choice', 'cryptex'); ?>
+		</p>
+		
+		<h4><?php _e('Font Location', 'cryptex'); ?></h4>
+		<!-- Font Source -->
+		<?php $this->_settingsUtility->displaySelect(__('Font-Source', 'cryptex'), 'font-source', array(__('System Fonts + Plugin Directory', 'cryptex') =>   'system+plugin', __('System Fonts', 'cryptex') => 'system', __('Plugin Directory', 'cryptex') => 'plugin', __('Custom Directory', 'cryptex') => 'custom')); ?>
+		
+		<!-- Custom Font Path -->
+		<div id="CryptexCustomFontpath">
+		<?php $this->_settingsUtility->displayInput(__('Font-Path', 'cryptex'), 'custom-font-path', __('e.g.', 'cryptex').' /usr/share/fonts'); ?>
+		</div>
+				
+	<!-- // System Font Source -->	
+	</div></div>
+	
+	<!-- EMail Autodetection !-->
+	<div class="postbox">
+	<h3 class="hndle"><span><?php _e('E-Mail-Address Autodetction', 'cryptex'); ?></span></h3>
+	<div class="inside CryptexBlockcontent">
+		<p><?php _e('Should E-Mail-Addresses automatically transformed into images ? No need for shortcode!', 'cryptex'); ?><br />
+		<?php _e('Note: <strong>ALL</strong> E-Mail-Addresses on your page will be transformed. This will be a usefull functionality on most blogs but can cause problems when posting sourcecode.', 'cryptex'); ?>
+		</p>
+		
+		<!-- Enable Detection -->
+		<?php $this->_settingsUtility->displayCheckbox(__('Enable Autodetection', 'cryptex'), 'email-autodetect'); ?>
+
+		<div id="CryptexAutodetectionOptions">
+			<!-- Exclude post/pages from autodetection -->
+			<p><?php _e('You can exclude several post/pages from beeing autodetected by adding their IDs to the following list (comma sperated)', 'cryptex'); ?></p>
+			<?php $this->_settingsUtility->displayInput(__('Exclude Post/Pages', 'cryptex'), 'email-autodetect-excludeid', __('e.g. 17, 18, 45', 'cryptex')); ?>
+					
+			<h4><?php _e('Filter Targets', 'cryptex'); ?></h4>
+			<p><?php _e('Choose the content-sections to which the autodetect-filter should be applied.', 'cryptex'); ?></p>
+			<!-- Enable the_content filter -->
+			<?php $this->_settingsUtility->displayCheckbox(__('Transform the_content', 'cryptex'), 'email-autodetect-content'); ?>
+			
+			<!-- Enable the_excerpt filter -->
+			<?php $this->_settingsUtility->displayCheckbox(__('Transform the_excerpt', 'cryptex'), 'email-autodetect-excerpt'); ?>
+			
+			
+			<!-- Enable comment-text filter -->
+			<?php $this->_settingsUtility->displayCheckbox(__('Transform comments', 'cryptex'), 'email-autodetect-comments'); ?>
+			
+			<!-- Enable comment-excerpt filter -->
+			<?php $this->_settingsUtility->displayCheckbox(__('Transform comments-excerpt', 'cryptex'), 'email-autodetect-comments-excerpt'); ?>
+			
+			<!-- Enable Widget-text filter -->
+			<?php $this->_settingsUtility->displayCheckbox(__('Transform widget-text', 'cryptex'), 'email-autodetect-widget-text'); ?>
+		</div>
+    
+    <!-- // EMail Autodetection !-->
+    </div></div>
+		
+	<!-- CDN SETTINGS -->
+	<div class="postbox">
+	<h3 class="hndle"><span><?php _e('CDN (Content Delivery Network)', 'cryptex'); ?></span></h3>
+	<div class="inside CryptexBlockcontent">
+		<p><?php _e('These options might be required when using a Content-Delivery-Network (CDN) or another server/location which outsources your CSS+Javascript files.', 'cryptex'); ?> 
+		<?php _e('In this case you have to manually include Cryptex.js and Cryptex.css into your page!', 'cryptex'); ?><br />
+		<?php _e('The generated styles are', 'cryptex'); ?> <a href="<?php echo $this->_cacheManager->getCacheUrl().'Cryptex.css'; ?>"><?php _e('available here', 'cryptex'); ?></a> (&lt;cachedir&gt;/Cryptex.css).</p>
+		
+		<!-- CSS Settings -->
+		<h4><?php _e('Stylesheet/CSS', 'cryptex'); ?></h4>
+		
+		<!-- embed css !-->
+		<?php $this->_settingsUtility->displayCheckbox(__('Include Cryptex-CSS', 'cryptex'), 'embed-css') ?>
+		
+		<!-- Inline/External CSS -->
+		<p><?php _e('Cryptex stylsheets are very small, to speed up your page it is possible to load the styles "inline" within the wp_footer action - e.g. when using a CDN it is no necessary to merge the Cryptex.css manually.', 'cryptex'); ?></p>
+		<?php $this->_settingsUtility->displaySelect(__('CSS-Loading', 'cryptex'), 'css-type', array(__('External File using <link href=""...>', 'cryptex') => 'external', __('Inline within wp_head', 'cryptex') => 'inline')); ?> 
+		
+		<!-- JS Settings -->
+		<h4><?php _e('Javascript', 'cryptex'); ?></h4>
+		<p><?php _e('The javascript files are only required for hyperlink-decoding - if disabled, no javascript files will be included!', 'cryptex'); ?></p>
+		
+		<!-- embed JS !-->
+		<?php $this->_settingsUtility->displayCheckbox(__('Include Cryptex-Javascript', 'cryptex'), 'embed-js'); ?>
+		
+		<!-- Inline/External JS -->
+		<p><?php _e('Like the small stylesheet, the required javascript can also be included as "inline" code.', 'cryptex'); ?></p>
+		<?php $this->_settingsUtility->displaySelect(__('JS-Loading', 'cryptex'), 'js-type', array(__('External File using <script src=""...>', 'cryptex') => 'external', __('Inline within wp_footer', 'cryptex') => 'inline-footer', __('Inline within wp_head', 'cryptex') => 'inline-head')); ?> 
+
+	<!-- // CDN SETTINGS -->	
+	</div></div>
+

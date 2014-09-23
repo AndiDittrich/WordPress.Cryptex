@@ -2,14 +2,20 @@
  * Settings Page Design for WordPress >= v3.8
 */
 .CryptexBlockcontent{
+	/*
 	padding: 5px 10px 10px 15px;
 	margin: 0px 0px 20px 0px;
 	background-color: #fff;
 	border-left: 4px solid #333c45;
 	-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-	max-width: 1500px;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);*/
 }
+
+
+#CryptexSettings .maintitle{
+	margin: 15px 0px 15px 0px;
+}
+
 .CryptexBlockcontent h4{
 	color: #0074a2;
 	displa: block;
@@ -42,4 +48,26 @@
 .CryptexFALSE{
 	font-weight: bold;
 	color: #d03a3a;
+}
+
+#CryptexSettings .postbox h3{
+	background-color: #333333 !important;
+	color: #ffffff !important;
+	cursor: default;
+	font-style: italic;
+}
+
+#CryptexSettings .credits{
+	font-color: #333333;
+	font-style: italic;
+}
+
+/* Tab Nav
+-------------------------------- */
+#CryptexTabNav{
+	display: none;
+	position: relative !important;
+}
+#CryptexTabNav a{
+	cursor: pointer;
 }

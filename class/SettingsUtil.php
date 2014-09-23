@@ -37,7 +37,7 @@ class SettingsUtil{
 		}
 	}
 	
-	// register settings
+	// register settings - required for wordpress settings api form
 	public function registerSettings(){
 		// register settings
 		foreach ($this->_config as $key=>$value){
