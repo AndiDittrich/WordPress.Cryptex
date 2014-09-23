@@ -174,10 +174,10 @@ class FontManager{
 		// check dirs for accessibility
 		foreach ($scandirs as $dir){
 			try{
-				if (is_dir($dir) && is_readable($dir)){
+				if (@is_dir($dir) && @is_readable($dir)){
 					$dirstack[] = $dir;
 				}
-			}catch (Exception $exc){}
+			}catch (\Exception $exc){}
 		}
 			
 		return $dirstack;

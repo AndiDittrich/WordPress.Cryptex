@@ -112,6 +112,7 @@ Send an email to Andi Dittrich (andi _D0T dittrich At a3non .dOT org) or or open
 * Added: Cleanup of generated stylesheets
 * Added: New Screenshots
 * Added: License Informations to settings-page footer
+* Added: Error supression for system-font scanning
 * Updated: MooTools Javascript code now uses `document.getElements()` instaed of leagcy `$$()` selector
 * Modified: Cryptex javascript file uses UglifyJS for minification
 * New settings page - now matches WordPress corporate UI style

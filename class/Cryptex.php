@@ -1,7 +1,7 @@
 <?php
 /**
 	Cryptex Class
-	Version: 3.3
+	Version: 4.0
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
 	Plugin URI: http://andidittrich.de/go/cryptex
@@ -48,7 +48,7 @@ class Cryptex{
 			'js-type' => 'external',
 			'font-file' => 'Arial.ttf',
 			'font-size' => '12px',
-			'line-height' => '16px',
+			'line-height' => '0',
 			'font-color' => '#000000',
 			'font-antialiasing' => true,
 			'font-renderer' => 'freetype',
