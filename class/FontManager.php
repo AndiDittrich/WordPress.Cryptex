@@ -88,7 +88,7 @@ class FontManager{
 		
 		// alphabetical sort
 		uasort($fontlist, function($s1, $s2){
-			return strnatcmp(strtolower($s1), strtolower($s2));
+			return strnatcmp(strtolower(basename($s1)), strtolower(basename($s2)));
 		});
 		
 		return $fontlist;

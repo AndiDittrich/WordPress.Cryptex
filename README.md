@@ -2,8 +2,8 @@
 Contributors: Andi Dittrich
 Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, retina, highdpi, responsive, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses, filter, automatically
 Requires at least: 3.8
-Tested up to: 4.0
-Stable tag: 4.0
+Tested up to: 4.1
+Stable tag: 4.1
 
 Cryptex transforms plain-text E-Mail-Addresses into Images - automatically! No scrapers. No harvesters. No spambots.
 
@@ -92,6 +92,9 @@ Send an email to Andi Dittrich (andi _D0T dittrich At a3non .dOT org) or or open
 6. Settings Page - Image Offsets & Retina/HighDpi Options
 
 ## Changelog ##
+
+### 4.1 ###
+* Bugfix: HDPI CSS container is now only adden when cryptex images found on the page
 
 ### 4.0 ###
 * Added: Retina/High-DPI image support

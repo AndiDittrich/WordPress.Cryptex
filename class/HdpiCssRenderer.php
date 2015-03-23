@@ -66,6 +66,11 @@ class HdpiCssRenderer
 	 * Generate the required Inline-Styles
 	 */
 	public function printInlineStyles(){
+		// crytex images available
+		if (count($this->_imageCache) == 0){
+			return;
+		}
+		
 		echo '<style type="text/css">';
 
 		// normal-dpi images; dpr=1.0
