@@ -45,6 +45,7 @@ class Cryptex{
 			'embed-css' => true,
 			'embed-js' => true,
 			'font-file' => 'Arial.ttf',
+            'font-family' => 'inherit',
 			'font-size' => '12px',
 			'line-height' => '0',
 			'font-color' => '#000000',
@@ -261,6 +262,7 @@ class Cryptex{
 		$cssTPL->assign('FONT.SIZE', $config['font-size']);
 		$cssTPL->assign('FONT.COLOR', $config['font-color']);
 		$cssTPL->assign('HREF.CURSOR', ($config['enable-hyperlink'] ? 'pointer' : 'auto'));
+        $cssTPL->assign('FONT.FAMILY', (strlen($config['font-family']) > 1 ? $config['font-family'] : 'inherit'));
 		
 		// render template and store it (caching)
 		$cssTPL->store($this->_cacheManager->getCachePath().'Cryptex.css');

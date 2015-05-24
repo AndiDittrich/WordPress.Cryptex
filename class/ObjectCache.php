@@ -46,7 +46,7 @@ class ObjectCache{
 	 * @param unknown $filename
 	 */
 	public function load(){
-		if (is_file($this->_filename) || is_readable($this->_filename)){
+		if (is_file($this->_filename) && is_readable($this->_filename)){
 			$this->_storage = require($this->_filename);
 		}
 	}

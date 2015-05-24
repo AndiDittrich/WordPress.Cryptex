@@ -17,7 +17,7 @@ It works with emails, telephone numbers, postal addresses or any other text-cont
 Just wrap your E-Mail-Address into a shortcode like `[email]youraddress@example.com[/email]` - that's it.
 Or use the **Autodetect** filter to transform every E-Mail-Address on your page automatically into an image!
 
-== Plugin Features ==
+= Plugin Features =
 * Fully customizable appearance: you can configure font-family, font-size and font-color - everything looks like your theme style
 * Retina/HD/High-Dpi Images - best appearance on all devices (2x, 3x or 4x resolution enhancement)
 * Shortcode and/or Autodetection usage!
@@ -33,10 +33,10 @@ Or use the **Autodetect** filter to transform every E-Mail-Address on your page 
 * Includes the [Liberation(tm) Fonts](https://fedorahosted.org/liberation-fonts/) package
 * TrueType as well as OpenType Fonts are supported
 
-== Text-Transformations ==
+= Text-Transformations =
 The @-sign as well as dot's within the e-mail-addresses can be automatically replaced by different placeholders, e.g. `mail(at)example{dot}org`, to match your website's corporate design.
 
-== Security Modes ==
+= Security Modes =
 Cryptex provides various obfuscation modes for E-Mail-Addresses:
 
 * Plain Text - only text-transformations are applied - no use of images
@@ -46,17 +46,17 @@ Cryptex provides various obfuscation modes for E-Mail-Addresses:
 
 == Installation ==
 
-== System requirements ==
+= System requirements =
 * PHP 5.3 or greater
 * GD library (v2.0.28 or greater)
 * GD PNG support
 * FreeType2 (optional, required for OpenType fonts)
 * Accessible cache directory (`/wp-content/plugins/cryptex/cache/` or a custom one)
 
-== WordPress Theme requirements ==
+= WordPress Theme requirements =
 * The `wp_footer` and `wp_head` action have to be used
 
-== Installation ==
+= Installation =
 1. Upload the complete `cryptex` folder (Wordpress Plugin) to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to Settings -> Cryptex and check all items into the sidebar.
@@ -119,12 +119,15 @@ After upgrading, go to the Cryptex settings page, check all options and click "A
 * Added: Additional HDPI Image renderer based on the [HTML5 srcset attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
 * Added: Settings page link to the plugin page (metadata row)
 * Added: Link to author's Twitter Channel (latest Enlighter updates/news)
+* Added: Option to set the CSS Font-Family (in case you want to use another font for Email addresses on your page)
 * Changed HTML output attribute ordering
 * Removed: MooTools + jQuery code - replaced by native version
 * Removed `js-type` option - Cryptex javascript is now **always** injected into the page (`wp_footer` action)
 * Removed external CSS option - the required CSS is now **always** injected into the page (`wp_head` action)
 * Bugfix: HDPI CSS container is now only added when cryptex images are found on the page
 * Bugfix: The contextual help link was not "full" selectable (covered by the tab nav)
+* Bugfix: Error handling of the FontManager failed (should never happen under normal conditions)
+* Bugfix: ObjectCache file existent check failed
 * The `readme.txt` (WordPress plugin repository) is generated from the markdown file `README.md` and `CHANGES.md` (GitHub style)
 
 = 4.0 =

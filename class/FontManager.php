@@ -30,7 +30,7 @@ class FontManager{
 		'/usr/share/fonts/X11/truetype',
 		'/usr/lib/X11/fonts/truetype'				
 	);
-	
+
 	// allowed ttf extensions
 	public static $ttfExtensions = array(
 		'ttf',
@@ -140,9 +140,12 @@ class FontManager{
 		return self::scandir($this->_config['custom-font-path']);
 	}
 	
-	// get fonts of plugin dir
+	// get fonts of plugin dir (./fonts and ./resources)
 	public function getPluginFonts(){
-		return self::scandir(CRYPTEX_DEFAULT_FONT_PATH);
+		$userFonts = self::scandir(CRYPTEX_DEFAULT_FONT_PATH);
+        $pluginFonts = self::scandir(CRYPTEX_PLUGIN_PATH.'/resources');
+
+        return array_merge($userFonts, $pluginFonts);
 	}
 	
 	// get system font list
@@ -255,7 +258,7 @@ class FontManager{
 				}
 			}
 		}catch(\Exception $exc){
-			return $filelist;
+			return $fileList;
 		}
 	
 		// return filelist

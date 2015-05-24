@@ -1,4 +1,4 @@
-/**
+/*
 	Cryptex CSS Template
 	Version: 4.0
 	Author: Andi Dittrich
@@ -22,6 +22,7 @@ $(CSSPREFIX) .cryptex, $(CSSPREFIX) .cryptex .divider{
 	background-color: transparent;
 	cursor: auto;
 	font-size: $(FONT.SIZE);
+    font-family: $(FONT.FAMILY);
 	font-weight: normal;
 	font-style: normal;
 	text-align: left;

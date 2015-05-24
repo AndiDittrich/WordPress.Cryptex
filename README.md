@@ -17,7 +17,7 @@ It works with emails, telephone numbers, postal addresses or any other text-cont
 Just wrap your E-Mail-Address into a shortcode like `[email]youraddress@example.com[/email]` - that's it.
 Or use the **Autodetect** filter to transform every E-Mail-Address on your page automatically into an image!
 
-## Plugin Features ##
+### Plugin Features ###
 * Fully customizable appearance: you can configure font-family, font-size and font-color - everything looks like your theme style
 * Retina/HD/High-Dpi Images - best appearance on all devices (2x, 3x or 4x resolution enhancement)
 * Shortcode and/or Autodetection usage!
@@ -33,10 +33,10 @@ Or use the **Autodetect** filter to transform every E-Mail-Address on your page 
 * Includes the [Liberation(tm) Fonts](https://fedorahosted.org/liberation-fonts/) package
 * TrueType as well as OpenType Fonts are supported
 
-## Text-Transformations ##
+### Text-Transformations ###
 The @-sign as well as dot's within the e-mail-addresses can be automatically replaced by different placeholders, e.g. `mail(at)example{dot}org`, to match your website's corporate design.
 
-## Security Modes ##
+### Security Modes ###
 Cryptex provides various obfuscation modes for E-Mail-Addresses:
 
 * Plain Text - only text-transformations are applied - no use of images
@@ -46,17 +46,17 @@ Cryptex provides various obfuscation modes for E-Mail-Addresses:
 
 ## Installation ##
 
-## System requirements ##
+### System requirements ###
 * PHP 5.3 or greater
 * GD library (v2.0.28 or greater)
 * GD PNG support
 * FreeType2 (optional, required for OpenType fonts)
 * Accessible cache directory (`/wp-content/plugins/cryptex/cache/` or a custom one)
 
-## WordPress Theme requirements ##
+### WordPress Theme requirements ###
 * The `wp_footer` and `wp_head` action have to be used
 
-## Installation ##
+### Installation ###
 1. Upload the complete `cryptex` folder (Wordpress Plugin) to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to Settings -> Cryptex and check all items into the sidebar.

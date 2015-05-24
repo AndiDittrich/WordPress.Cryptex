@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2015-05-24 10:53:23+00:00\n"
+"POT-Creation-Date: 2015-05-24 13:42:46+00:00\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
 "Project-Id-Version: Cryptex  5.0\n"
@@ -25,11 +25,11 @@ msgstr ""
 msgid "Cryptex | E-Mail-Address Protection"
 msgstr ""
 
-#: class/Cryptex.php:234
+#: class/Cryptex.php:235
 msgid "Settings"
 msgstr ""
 
-#: class/Cryptex.php:235
+#: class/Cryptex.php:236
 msgid "News & Updates"
 msgstr ""
 
@@ -234,198 +234,206 @@ msgid "Change these settings to match your current theme styles."
 msgstr ""
 
 #: views/admin/Appearance.phtml:8
-msgid "<strong>Note: </strong>It`s strongly recommend to use standard fonts only"
+msgid "The CSS Font-Family is used to change the font of the cryptex divider text (non image). Set it to \"inherit\" to use your standard page font!"
 msgstr ""
 
 #: views/admin/Appearance.phtml:12
-msgid "Font-Family"
+msgid "Image Font-Family"
 msgstr ""
 
 #: views/admin/Appearance.phtml:15
+msgid "CSS Font-Family"
+msgstr ""
+
+#: views/admin/Appearance.phtml:15
+msgid "e.g. Arial, Verdana, sans-serif"
+msgstr ""
+
+#: views/admin/Appearance.phtml:18
 msgid "Font-Size (px or pt)"
 msgstr ""
 
-#: views/admin/Appearance.phtml:15
+#: views/admin/Appearance.phtml:18
 msgid "e.g. 12px, 14pt"
 msgstr ""
 
-#: views/admin/Appearance.phtml:18
+#: views/admin/Appearance.phtml:21
 msgid "Font-Color"
 msgstr ""
 
-#: views/admin/Appearance.phtml:18
+#: views/admin/Appearance.phtml:21
 msgid "e.g. #000000, #ff00c1"
 msgstr ""
 
-#: views/admin/Appearance.phtml:21
+#: views/admin/Appearance.phtml:24
 msgid "Image-Height (px)"
 msgstr ""
 
-#: views/admin/Appearance.phtml:21
+#: views/admin/Appearance.phtml:24
 msgid "e.g. 12px - use 0 for auto"
 msgstr ""
 
-#: views/admin/Appearance.phtml:23
+#: views/admin/Appearance.phtml:26
 msgid "E-Mail Text Transformations"
 msgstr ""
 
-#: views/admin/Appearance.phtml:24
+#: views/admin/Appearance.phtml:27
 msgid "These replacements are only applied to E-Mail-Addresses"
 msgstr ""
 
-#: views/admin/Appearance.phtml:27
+#: views/admin/Appearance.phtml:30
 msgid "Instead of using the @ sign for emails, you can choose between some options - this could increase the protection level against spiders/bots using OCR."
 msgstr ""
 
-#: views/admin/Appearance.phtml:28
+#: views/admin/Appearance.phtml:31
 msgid "<strong>Note:</strong> Use ALWAYS the @ sign in the cryptex shortcode!"
 msgstr ""
 
-#: views/admin/Appearance.phtml:29
+#: views/admin/Appearance.phtml:32
 msgid "@Sign-Replacement"
 msgstr ""
 
-#: views/admin/Appearance.phtml:29 views/admin/Appearance.phtml:32
+#: views/admin/Appearance.phtml:32 views/admin/Appearance.phtml:35
 msgid "No Replacement"
 msgstr ""
 
-#: views/admin/Appearance.phtml:31
+#: views/admin/Appearance.phtml:34
 msgid "<strong>Note:</strong> Use ALWAYS the . in the cryptex shortcode!"
 msgstr ""
 
-#: views/admin/Appearance.phtml:32
+#: views/admin/Appearance.phtml:35
 msgid "Dot-Replacement"
 msgstr ""
 
-#: views/admin/Appearance.phtml:35
+#: views/admin/Appearance.phtml:38
 msgid "E-Mail Settings"
 msgstr ""
 
-#: views/admin/Appearance.phtml:37
+#: views/admin/Appearance.phtml:40
 msgid "Should E-Mail-Addresses clickable ? (mailto:youremail@example.com)"
 msgstr ""
 
-#: views/admin/Appearance.phtml:38
+#: views/admin/Appearance.phtml:41
 msgid "Cryptex provides an integrated key-shifting based encryption/decryption of hyperlinks to ensure maximum protection."
 msgstr ""
 
-#: views/admin/Appearance.phtml:40
+#: views/admin/Appearance.phtml:43
 msgid "Enable-Hyperlinks"
 msgstr ""
 
-#: views/admin/Appearance.phtml:43
+#: views/admin/Appearance.phtml:46
 msgid "E-Mail-addresses can be displayed as a single image or, in case of higher security, as a multipart-image."
 msgstr ""
 
-#: views/admin/Appearance.phtml:44
+#: views/admin/Appearance.phtml:47
 msgid "The address will be splitted into 2 parts (before and after the @ sign). Each part is displayed as a single image, the @ sign as plain text. This feature provides an improved protection against ocr-grabbing spambots, which will analyze page images."
 msgstr ""
 
-#: views/admin/Appearance.phtml:45
+#: views/admin/Appearance.phtml:48
 msgid "Note: This option will only influence E-Mail-addresses, other content will be still displayed as a single image!"
 msgstr ""
 
-#: views/admin/Appearance.phtml:47
+#: views/admin/Appearance.phtml:50
 msgid "E-Mail Security Level"
 msgstr ""
 
-#: views/admin/Appearance.phtml:47
+#: views/admin/Appearance.phtml:50
 msgid "Text (not recommended)"
 msgstr ""
 
-#: views/admin/Appearance.phtml:47
+#: views/admin/Appearance.phtml:50
 msgid "Single Image"
 msgstr ""
 
-#: views/admin/Appearance.phtml:47
+#: views/admin/Appearance.phtml:50
 msgid "Multipart Image (2 Images, seperated by @ sign)"
 msgstr ""
 
-#: views/admin/Appearance.phtml:47
+#: views/admin/Appearance.phtml:50
 msgid "Advanced Multipart Image (Multiple Images, seperated by dot AND @ sign)"
 msgstr ""
 
-#: views/admin/Appearance.phtml:54
+#: views/admin/Appearance.phtml:57
 msgid "Image Offsets"
 msgstr ""
 
-#: views/admin/Appearance.phtml:57
+#: views/admin/Appearance.phtml:60
 msgid "Sometimes the generated text, depending on the selected font family, won`t fit into his image box - it is possible to configure the following offsets (in px) to fix this issue:"
 msgstr ""
 
-#: views/admin/Appearance.phtml:58
+#: views/admin/Appearance.phtml:61
 msgid "Offsets can also be used to adjust the font baseline (use Offset A and Offset B)."
 msgstr ""
 
-#: views/admin/Appearance.phtml:61
+#: views/admin/Appearance.phtml:64
 msgid "Offset Values"
 msgstr ""
 
-#: views/admin/Appearance.phtml:62
+#: views/admin/Appearance.phtml:65
 msgid "Offset X (width)"
 msgstr ""
 
-#: views/admin/Appearance.phtml:63
+#: views/admin/Appearance.phtml:66
 msgid "Offset Y (height)"
 msgstr ""
 
-#: views/admin/Appearance.phtml:64
+#: views/admin/Appearance.phtml:67
 msgid "Offset A (font position x)"
 msgstr ""
 
-#: views/admin/Appearance.phtml:65
+#: views/admin/Appearance.phtml:68
 msgid "Offset B (font position y)"
 msgstr ""
 
-#: views/admin/Appearance.phtml:72
+#: views/admin/Appearance.phtml:75
 msgid "High DPI/Retina Support"
 msgstr ""
 
-#: views/admin/Appearance.phtml:74
+#: views/admin/Appearance.phtml:77
 msgid "Several modern devices like tablets, smartphones or notebooks using high-dpi screens better known as \"retina displays\" which results in blurred E-Mail-Addresses."
 msgstr ""
 
-#: views/admin/Appearance.phtml:75
+#: views/admin/Appearance.phtml:78
 msgid "The High-DPI mode will generate optional high-resolution images to fix such issues. High-Dpi devices will automatically access these images."
 msgstr ""
 
-#: views/admin/Appearance.phtml:78
+#: views/admin/Appearance.phtml:81
 msgid "Enable High DPI/Retina"
 msgstr ""
 
-#: views/admin/Appearance.phtml:81
+#: views/admin/Appearance.phtml:84
 msgid "Hdpi Options"
 msgstr ""
 
-#: views/admin/Appearance.phtml:82
+#: views/admin/Appearance.phtml:85
 msgid "The scaling factor is multiplied with the image-parameters (width, height, font-size, ..) to create high-resolution images - e.g. a value of 2 will double the image dimensions."
 msgstr ""
 
-#: views/admin/Appearance.phtml:83
+#: views/admin/Appearance.phtml:86
 msgid "A value of 3 is good choice and provides great looking results on an iPad4 (Retina, 2048x1536) or Sony-Tablet (FullHD, 1920x1080)."
 msgstr ""
 
-#: views/admin/Appearance.phtml:83
+#: views/admin/Appearance.phtml:86
 msgid "Scaling Factor Comparision"
 msgstr ""
 
-#: views/admin/Appearance.phtml:85
+#: views/admin/Appearance.phtml:88
 msgid "Hdpi scaling factor"
 msgstr ""
 
-#: views/admin/Appearance.phtml:87
+#: views/admin/Appearance.phtml:90
 msgid "Select the HDPI renderer which should used to display high density images. Most modern HTML5 browser support the srcset attribute - otherwise the standard images are displayed."
 msgstr ""
 
-#: views/admin/Appearance.phtml:87
+#: views/admin/Appearance.phtml:90
 msgid "Current srcset browser support."
 msgstr ""
 
-#: views/admin/Appearance.phtml:88
+#: views/admin/Appearance.phtml:91
 msgid "Instead of an img tag with the srcset attribute, cryptex can use css-based images which are based on inline styles in the html-body. This is not valid html5 but will perfectly work in all common browsers and provides the currently best appearance!"
 msgstr ""
 
-#: views/admin/Appearance.phtml:90
+#: views/admin/Appearance.phtml:93
 msgid "Hdpi Renderer"
 msgstr ""
 

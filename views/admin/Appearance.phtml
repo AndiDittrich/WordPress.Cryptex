@@ -5,11 +5,14 @@
 	<div class="inside CryptexBlockcontent">
     	<h4><?php _e('Font Styles', 'cryptex'); ?></h4>
 		<p><?php _e('Change these settings to match your current theme styles.', 'cryptex'); ?> <br />
-		<?php _e('<strong>Note: </strong>It`s strongly recommend to use standard fonts only', 'cryptex'); ?>
+		<?php _e('The CSS Font-Family is used to change the font of the cryptex divider text (non image). Set it to "inherit" to use your standard page font!', 'cryptex'); ?>
 		</p>
 
 		<!-- Font List -->
-		<?php $this->_settingsUtility->displaySelect(__('Font-Family', 'cryptex'), 'font-file', $fontlist); ?>
+		<?php $this->_settingsUtility->displaySelect(__('Image Font-Family', 'cryptex'), 'font-file', $fontlist); ?>
+
+        <!-- CSS Font Family -->
+        <?php $this->_settingsUtility->displayInput(__('CSS Font-Family', 'cryptex'), 'font-family', __('e.g. Arial, Verdana, sans-serif', 'cryptex')); ?>
 		
 		<!-- Font Size -->
 		<?php $this->_settingsUtility->displayInput(__('Font-Size (px or pt)', 'cryptex'), 'font-size', __('e.g. 12px, 14pt', 'cryptex')); ?>
