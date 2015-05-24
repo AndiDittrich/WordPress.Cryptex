@@ -3,7 +3,7 @@
 <project name="Cryptex" default="build" basedir=".">
 
 	<!-- Generate Build -->
-	<target name="build">
+	<target name="build" depends="readme, pot">
 		<copy todir="C:\Development\htdocs\wordpress2\wp-content\plugins\cryptex" overwrite="true">
 			<fileset dir="." />
 		</copy>
@@ -12,18 +12,19 @@
 		</copy>
 	</target>
 	
-	<!-- WordPress -> GitHub readme transformation !-->
+	<!-- GitHub readme + changes => WordPress transformation !-->
 	<target name="readme">
-		<!-- just dublicate it !-->
-		<copy file="readme.txt" tofile="README.md"/>
-	
+		<!-- merge readme + changes !-->
+        <concat destfile="readme.txt" append="false">
+            <filelist files="README.md, CHANGES.md"/>
+        </concat>
+
 		<!-- replace headings !-->
-		<replaceregexp file="README.md" match="^===(.*)===" replace="#\1#" byline="true"	/>
-		<replaceregexp file="README.md" match="^==(.*)==" replace="##\1##" byline="true"	/>
-		<replaceregexp file="README.md" match="^=(.*)=" replace="###\1###" byline="true"	/>
+		<replaceregexp file="readme.txt" match="^###(.*)###" replace="=\1=" byline="true"	/>
+        <replaceregexp file="readme.txt" match="^##(.*)##" replace="==\1==" byline="true"	/>
+        <replaceregexp file="readme.txt" match="^#(.*)#" replace="===\1===" byline="true"	/>
 	</target>
-	
-	
+
 	<!-- Generate Langage Files -->
 	<target name="pot">
 		<!-- Merge required source files !-->

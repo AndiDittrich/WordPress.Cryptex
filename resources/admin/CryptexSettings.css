@@ -71,3 +71,8 @@
 #CryptexTabNav a{
 	cursor: pointer;
 }
+
+/* Fix the Contextual Help Link */
+#screen-meta-links, #contextual-help-link-wrap, #contextual-help-link{
+    z-index: 100 !important;
+}

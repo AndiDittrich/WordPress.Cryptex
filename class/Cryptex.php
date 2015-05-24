@@ -1,13 +1,13 @@
 <?php
 /**
 	Cryptex Class
-	Version: 4.0
+	Version: 5.0
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
 	Plugin URI: http://andidittrich.de/go/cryptex
 	License: MIT X11-License
 	
-	Copyright (c) 2010-2014, Andi Dittrich
+	Copyright (c) 2010-2015, Andi Dittrich
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 	
@@ -44,8 +44,6 @@ class Cryptex{
 			'email-replacement-dot' => '.',
 			'embed-css' => true,
 			'embed-js' => true,
-			'css-type' => 'external',
-			'js-type' => 'external',
 			'font-file' => 'Arial.ttf',
 			'font-size' => '12px',
 			'line-height' => '0',
@@ -55,6 +53,8 @@ class Cryptex{
 			'security-level' => '2',
 			'hdpi-enabled' => false,
 			'hdpi-factor' => '3',
+            'hdpi-renderer' => 'css',
+            'placeholder-enabled' => true,
 			'css-prefix' => '',
 			'salt' => 'ABCDEF1234567890',
 			'css-classes' => '',
@@ -188,8 +188,11 @@ class Cryptex{
 		if (current_user_can('manage_options')){
 			// add options page
 			$optionsPage = add_options_page(__('Cryptex | E-Mail-Address Protection', 'cryptex'), 'Cryptex', 'administrator', __FILE__, array($this, 'settingsPage'));
-		
-			// load jquery stuff
+
+            // add links
+            add_filter('plugin_row_meta', array($this, 'addPluginPageLinks'), 10, 2);
+
+            // load jquery stuff
 			add_action('admin_print_scripts-'.$optionsPage, array($this->_resourceLoader, 'appendAdminJS'));
 			add_action('admin_print_styles-'.$optionsPage, array($this->_resourceLoader, 'appendAdminCSS'));
 		
@@ -223,6 +226,17 @@ class Cryptex{
 		// render settings view
 		include(CRYPTEX_PLUGIN_PATH.'/views/admin/SettingsPage.phtml');
 	}
+
+    // links on the plugin page
+    public function addPluginPageLinks($links, $file){
+        // current plugin ?
+        if ($file == 'cryptex/Cryptex.php'){
+            $links[] = '<a href="'.admin_url('options-general.php?page='.plugin_basename(__FILE__)).'">'.__('Settings', 'cryptex').'</a>';
+            $links[] = '<a href="https://twitter.com/andidittrich" target="_blank">'.__('News & Updates', 'cryptex').'</a>';
+        }
+
+        return $links;
+    }
 	
 	// direct static crypt (shortcode passthrough)
 	public static function crypt($content, $options=NULL){
@@ -261,5 +275,3 @@ class Cryptex{
 		}
 	}
 }
-
-?>

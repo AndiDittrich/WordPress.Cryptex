@@ -3,12 +3,12 @@
 	Plugin Name: Cryptex - E-Mail Address Protection
 	Plugin URI: http://andidittrich.de/go/cryptex
 	Description: Advanced Graphical EMail Obfuscator which provides image based email address protection using wordpress shortcode and integrated encryption/decryption of addresses
-	Version: 4.1
+	Version: 5.0
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
 	License: MIT X11-License
 	
-	Copyright (c) 2010-2014, Andi Dittrich
+	Copyright (c) 2010-2015, Andi Dittrich
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 	
@@ -21,7 +21,7 @@
 *	BOOTSTRAP OPERATION
 */
 define('CRYPTEX_INIT', true);
-define('CRYPTEX_VERSION', '4.1');
+define('CRYPTEX_VERSION', '5.0');
 define('CRYPTEX_PLUGIN_PATH', dirname(__FILE__));
 define('CRYPTEX_DEFAULT_FONT_PATH', CRYPTEX_PLUGIN_PATH.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR);
 
@@ -42,6 +42,7 @@ if (version_compare(phpversion(), '5.3', '>=')){
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/ObjectCache.php');
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/ClassicRenderer.php');
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/HdpiCssRenderer.php');
+    require_once(CRYPTEX_PLUGIN_PATH.'/class/Hdpi5Renderer.php');
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/ContextualHelp.php');
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/CacheManager.php');
 	
@@ -61,4 +62,3 @@ function Cryptex_SetupEnvironmentError(){
 function Cryptex_EnvironmentError(){
 	include(CRYPTEX_PLUGIN_PATH.'/views/admin/EnvironmentError.phtml');
 }
-?>

@@ -40,7 +40,12 @@ class ShortcodeHandler{
 		
 		// initialize renderer
 		if ($this->_config['hdpi-enabled']){
-			$this->_renderer = new HdpiCssRenderer($settingsUtil, $imageGenerator);
+            // css or srcset renderer ?
+            if ($this->_config['hdpi-renderer']=='srcset') {
+                $this->_renderer = new Hdpi5Renderer($settingsUtil, $imageGenerator);
+            }else{
+                $this->_renderer = new HdpiCssRenderer($settingsUtil, $imageGenerator);
+            }
 		}else{
 			$this->_renderer = new ClassicRenderer($settingsUtil, $imageGenerator);
 		}

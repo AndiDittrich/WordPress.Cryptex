@@ -47,7 +47,7 @@ class ClassicRenderer{
 		$isEmail = (filter_var($content, FILTER_VALIDATE_EMAIL) !== false);
 		
 		// return value
-		$html = '';
+		$html = ($this->_config['placeholder-enabled']) ? '<!--CTX!-->' : '';
 		
 		// security level override
 		$securityLevel = ($options['security'] != null ? $options['security'] : $this->_config['security-level']);
@@ -68,9 +68,9 @@ class ClassicRenderer{
 		// rel attribute available ? - add it
 		// add additional css classes
 		if (strlen($rel)>0 && $isEmail){
-			$html  = sprintf('<span class="cryptex %s" rel="%s" style="%s">', esc_attr($this->_config['css-classes']), esc_attr($rel), esc_attr($styles));
+			$html  .= sprintf('<span rel="%s" class="cryptex %s" style="%s">',  esc_attr($rel), esc_attr($this->_config['css-classes']),esc_attr($styles));
 		}else{
-			$html  = sprintf('<span class="cryptex %s" style="%s">', esc_attr($this->_config['css-classes']), esc_attr($styles));
+			$html  .= sprintf('<span class="cryptex %s" style="%s">', esc_attr($this->_config['css-classes']), esc_attr($styles));
 		}
 		
 		// email address ?
@@ -164,7 +164,7 @@ class ClassicRenderer{
 		}
 		
 		// add closing span tag
-		$html .= '</span>';
+		$html .= '</span>' . (($this->_config['placeholder-enabled']) ? '<!--/CTX!-->' : '');
 		
 		// return rendered shortcode
 		return $html;

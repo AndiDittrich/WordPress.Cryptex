@@ -28,6 +28,11 @@
 		<h4><?php _e('Nested Shortcodes', 'cryptex'); ?></h4>
 		<p><?php _e('In some cases it can be necessary to process nested-shortcodes (shortcodes within a cryptex/email tag) - maybe the inner shortcode fetches some content from your database, etc. Only enable this option if you exactly know what your doing!', 'cryptex'); ?></p>
 		<?php $this->_settingsUtility->displayCheckbox(__('Enable Nested-Shortcodes', 'cryptex'), 'nestedShortcodes'); ?>
+
+        <!-- Placeholders -->
+        <h4><?php _e('Enlighter Plugin Support', 'cryptex'); ?></h4>
+        <p><?php _e('To protect Email Addresses within highlighted sourcecode (Enlighter Plugin) each cryptex address has to be surrounded with invisible HTML comments.', 'cryptex')?></p>
+        <?php $this->_settingsUtility->displayCheckbox(__('Add placeholder', 'cryptex'), 'placeholder-enabled') ?>
 	
 		<!-- I18n -->
 		<h4><?php _e('I18n (Internationalization)', 'cryptex'); ?></h4>

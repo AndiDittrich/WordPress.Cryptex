@@ -36,73 +36,30 @@ class ResourceLoader{
 	public function frontend(){
 		// load frontend css
 		if ($this->_config['embed-css']){
-			if ($this->_config['css-type'] == 'inline'){
-				add_action('wp_head', array($this, 'appendInlineCSS'), 50);
-			}else{
-				add_action('wp_enqueue_scripts', array($this, 'appendCSS'), 50);
-			}
+			add_action('wp_head', array($this, 'appendInlineCSS'), 50);
 		}
 		
 		// only include js if required
 		if ($this->_config['enable-hyperlink'] && $this->_config['embed-js']){
-			// inline js on the bottom of the page ?		
-			if ($this->_config['js-type'] == 'inline-footer'){
-				add_action('wp_footer', array($this, 'appendInlineJavascript'));
-			
-			}else if ($this->_config['js-type'] == 'inline-head'){
-				add_action('wp_head', array($this, 'appendInlineJavascript'));
-				
-			// external js fallback
-			}else{	
-				// load frontend js
-				add_action('wp_enqueue_scripts', array($this, 'appendJS'), 50);
-					
-				// display frontend config
-				add_action('wp_head', array($this, 'appendJavascriptConfig'));				
-			}
-
+			add_action('wp_footer', array($this, 'appendInlineJavascript'));
 		}
 	}
-	
-	// append javascript based config
-	public function appendJavascriptConfig(){
-		// generate a config based js tag
-		echo '<script type="text/javascript">var CRYPTEX_KEY = \''.KeyShiftingEncoder::getKey().'\';</script>';
-	}
-	
+
 	// inline css
 	public function appendInlineJavascript(){
 		// get js
-		$js = file_get_contents(CRYPTEX_PLUGIN_PATH.'/resources/Cryptex.min.js');
-		
-		// add inline key
-		$js = str_replace('CRYPTEX_KEY', "'".KeyShiftingEncoder::getKey()."'", $js);
-		
-		// output inline scripts
-		echo '<script type="text/javascript">/* <![CDATA[ */';
-		echo $js;
-		echo '/* ]]> */</script>';
+		$js = file_get_contents(CRYPTEX_PLUGIN_PATH.'/resources/CryptexHyperlinkDecoder.min.js');
+
+        // drop trailing ;
+        $js = rtrim($js, ';');
+
+		// output inline scripts - add function call
+		echo '<script type="text/javascript">/* <![CDATA[ */', $js, '(window, document, "', KeyShiftingEncoder::getKey() , '"); /* ]]> */</script>';
 	}
-	
-	// append css
-	public function appendCSS(){
-		// include local css file
-		wp_register_style('cryptex-local', $this->_cacheManager->getCacheUrl().'Cryptex.css');
-		wp_enqueue_style('cryptex-local');
-	}
-	
+
 	// inline css
 	public function appendInlineCSS(){
-		echo '<style type="text/css">';
-		echo file_get_contents($this->_cacheManager->getCachePath().'Cryptex.css');
-		echo '</style>';
-	}
-	
-	// append js
-	public function appendJS(){
-		// include local css file
-		wp_register_script('cryptex-local', plugins_url('/cryptex/resources/Cryptex.min.js'));
-		wp_enqueue_script('cryptex-local');
+		echo '<style type="text/css">', file_get_contents($this->_cacheManager->getCachePath().'Cryptex.css'), '</style>';
 	}
 	
 	public function appendAdminCSS(){
@@ -118,6 +75,10 @@ class ResourceLoader{
 	}
 	
 	public function appendAdminJS(){
+        // jquery cookie js
+        wp_register_script('cryptex-jquery-cookie', plugins_url('/cryptex/extern/jquery.cookie/jquery.cookie.js'), array('jquery'));
+        wp_enqueue_script('cryptex-jquery-cookie');
+
 		// colorpicker js
 		wp_register_script('cryptex-jquery-colorpicker', plugins_url('/cryptex/extern/colorpicker/js/colorpicker.js'), array('jquery'));
 		wp_enqueue_script('cryptex-jquery-colorpicker');

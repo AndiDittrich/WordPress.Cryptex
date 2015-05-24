@@ -72,19 +72,22 @@
 	<h3 class="hndle"><span><?php _e('High DPI/Retina Support', 'cryptex'); ?></span></h3>
 	<div class="inside CryptexBlockcontent">
  		<p><?php _e('Several modern devices like tablets, smartphones or notebooks using high-dpi screens better known as "retina displays" which results in blurred E-Mail-Addresses.', 'cryptex'); ?>
- 		<?php _e('The High-DPI mode will generate optional high-resolution, css-based images to fix such issues. High-Dpi devices will automatically access these images.', 'cryptex'); ?>
+ 		<?php _e('The High-DPI mode will generate optional high-resolution images to fix such issues. High-Dpi devices will automatically access these images.', 'cryptex'); ?>
  		</p>
-		<p><?php printf(__('Note: This mode requires that your theme supports the %s action - this is a widely supported theme hook, it should work!', 'cryptex'), '<a href="http://codex.wordpress.org/Plugin_API/Action_Reference/wp_footer">wp_footer</a>'); ?>
-		<p><strong><?php _e('Remark: Because of the currently missing browser support of the picture-element and srcset attribute, cryptex is using css-based images which are based on inline styles in the html-body - this is not valid html5 but will perfectly work in all common browsers!', 'cryptey'); ?></strong></p>
-		
+
 		<?php $this->_settingsUtility->displayCheckbox(__('Enable High DPI/Retina', 'cryptex'), 'hdpi-enabled'); ?>
     
     	<div id="CryptexHdpiSettings">
     		<h4><?php _e('Hdpi Options', 'cryptex'); ?></h4>
     		<p><?php _e('The scaling factor is multiplied with the image-parameters (width, height, font-size, ..) to create high-resolution images - e.g. a value of 2 will double the image dimensions.', 'cryptex'); ?><br />
-    		<?php _e('A value of 3 is good choice and provides great looking results on an iPad4 (Retina, 2048x1536) or Sony-Tablet (FullHD, 1920x1080).', 'cryptex'); ?> <a href="http://andidittrich.de/2014/09/cryptex-4-0-with-retinahighdpi-support.html"><?php _e('Scaling Factor Comparision', 'cryptex'); ?></a>
+    		<?php _e('A value of 3 is good choice and provides great looking results on an iPad4 (Retina, 2048x1536) or Sony-Tablet (FullHD, 1920x1080).', 'cryptex'); ?> <a href="http://andidittrich.de/2014/09/cryptex-4-0-with-retinahighdpi-support.html" target="_blank"><?php _e('Scaling Factor Comparision', 'cryptex'); ?></a>
     		</p>
     		<?php $this->_settingsUtility->displaySelect(__('Hdpi scaling factor', 'cryptex'), 'hdpi-factor', array('Factor 2' => '2', 'Factor 3' => '3', 'Factor 4' => '4')); ?>
+
+            <p><?php _e('Select the HDPI renderer which should used to display high density images. Most modern HTML5 browser support the srcset attribute - otherwise the standard images are displayed.', 'cryptex'); ?> <a href="http://caniuse.com/#feat=srcset" target="_blank"><?php _e('Current srcset browser support.', 'cryptex'); ?></a> <br />
+            <?php _e('Instead of an img tag with the srcset attribute, cryptex can use css-based images which are based on inline styles in the html-body. This is not valid html5 but will perfectly work in all common browsers and provides the currently best appearance!', 'cryptey'); ?></strong></p>
+
+            <?php $this->_settingsUtility->displaySelect(__('Hdpi Renderer', 'cryptex'), 'hdpi-renderer', array('CSS Images' => 'css', 'HTML5 srcset' => 'srcset')); ?>
     	</div>
     <!-- // HDPI !-->
     </div></div>

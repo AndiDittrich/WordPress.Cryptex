@@ -1,4 +1,7 @@
 .settings*
 .project
-gfx/*
+.idea*
+.gitignore
+gfx*
+PublicHtml*
 .buildpath
