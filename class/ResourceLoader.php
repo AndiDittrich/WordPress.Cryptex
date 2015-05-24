@@ -84,7 +84,7 @@ class ResourceLoader{
 		wp_enqueue_script('cryptex-jquery-colorpicker');
 		
 		// settings init script
-		wp_register_script('cryptex-settings-init', plugins_url('/cryptex/resources/admin/CryptexSettings.js'), array('jquery'));
+		wp_register_script('cryptex-settings-init', plugins_url('/cryptex/resources/admin/CryptexSettings.min.js'), array('jquery'));
 		wp_enqueue_script('cryptex-settings-init');
 	}
 }
