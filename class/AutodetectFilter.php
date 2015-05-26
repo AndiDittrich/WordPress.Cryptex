@@ -25,9 +25,10 @@ class AutodetectFilter{
 	// post/page IDs to exclude from filtering
 	private $_excludeIDs = array();
 	
-	// the email address detection pattern	
-	private $_detectionPattern = '/([a-z0-9_\.-]+@[\da-z\.-]+\.[a-z\.]{2,6})[\w\b]/i';
-	
+	// the email address detection pattern
+    private $_detectionPattern = '/([a-z0-9_\.-]+@[\da-z\.-]+\.[a-z]{2,23})\b/i';
+
+
 	public function __construct($settingsUtil, $shorcodeHandler){
 		// get IDs to exclude
 		$eID = $settingsUtil->getOption('email-autodetect-excludeid');

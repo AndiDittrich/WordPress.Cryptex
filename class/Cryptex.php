@@ -138,6 +138,9 @@ class Cryptex{
 		if (is_admin()){
 			// add admin menu handler
 			add_action('admin_menu', array($this, 'setupBackend'));
+
+            // add plugin upgrade notification
+            add_action('in_plugin_update_message-cryptex/Cryptex.php', array($this, 'showUpgradeNotification'), 10, 2);
 		}else{
 			// create new shortcode handler, register all used shortcodes
 			$this->_shortcodeHandler = new Cryptex\ShortcodeHandler($this->_settingsUtility, array('cryptex', 'email'), $this->_imageGenerator);
@@ -276,4 +279,12 @@ class Cryptex{
 			$this->generateCSS();
 		}
 	}
+
+    public function showUpgradeNotification($currentPluginMetadata, $newPluginMetadata){
+        // check "upgrade_notice"
+        if (isset($newPluginMetadata->upgrade_notice) && strlen(trim($newPluginMetadata->upgrade_notice)) > 0){
+            echo '<p style="background-color: #d54e21; padding: 10px; color: #f9f9f9; margin-top: 10px"><strong>Important Upgrade Notice:</strong> ';
+            echo esc_html($newPluginMetadata->upgrade_notice), '</p>';
+        }
+    }
 }

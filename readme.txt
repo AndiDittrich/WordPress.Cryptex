@@ -3,7 +3,7 @@ Contributors: Andi Dittrich
 Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, retina, highdpi, responsive, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses, filter, automatically
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 5.0
+Stable tag: 5.1
 License: MIT X11-License
 License URI: http://opensource.org/licenses/MIT
 
@@ -109,6 +109,11 @@ A new Javascript decoder is used - this will **break custom user modifications**
 After upgrading, go to the Cryptex settings page, check all options and click "Apply Settings" to force an update of the generated CSS files!
 
 == Changelog ==
+
+= 5.1 =
+* Added: Plugin Upgrade notifications fo major releases to the admins plugin page
+* Added: Some unit testcases (development only)
+* Bugfix: Email Address autodetection failed in some cases - thanks to [topotato on GitHub)(https://github.com/AndiDittrich/WordPress.Cryptex/issues/1)
 
 = 5.0 =
 * Added: New Javascript decryption engine (size optimized - 827bytes)

@@ -1,5 +1,10 @@
 ## Changelog ##
 
+### 5.1 ###
+* Added: Plugin Upgrade notifications fo major releases to the admins plugin page
+* Added: Some unit testcases (development only)
+* Bugfix: Email Address autodetection failed in some cases - thanks to [topotato on GitHub)(https://github.com/AndiDittrich/WordPress.Cryptex/issues/1)
+
 ### 5.0 ###
 * Added: New Javascript decryption engine (size optimized - 827bytes)
 * Added: Support for [Enlighter Syntax Highlighter](https://wordpress.org/plugins/enlighter/) to display E-Mail Addresses within highlighted content (requires Enlighter v2.7)
