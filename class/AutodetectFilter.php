@@ -26,7 +26,7 @@ class AutodetectFilter{
 	private $_excludeIDs = array();
 	
 	// the email address detection pattern
-    private $_detectionPattern = '/([a-z0-9_\.-]+@[\da-z\.-]+\.[a-z]{2,23})\b/i';
+    private $_detectionPattern = '/([a-z0-9_\.+-]+@[\da-z\.-]+\.[a-z]{2,23})\b/i';
 
 
 	public function __construct($settingsUtil, $shorcodeHandler){
