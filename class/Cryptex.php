@@ -1,7 +1,7 @@
 <?php
 /**
 	Cryptex Class
-	Version: 5.0
+	Version: 5.1
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
 	Plugin URI: http://andidittrich.de/go/cryptex
@@ -34,7 +34,6 @@ class Cryptex{
 		}
 		return self::$__instance;
 	}
-	
 	
 	// cryptex config keys with default values
 	private $_defaultConfig = array(

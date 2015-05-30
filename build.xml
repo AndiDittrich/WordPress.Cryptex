@@ -30,4 +30,20 @@
 		<!-- Merge required source files !-->
 		<exec executable="php.exe"><arg value="util/GeneratePOT.php" /></exec>
 	</target>
+
+    <target name="release" depends="build">
+       <input message="Enter release version" addproperty="release.version" />
+
+        <if>
+            <available file="../svn/tags/${release.version}" type="dir" />
+            <then>
+                <echo message="SVN Tag exists" />
+            </then>
+            <else>
+                <echo message="Creating new SVN Tag" />
+
+
+            </else>
+        </if>
+    </target>
 </project>

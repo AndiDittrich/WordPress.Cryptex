@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2015-05-26 16:43:47+00:00\n"
+"POT-Creation-Date: 2015-05-30 13:33:45+00:00\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
 "Project-Id-Version: Cryptex  5.1\n"
@@ -25,11 +25,11 @@ msgstr ""
 msgid "Cryptex | E-Mail-Address Protection"
 msgstr ""
 
-#: class/Cryptex.php:238
+#: class/Cryptex.php:237
 msgid "Settings"
 msgstr ""
 
-#: class/Cryptex.php:239
+#: class/Cryptex.php:238
 msgid "News & Updates"
 msgstr ""
 

@@ -6,7 +6,7 @@
     <li>Subdomain: [cryptex]user.xxx@mail.company.example.com[/cryptex]</li>
     <li>Subdomain: [cryptex]user.mail@x.ge.com[/cryptex]</li>
     <li>EMail Shortcode: [email]user.mail@x.ge.com[/email]</li>
-    <li>GMail Postfix: [email]Hello+service1234@gmail.com</li>
+    <li>GMail Postfix: [email]Hello+service1234@gmail.com[/email]</li>
 </ul>
 
 
@@ -42,3 +42,22 @@ Stet clita kasd gubergren, [cryptex]user.mail@x.ge.com[/cryptex] no sea takimata
 
 <h3>End of line</h3>
 hostmaster@example.com
+
+<h2>Shortcode Attribute Test</h2>
+<ul>
+    <li>Green: [cryptex color="#11a600"]cryptex@example.com[/cryptex]</li>
+    <li>10pt: [cryptex size="10pt"]cryptex@example.de[/cryptex]</li>
+    <li>Green+10pt: [cryptex size="10pt" color="#11a600"]cryptex@example.technology[/cryptex]</li>
+    <li>Single Image: [cryptex security="1"]user.xxx@mail.company.example.com[/cryptex]</li>
+    <li>Text + Orange: [cryptex security="0" color="#a62f00"]user.mail@x.ge.com[/cryptex]</li>
+    <li>Advanced multipart+Orange+10pt: [cryptex size="10pt" color="#a62f00" security="3"]cryptex@example.technology[/cryptex]</li>
+    <li>Text + Green + 20px: [cryptex security="0" color="#11a600" size="20px"]user.mail@x.ge.com[/cryptex]</li>
+    <li>Single Image + Green: [cryptex security="1" color="#11a600"]user.xxx@mail.company.example.com[/cryptex]</li>
+</ul>
+
+
+<h3>Inline</h3>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita [cryptex security="1"]user.xxx@mail.company.example.com[/cryptex] <strong>(single image)</strong> kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.At vero eos et accusam et justo duo dolores et ea rebum.
+    Stet clita kasd gubergren, [cryptex security="0" color="#a62f00"]user.mail@x.ge.com[/cryptex] <strong>(Text + Red)</strong> no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>

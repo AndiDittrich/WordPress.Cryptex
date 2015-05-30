@@ -191,6 +191,7 @@ class ClassicRenderer{
 	 * Generate the divider (dots, @) inlcuding css overrides
 	 * @param unknown $content
 	 * @param unknown $options
+     * @return string html
 	 */
 	protected function getDivider($content, $styles){
 		return '<span class="divider" style="'.esc_attr($styles).'">'.esc_html($content).'</span>';
