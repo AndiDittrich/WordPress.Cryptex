@@ -39,7 +39,6 @@ if (version_compare(phpversion(), '5.3', '>=')){
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/ShortcodeHandler.php');
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/FontManager.php');
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/AutodetectFilter.php');
-	require_once(CRYPTEX_PLUGIN_PATH.'/class/ObjectCache.php');
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/ClassicRenderer.php');
 	require_once(CRYPTEX_PLUGIN_PATH.'/class/HdpiCssRenderer.php');
     require_once(CRYPTEX_PLUGIN_PATH.'/class/Hdpi5Renderer.php');

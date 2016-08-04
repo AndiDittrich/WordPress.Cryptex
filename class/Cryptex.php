@@ -132,6 +132,9 @@ class Cryptex{
         
         // update cache on upgrade
         add_action('upgrader_post_install', array($this, 'generateCSS'), 10, 0);
+
+        // store cached data on shutdown
+        add_action('shutdown', array($this->_imageGenerator, 'updateCache'));
     
         // frontend or admin area ?
         if (is_admin()){

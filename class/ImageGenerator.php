@@ -60,7 +60,7 @@ class ImageGenerator{
     public function __construct($settingsUtil, $cacheManager){
         $this->_options = $settingsUtil->getOptions();
 
-        // extract cahce pathes
+        // extract cache paths
         $this->_cachePath = $cacheManager->getCachePath();
         $this->_cacheURL = $cacheManager->getCacheUrl();
 
@@ -86,8 +86,11 @@ class ImageGenerator{
             $this->_lineheight = 0;
         }
 
-        // load dimension cache
-        $this->_imageSizeCache = new ObjectCache($cacheManager->getInternalCachePath().'imgs.php');
+        // try to load dimension cache
+        if (($this->_imageSizeCache = get_transient('cryptex_imgsize')) === false){
+            // cache has to be re-generated!
+            $this->_imageSizeCache = array();
+        }
 
         // GD lib installed ? prevent errors
         if (function_exists('gd_info')){
@@ -106,8 +109,9 @@ class ImageGenerator{
     /**
      * Store Image Dimensions
      */
-    public function __destruct(){
-        $this->_imageSizeCache->store();
+    public function updateCache(){
+        // store data; 1day cache expire
+        set_transient('cryptex_imgsize', $this->_imageSizeCache, DAY_IN_SECONDS);
     }
 
     public function getImage($txt, $font=null, $fontsize=null, $fontcolor=null, $offset=null, $scale=1){
@@ -143,7 +147,7 @@ class ImageGenerator{
         $storagePath = $this->_cachePath.$filename;
 
         // try to load image dimensions
-        $dim = $this->_imageSizeCache->getValue($imagehash);
+        $dim = (isset($this->_imageSizeCache[$imagehash]) ? $this->_imageSizeCache[$imagehash] : null);
 
         // cached version not available ? // generate new image
         if (!file_exists($storagePath) || $dim==null){
@@ -158,7 +162,7 @@ class ImageGenerator{
             }
 
             // store dimension
-            $this->_imageSizeCache->setValue($imagehash, $dim);
+            $this->_imageSizeCache[$imagehash] = $dim;
         }
 
         // return cache file url and dimensions
