@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="Cryptex" default="build" basedir=".">
+<project name="Cryptex" default="devcopy" basedir=".">
 
-	<!-- Generate Build -->
-	<target name="build" depends="readme, pot">
-		<copy todir="C:\Development\htdocs\wordpress2\wp-content\plugins\cryptex" overwrite="true">
-			<fileset dir="." />
-		</copy>
-		<copy todir="C:\Development\htdocs\wordpress\wp-content\plugins\cryptex" overwrite="true">
-			<fileset dir="." />
-		</copy>
-	</target>
-	
+    <!-- Plugin Test - DEVELOPMENT ONLY -->
+    <target name="devcopy">
+        <!-- Credentials, Host Settings !-->
+        <loadproperties srcFile=".credentials/account.conf" prefix="dev" />
+
+        <!-- transfer deploy plugin !-->
+        <echo message="Uploading files" />
+
+        <scp todir="${dev.user}@${dev.host}:${dev.path}" trust="true" port="${dev.port}" keyfile="${user.home}/${dev.keyfile}" >
+            <fileset dir="." />
+        </scp>
+    </target>
+
 	<!-- GitHub readme + changes => WordPress transformation !-->
 	<target name="readme">
 		<!-- merge readme + changes !-->
@@ -31,7 +34,7 @@
 		<exec executable="php.exe"><arg value="util/GeneratePOT.php" /></exec>
 	</target>
 
-    <target name="release" depends="build">
+    <target name="release" depends="">
        <input message="Enter release version" addproperty="release.version" />
 
         <if>

@@ -1,5 +1,9 @@
 ## Changelog ##
 
+### 5.2 ###
+* Bugfix: Fatal Errors thrown in environments with missing `imageantialias()` GD function are suppressed by additional check
+* Replaced: the low-level PHP based ObjectCache by the [WordPress Transient API](https://codex.wordpress.org/Transients_API)
+
 ### 5.1 ###
 * Added: Plugin Upgrade notifications fo major releases to the admins plugin page
 * Added: Some unit testcases (development only)

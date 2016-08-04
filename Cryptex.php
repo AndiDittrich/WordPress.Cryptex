@@ -3,12 +3,12 @@
 	Plugin Name: Cryptex - E-Mail Address Protection
 	Plugin URI: http://andidittrich.de/go/cryptex
 	Description: Advanced Graphical EMail Obfuscator which provides image based email address protection using wordpress shortcode and integrated encryption/decryption of addresses
-	Version: 5.1
+	Version: 5.2-BETA1
 	Author: Andi Dittrich
 	Author URI: http://andidittrich.de
 	License: MIT X11-License
 	
-	Copyright (c) 2010-2015, Andi Dittrich
+	Copyright (c) 2010-2016, Andi Dittrich
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 	
@@ -21,7 +21,7 @@
 *	BOOTSTRAP OPERATION
 */
 define('CRYPTEX_INIT', true);
-define('CRYPTEX_VERSION', '5.1');
+define('CRYPTEX_VERSION', '5.2-BETA1');
 define('CRYPTEX_PLUGIN_PATH', dirname(__FILE__));
 define('CRYPTEX_DEFAULT_FONT_PATH', CRYPTEX_PLUGIN_PATH.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR);
 
