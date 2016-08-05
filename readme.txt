@@ -2,8 +2,8 @@
 Contributors: Andi Dittrich
 Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, retina, highdpi, responsive, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses, filter, automatically
 Requires at least: 3.8
-Tested up to: 4.3
-Stable tag: 5.1
+Tested up to: 4.6
+Stable tag: 5.2
 License: MIT X11-License
 License URI: http://opensource.org/licenses/MIT
 
@@ -109,6 +109,11 @@ A new Javascript decoder is used - this will **break custom user modifications**
 After upgrading, go to the Cryptex settings page, check all options and click "Apply Settings" to force an update of the generated CSS files!
 
 == Changelog ==
+
+= 5.2 =
+* Changed: the default font-file to `LiberationSans-Regular.ttf`
+* Replaced: the low-level PHP based ObjectCache by the [WordPress Transient API](https://codex.wordpress.org/Transients_API)
+* Bugfix: Fatal Errors thrown in environments with missing `imageantialias()` GD function are suppressed by additional check
 
 = 5.1 =
 * Added: Plugin Upgrade notifications fo major releases to the admins plugin page

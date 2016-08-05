@@ -2,8 +2,8 @@
 
 ### 5.2 ###
 * Changed: the default font-file to `LiberationSans-Regular.ttf`
-* Bugfix: Fatal Errors thrown in environments with missing `imageantialias()` GD function are suppressed by additional check
 * Replaced: the low-level PHP based ObjectCache by the [WordPress Transient API](https://codex.wordpress.org/Transients_API)
+* Bugfix: Fatal Errors thrown in environments with missing `imageantialias()` GD function are suppressed by additional check
 
 ### 5.1 ###
 * Added: Plugin Upgrade notifications fo major releases to the admins plugin page
