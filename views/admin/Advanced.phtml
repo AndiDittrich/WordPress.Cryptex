@@ -7,9 +7,12 @@
         <p class="CryptexFALSE"><strong><?php _e('Warning: These options are for advanced users only!', 'cryptex'); ?></strong></p>
     
         <h4><?php _e('Miscellaneous', 'cryptex'); ?></h4>
-        <p><?php _e('Should the shortcode [email] added as alias for cryptex? Kindly note that this can influence other plugins because of identical names!', 'cryptex'); ?></p>
+        <p><?php _e('Should the shortcodes [email] and [telephone] added as alias for cryptex? Kindly note that this can influence other plugins because of identical names!', 'cryptex'); ?></p>
         <!-- email shortcode !-->
         <?php $this->_settingsUtility->displayCheckbox(__('Use [email] Shortcode', 'cryptex'), 'shortcode-email') ?>
+
+        <!-- telephone shortcode !-->
+        <?php $this->_settingsUtility->displayCheckbox(__('Use [telephone] Shortcode', 'cryptex'), 'shortcode-telephone') ?>
     
         <!-- font filenames -->
         <p><?php _e('Should the full font-paths be displayed on this settings page or only their file names ?', 'cryptex')?></p>
