@@ -68,11 +68,11 @@ class ClassicRenderer{
                 // encode telephone
                 $rel = KeyShiftingEncoder::encode('2!'.$content);
             }
-        }
 
-        // custom href attribute set ?
-        if ($options['href']){
-            $rel = KeyShiftingEncoder::encode('0!'.$options['href']);
+            // custom href attribute set ?
+            if ($options['href']){
+                $rel = KeyShiftingEncoder::encode('0!'.$options['href']);
+            }
         }
 
         // shortcode-options set ?
