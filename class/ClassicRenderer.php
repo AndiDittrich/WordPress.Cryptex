@@ -44,17 +44,37 @@ class ClassicRenderer{
         $content = trim($content);
         
         // email address ?
-        $isEmail = (filter_var($content, FILTER_VALIDATE_EMAIL) !== false);
+        $isEmail = ($options['type'] == 'email') && (filter_var($content, FILTER_VALIDATE_EMAIL) !== false);
+
+        // telephone number ?
+        $isTelephone = ($options['type'] == 'telephone');
         
         // return value
         $html = ($this->_config['placeholder-enabled']) ? '<!--CTX!-->' : '';
         
         // security level override
         $securityLevel = ($options['security'] != null ? $options['security'] : $this->_config['security-level']);
+
+        // get rel attribute - used to store encrypted email address/telepone numbers
+        $rel = null;
+
+        // use hyperlinks ?
+        if ($this->_config['enable-hyperlink']){
             
-        // get rel attribute - used to store encrypted email address
-        $rel = ($this->_config['enable-hyperlink'] ? KeyShiftingEncoder::encode($content) : '');
-        
+            if ($isEmail){
+                // encode email
+                $rel = KeyShiftingEncoder::encode('1!'.$content);
+            }else if ($isTelephone){
+                // encode telephone
+                $rel = KeyShiftingEncoder::encode('2!'.$content);
+            }
+        }
+
+        // custom href attribute set ?
+        if ($options['href']){
+            $rel = KeyShiftingEncoder::encode('0!'.$options['href']);
+        }
+
         // shortcode-options set ?
         $styles = '';
         if ($options['color'] != null){
@@ -67,10 +87,10 @@ class ClassicRenderer{
         
         // rel attribute available ? - add it
         // add additional css classes
-        if (strlen($rel)>0 && $isEmail){
-            $html  .= sprintf('<span rel="%s" class="cryptex %s" style="%s">',  esc_attr($rel), esc_attr($this->_config['css-classes']),esc_attr($styles));
+        if ($rel != null){
+            $html .= sprintf('<span rel="%s" class="cryptex %s" style="%s">',  esc_attr($rel), esc_attr($this->_config['css-classes']),esc_attr($styles));
         }else{
-            $html  .= sprintf('<span class="cryptex %s" style="%s">', esc_attr($this->_config['css-classes']), esc_attr($styles));
+            $html .= sprintf('<span class="cryptex %s" style="%s">', esc_attr($this->_config['css-classes']), esc_attr($styles));
         }
         
         // email address ?

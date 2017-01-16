@@ -1,0 +1,19 @@
+{
+    "slug": "cryptex",
+    "name": "Cryptex",
+    "namespace": "Cryptex",
+    "version": "6.0-BETA1",
+    "license": "MIT X11 License",
+    "licenseFile": "LICENSE.txt",
+    "constants": {
+        "CRYPTEX_DEFAULT_FONT_PATH": "CRYPTEX_PLUGIN_PATH.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR"
+    },
+    "plugin": {
+        "name": "Cryptex - E-Mail Address Protection",
+        "description": "Advanced Graphical E-Mail Obfuscator which provides image based email address protection using wordpress shortcode and integrated encryption/decryption of addresses",
+        "url": "https://andidittrich.de/go/cryptex",
+        "author": "Andi Dittrich",
+        "authorUrl": "https://andidittrich.de"
+    },
+    "skltnVersion": "0.2.0"
+}

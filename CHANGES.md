@@ -1,5 +1,19 @@
 ## Changelog ##
 
+### 6.0 ###
+* Added: [WordPress Multisite](https://codex.wordpress.org/Create_A_Network) support 
+* Added: New Environment Check to ensure Cryptex is working in a well configured environment
+* Added: Support for telephone numbers including uri scheme link `tel:`
+* Added: Shortcode `telephone`
+* Added: `href` Shortcode attribute to override the default behaviour
+* Changed: [WP-Skeleton](https://github.com/AndiDittrich/WP-Skeleton) is used as Plugin Backend Framework 
+* Changed: All settings are stored in serialized form in `cryptex-options` instead of single options
+* Changed: Settings Page URL to `wp-admin/options-general.php?page=Cryptex`
+* Replaced: PHP-Version-Errorpage by global admin_notice - ensure that **PHP 5.3 or greater** is used to avoid weird errors
+* Bugfix: The cache accessibility check did not work on WIN platform
+* Bugfix: Fixed some CSS rules used in Settings-Page
+* Cleaned up the internal Plugin Structure
+
 ### 5.2 ###
 * Changed: the default font-file to `LiberationSans-Regular.ttf`
 * Replaced: the low-level PHP based ObjectCache by the [WordPress Transient API](https://codex.wordpress.org/Transients_API)

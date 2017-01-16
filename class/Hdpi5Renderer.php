@@ -54,5 +54,3 @@ class Hdpi5Renderer
         );
     }
 }
-
-?>

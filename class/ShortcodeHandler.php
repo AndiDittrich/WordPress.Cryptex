@@ -19,35 +19,41 @@ namespace Cryptex;
 
 class ShortcodeHandler{
     
-    // stores the plugin config
-    private $_config;
-    
     // store registered shortcodes
-    private $_registeredShortcodes;
+    private $_registeredShortcodes = array('cryptex');
     
     // renderer
     private $_renderer;
     
-    public function __construct($settingsUtil, $registeredShortcodes, $imageGenerator){
-        // store local plugin config
-        $this->_config = $settingsUtil->getOptions();
+    public function __construct($settingsManager, $imageGenerator){
+        // add shotcode handlers
+        add_shortcode('cryptex', array($this, 'cryptex'));
         
-        // store registered shortcodes
-        $this->_registeredShortcodes = $registeredShortcodes;
+        // use email shortcode ?
+        if ($settingsManager->getOption('shortcode-email')){
+            $this->_registeredShortcodes[] = 'email';
+            add_shortcode('email', array($this, 'email'));
+        }
+
+        // use telephone shortcode ?
+        if ($settingsManager->getOption('shortcode-telephone')){
+            $this->_registeredShortcodes[] = 'telephone';
+            add_shortcode('telephone', array($this, 'telephone'));
+        }
         
         // add texturize filter
         add_filter('no_texturize_shortcodes', array($this, 'texturizeHandler'));
         
         // initialize renderer
-        if ($this->_config['hdpi-enabled']){
+        if ($settingsManager->getOption('hdpi-enabled')){
             // css or srcset renderer ?
-            if ($this->_config['hdpi-renderer']=='srcset') {
-                $this->_renderer = new Hdpi5Renderer($settingsUtil, $imageGenerator);
+            if ($settingsManager->getOption('hdpi-renderer')=='srcset'){
+                $this->_renderer = new Hdpi5Renderer($settingsManager, $imageGenerator);
             }else{
-                $this->_renderer = new HdpiCssRenderer($settingsUtil, $imageGenerator);
+                $this->_renderer = new HdpiCssRenderer($settingsManager, $imageGenerator);
             }
         }else{
-            $this->_renderer = new ClassicRenderer($settingsUtil, $imageGenerator);
+            $this->_renderer = new ClassicRenderer($settingsManager, $imageGenerator);
         }
     }
     
@@ -60,7 +66,9 @@ class ShortcodeHandler{
                     'size' => null,
                     'color' => null,
                     'offset' => null,
-                    'security' => null    
+                    'security' => null,
+                    'type' => 'email',
+                    'href' => null
                 ), $shortcodeAttributes);
         
         // offset available ?
@@ -76,6 +84,18 @@ class ShortcodeHandler{
         }
         
         return $this->_renderer->render($content, $options);
+    }
+
+    // handle email shortcode - just set the type and pass to cryptex generic handler
+    public function email($shortcodeAttributes=NULL, $content='', $code=''){
+        $shortcodeAttributes['type'] = 'email';
+        return $this->cryptex($shortcodeAttributes, $content, $code);
+    }
+
+    // handle telephone shortcode - just set the type and pass to cryptex generic handler
+    public function telephone($shortcodeAttributes=NULL, $content='', $code=''){
+        $shortcodeAttributes['type'] = 'telephone';
+        return $this->cryptex($shortcodeAttributes, $content, $code);
     }
     
     /**

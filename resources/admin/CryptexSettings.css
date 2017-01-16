@@ -1,78 +1,95 @@
 /**
  * Settings Page Design for WordPress >= v3.8
 */
-.CryptexBlockcontent{
-	/*
-	padding: 5px 10px 10px 15px;
-	margin: 0px 0px 20px 0px;
-	background-color: #fff;
-	border-left: 4px solid #333c45;
-	-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);*/
+.CryptexBlockcontent {
+    /*
+    padding: 5px 10px 10px 15px;
+    margin: 0px 0px 20px 0px;
+    background-color: #fff;
+    border-left: 4px solid #333c45;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);*/
 }
 
-
-#CryptexSettings .maintitle{
-	margin: 15px 0px 15px 0px;
+#CryptexSettings .maintitle {
+    margin: 15px 0px 15px 0px;
 }
 
-.CryptexBlockcontent h4{
-	color: #0074a2;
-	displa: block;
-	border-bottom: dotted 2px #c0c0c0;
-}
-.CryptexBlockcontent img{
-	padding-left: 15px;
-}
-.CryptexSetting{
-	display: block;
-	padding: 5px 10px 5px 15px;
-}
-.CryptexSettingTitle{
-	float: left;
-	width: 250px;
-	font-weight: bold;
-	hieght: 30px;
-	line-height: 30px;
-}
-.CryptexSettingItem{
-	float: left;
-}
-.CryptexSettingClear{
-	clear: left;
-}
-.CryptexTRUE{
-	font-weight: bold;
-	color: #7ad03a;
-}
-.CryptexFALSE{
-	font-weight: bold;
-	color: #d03a3a;
+#CryptexSettings:after {
+    content: '';
+    display: block;
+    clear: both !important;
 }
 
-#CryptexSettings .postbox h3{
-	background-color: #333333 !important;
-	color: #ffffff !important;
-	cursor: default;
-	font-style: italic;
+.CryptexBlockcontent h4 {
+    color: #0074a2;
+    display: block;
+    border-bottom: dotted 2px #c0c0c0;
 }
 
-#CryptexSettings .credits{
-	font-color: #333333;
-	font-style: italic;
+.CryptexBlockcontent img {
+    padding-left: 15px;
+}
+
+.CryptexTRUE {
+    font-weight: bold;
+    color: #7ad03a;
+}
+
+.CryptexFALSE {
+    font-weight: bold;
+    color: #d03a3a;
+}
+
+#CryptexSettings .postbox h3 {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+    cursor: default;
+    font-style: italic;
+}
+
+#CryptexSettings .credits {
+    color: #333333;
+    font-style: italic;
 }
 
 /* Tab Nav
 -------------------------------- */
-#CryptexTabNav{
-	display: none;
-	position: relative !important;
+#CryptexTabNav {
+    display: none;
+    position: relative !important;
 }
-#CryptexTabNav a{
-	cursor: pointer;
+
+#CryptexTabNav a {
+    cursor: pointer;
 }
 
 /* Fix the Contextual Help Link */
-#screen-meta-links, #contextual-help-link-wrap, #contextual-help-link{
+#screen-meta-links, #contextual-help-link-wrap, #contextual-help-link {
     z-index: 100 !important;
+}
+
+/* Input Elements
+-------------------------------- */
+.cryptex-setting {
+    display: block;
+    padding: 5px 10px 5px 15px;
+}
+
+.cryptex-setting-title {
+    float: left;
+    width: 250px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+}
+
+.cryptex-setting-item {
+    float: left;
+}
+
+.cryptex-setting:after {
+    content: '';
+    display: block;
+    clear: left !important;
 }

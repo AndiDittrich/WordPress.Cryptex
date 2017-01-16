@@ -6,3 +6,5 @@ gfx*
 PublicHtml*
 .buildpath
 .credentials
+node_modules*
+.hidden*

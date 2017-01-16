@@ -1,13 +1,13 @@
 /**
 	Plugin Name: CRYPTEX
-	Plugin URI: http://andidittrich.de/go/cryptex
+	Plugin URI: https://github.com/AndiDittrich/WordPress.Cryptex
 	Description: EMAIL OBFUSCATOR
 	Version: 4.0
 	Author: Andi Dittrich
-	Author URI: http://andidittrich.de/
+	Author URI: https://andidittrich.de/
 	License: MIT X11-License
 	
-	Copyright (c) 2010-2015, Andi Dittrich
+	Copyright (c) 2010-2016, Andi Dittrich
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 	
@@ -26,6 +26,7 @@
             for (var i=0;i<e.length;i++){
                 // variable scope
                 (function(r, c){
+
                     // attributes set ?
                     if (c.indexOf('cryptex') != -1 && r.length > 5){
                         e[i].onclick = function(){
@@ -40,6 +41,7 @@
         decode: function(hash){
             var origdata = '';
             var crypt = [];
+            var protocols = ['', 'mailto:', 'tel:'];
 
             // convert hex
             for (var i=0;i<hash.length;i=i+2){
@@ -70,14 +72,25 @@
                     }
                 }
             }
-            return origdata;
+
+            // mail or tel ?
+            var payload = origdata.substr(2);
+            var protocolNumber = parseInt(origdata.substr(0, 1));
+
+            // get protocol
+            if (protocols[protocolNumber]){
+                return protocols[protocolNumber] + payload;
+            }else{
+                return payload;
+            }
         }
     };
 
     // delay init - async
     w.setTimeout(function(){
         ctx.process(function(hash){
-            location.href = 'mailto:' + ctx.decode(hash);
+            console.log( ctx.decode(hash));
+            location.href = ctx.decode(hash);
         });
     }, 100);
 });
