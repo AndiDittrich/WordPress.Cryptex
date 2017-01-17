@@ -84,7 +84,6 @@
                         <include name="cache/**" />
                         <include name="class/**" />
                         <include name="fonts/**" />
-                        <include name="extern/**" />
                         <include name="lang/**" />
                         <include name="resources/**" />
                         <include name="views/**" />

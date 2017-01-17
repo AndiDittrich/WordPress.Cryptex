@@ -53,10 +53,10 @@ class Upgrade_to_6_0_0{
 
     public function run($currentVersion, $newVersion){
         // plugin config instance
-        $pluginConfig = new Cryptex\skltn\PluginConfig();
+        $pluginConfig = new \Cryptex\skltn\PluginConfig();
 
         // plugin settings manager
-        $settingsManager = new Cryptex\skltn\SettingsManager($pluginConfig);
+        $settingsManager = new \Cryptex\skltn\SettingsManager($pluginConfig);
 
         // existing plugin config
         $oldPluginConfig = array();
