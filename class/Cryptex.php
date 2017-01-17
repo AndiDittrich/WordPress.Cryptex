@@ -1,13 +1,13 @@
 <?php
 /**
     Cryptex Class
-    Version: 5.2
+    Version: 6.0
     Author: Andi Dittrich
-    Author URI: http://andidittrich.de
-    Plugin URI: http://andidittrich.de/go/cryptex
+    Author URI: https://andidittrich.de
+    Plugin URI: https://andidittrich.de/go/cryptex
     License: MIT X11-License
     
-    Copyright (c) 2010-2016, Andi Dittrich
+    Copyright (c) 2010-2017, Andi Dittrich
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
     

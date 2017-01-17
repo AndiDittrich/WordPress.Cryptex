@@ -140,7 +140,7 @@ class ImageGenerator{
 
         // generate filename
         $configHash = sha1($scale.$font.$fontsize.$fontcolor.implode('.', $offset));
-        $imagehash = sha1($this->_salt.sha1($txt.$this->_salt.$configHash));
+        $imagehash = \Cryptex\skltn\Hash::filename($this->_salt.sha1($txt.$this->_salt.$configHash));
         $filename = $imagehash.'.png';
 
         // generate storage path

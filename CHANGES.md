@@ -10,6 +10,7 @@
 * Changed: [WP-Skeleton](https://github.com/AndiDittrich/WP-Skeleton) is used as Plugin Backend Framework 
 * Changed: All settings are stored in serialized form in `cryptex-options` instead of single options
 * Changed: Settings Page URL to `wp-admin/options-general.php?page=Cryptex`
+* Changed: Base64 Filename hashes are used instead of hexadecimal ones
 * Replaced: PHP-Version-Errorpage by global admin_notice - ensure that **PHP 5.3 or greater** is used to avoid weird errors
 * Bugfix: The cache accessibility check did not work on WIN platform
 * Bugfix: Fixed some CSS rules used in Settings-Page

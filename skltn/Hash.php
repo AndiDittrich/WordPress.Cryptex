@@ -45,4 +45,15 @@ class Hash{
 
         return $hash;
     }
+
+    // generate a length-limited hash with DEFAULT_ALGORITHM in base64 format with url safe characters
+    public static function filename($data, $length=null){
+        // base64
+        $hash = self::base64($data, $length);
+
+        // url safe
+        $hash = str_replace(array('+', '/', '='), array('-', '_', ''), $hash);
+
+        return $hash;
+    }
 }
