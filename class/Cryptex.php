@@ -225,6 +225,10 @@ class Cryptex{
             $upgrader->run($currentVersion, CRYPTEX_VERSION);
         }
 
+        // regenerate cache on upgrade
+        $this->_cacheManager->clearCache();
+        $this->generateCSS();
+
         // upgrade successfull
         return true;
     }
