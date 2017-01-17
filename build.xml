@@ -88,6 +88,7 @@
                         <include name="lang/**" />
                         <include name="resources/**" />
                         <include name="views/**" />
+                        <include name="upgrade/**" />
 
                         <include name="Cryptex.php" />
                         <include name="readme.txt" />

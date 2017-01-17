@@ -64,7 +64,7 @@ class ResourceLoader{
     
     public function appendAdminCSS(){
         // colorpicker css
-        wp_register_style('cryptex-jquery-colorpicker', plugins_url('/cryptex/extern/colorpicker/css/colorpicker.css'));
+        wp_register_style('cryptex-jquery-colorpicker', plugins_url('/cryptex/resources/extern/colorpicker/css/colorpicker.css'));
         wp_enqueue_style('cryptex-jquery-colorpicker');
         
         // new UI !
@@ -76,11 +76,11 @@ class ResourceLoader{
     
     public function appendAdminJS(){
         // jquery cookie js
-        wp_register_script('cryptex-jquery-cookie', plugins_url('/cryptex/extern/jquery.cookie/jquery.cookie.js'), array('jquery'));
+        wp_register_script('cryptex-jquery-cookie', plugins_url('/cryptex/resources/extern/jquery.cookie/jquery.cookie.js'), array('jquery'));
         wp_enqueue_script('cryptex-jquery-cookie');
 
         // colorpicker js
-        wp_register_script('cryptex-jquery-colorpicker', plugins_url('/cryptex/extern/colorpicker/js/colorpicker.js'), array('jquery'));
+        wp_register_script('cryptex-jquery-colorpicker', plugins_url('/cryptex/resources/extern/colorpicker/js/colorpicker.js'), array('jquery'));
         wp_enqueue_script('cryptex-jquery-colorpicker');
         
         // settings init script
