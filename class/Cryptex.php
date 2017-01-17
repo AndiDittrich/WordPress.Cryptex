@@ -89,13 +89,14 @@ class Cryptex{
             add_action('in_plugin_update_message-cryptex/Cryptex.php', array($this, 'showUpgradeAvailabilityNotification'), 10, 2);
 
             // plugin upgraded ?
-            if (get_option('cryptex-upgrade', null) === true){
+            if (get_option('cryptex-upgrade', false) === true){
                 // add admin message handler
                 add_action('admin_notices', array($this, 'showUpgradeMessage'));
                 add_action('network_admin_notices', array($this, 'showUpgradeMessage'));
 
-                // clear flag
+                // clear flag - avoid issues with caching plugin - override AND delete the flag
                 update_option('cryptex-upgrade', false);
+                delete_option('cryptex-upgrade');
             }
 
             // initialize settings view helper
