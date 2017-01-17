@@ -51,7 +51,7 @@ class Upgrade_to_6_0_0{
     public function __construct(){
     }
 
-    public function upgrade($currentVersion, $newVersion){
+    public function run($currentVersion, $newVersion){
         // plugin config instance
         $pluginConfig = new Cryptex\skltn\PluginConfig();
 

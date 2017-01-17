@@ -196,8 +196,21 @@ class Cryptex{
     public function _wp_plugin_deactivate(){
     }
 
-    public function _wp_plugin_upgrade(){
+    public function _wp_plugin_upgrade($currentVersion){
+        // upgrade from < 6.0 ?
+        if (version_compare($currentVersion, '6.0.0', '<')){
+            // load upgrader
+            require_once(CRYPTEX_PLUGIN_PATH.'/upgrade/Upgrade_to_6_0_0.php');
 
+            // create upgrader instance
+            $upgrader = new Cryptex\Upgrade\Upgrade_to_6_0_0();
+
+            // run
+            $upgrader->run($currentVersion, CRYPTEX_VERSION);
+        }
+
+        // upgrade successfull
+        return true;
     }
 
     public function showUpgradeNotification($currentPluginMetadata, $newPluginMetadata){
