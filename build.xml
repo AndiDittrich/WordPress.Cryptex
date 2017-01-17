@@ -81,6 +81,7 @@
                 <!-- Copy Plugin !-->
                 <copy todir="${svn.tag.path}">
                     <fileset dir=".">
+                        <include name="skltn/**" />
                         <include name="cache/**" />
                         <include name="class/**" />
                         <include name="fonts/**" />
