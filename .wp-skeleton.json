@@ -2,7 +2,7 @@
     "slug": "cryptex",
     "name": "Cryptex",
     "namespace": "Cryptex",
-    "version": "6.0-BETA1",
+    "version": "6.0",
     "license": "MIT X11 License",
     "licenseFile": "LICENSE.txt",
     "constants": {

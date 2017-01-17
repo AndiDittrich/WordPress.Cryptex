@@ -24,7 +24,7 @@
 ### 5.1 ###
 * Added: Plugin Upgrade notifications fo major releases to the admins plugin page
 * Added: Some unit testcases (development only)
-* Bugfix: Email Address autodetection failed in some cases - thanks to [topotato on GitHub)(https://github.com/AndiDittrich/WordPress.Cryptex/issues/1)
+* Bugfix: Email Address autodetection failed in some cases - thanks to [topotato on GitHub](https://github.com/AndiDittrich/WordPress.Cryptex/issues/1)
 
 ### 5.0 ###
 * Added: New Javascript decryption engine (size optimized - 827bytes)

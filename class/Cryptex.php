@@ -213,8 +213,8 @@ class Cryptex{
     }
 
     public function _wp_plugin_upgrade($currentVersion){
-        // upgrade from < 6.0 ?
-        if (version_compare($currentVersion, '6.0.0', '<')){
+        // upgrade from < 6.0 ? use v5.99 condition to ensure that beta versions are not altered!
+        if (version_compare($currentVersion, '5.99', '<')){
             // load upgrader
             require_once(CRYPTEX_PLUGIN_PATH.'/upgrade/Upgrade_to_6_0_0.php');
 
@@ -265,11 +265,11 @@ class Cryptex{
             $version = get_option('cryptex-version', '0.0.0');
 
             // plugin upgraded ?
-            if (version_compare('6.0-BETA1', $version, '>')){
+            if (version_compare('6.0', $version, '>')){
                 // run upgrade hook
                 if ($i->_wp_plugin_upgrade($version)){
                     // store new version
-                    update_option('cryptex-version', '6.0-BETA1');
+                    update_option('cryptex-version', '6.0');
 
                     // set flag
                     update_option('cryptex-upgrade', true);

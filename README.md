@@ -1,4 +1,4 @@
-# Cryptex | Email Address Obfuscation #
+# Cryptex | E-Mail Address Protection #
 Contributors: Andi Dittrich
 Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, retina, highdpi, responsive, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses, filter, automatically
 Requires at least: 3.9
@@ -11,7 +11,7 @@ Cryptex transforms plain-text E-Mail-Addresses into Images - automatically - No 
 
 ## Description ##
 
-The plugin is used to display Email addresses - that are normally expressed in plain text - **as an image** - automatically.
+The plugin is used to display Email addresses **as an image** - automatically.
 This will stop harvesters and crawlers from gathering sensitive data from your website.
 It works with emails, telephone numbers, postal addresses or any other text-content.
 Just wrap your E-Mail-Address into a shortcode like `[email]youraddress@example.com[/email]` - that's it.
