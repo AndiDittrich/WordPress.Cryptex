@@ -85,7 +85,7 @@
             <p><?php _e('Default: ', 'cryptex'); ?><code><?php echo CRYPTEX_PLUGIN_PATH.'/cache/'; ?></code></p>
             <?php 
                 $customCachePath = $this->_settingsManager->getOption('cache-path');
-                if (\Cryptex\skltn\CacheManager::isPathAccessible($customCachePath)){
+                if (\Cryptex\skltn\CacheManager::isPathAccessible($customCachePath) != true){
                     echo '<p class="CryptexFALSE">', __('Warning: cache-path is not accessible!'), '</p>';
                 }
             ?>
