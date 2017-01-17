@@ -2,7 +2,7 @@
 	Plugin Name: CRYPTEX
 	Plugin URI: https://github.com/AndiDittrich/WordPress.Cryptex
 	Description: EMAIL OBFUSCATOR
-	Version: 4.0
+	Version: 6.0
 	Author: Andi Dittrich
 	Author URI: https://andidittrich.de/
 	License: MIT X11-License
@@ -15,14 +15,14 @@
 	
 	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-(function(w, d, ck){
+(function(_window, _document, ck){
     'use strict';
 
-    var ctx = w.Cryptex ={
+    var ctx = _window.Cryptex ={
         // get cryptex elements and add onclick event
         process: function(h){
 
-            var e = d.getElementsByTagName('span');
+            var e = _document.getElementsByTagName('span');
             for (var i=0;i<e.length;i++){
                 // variable scope
                 (function(r, c){
@@ -87,10 +87,9 @@
     };
 
     // delay init - async
-    w.setTimeout(function(){
+    _window.setTimeout(function(){
         ctx.process(function(hash){
-            console.log( ctx.decode(hash));
             location.href = ctx.decode(hash);
         });
     }, 100);
-});
+})();

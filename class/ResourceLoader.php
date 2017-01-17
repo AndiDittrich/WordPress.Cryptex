@@ -48,10 +48,10 @@ class ResourceLoader{
     // inline js
     public function appendInlineJavascript(){
         // get js
-        $js = file_get_contents(CRYPTEX_PLUGIN_PATH.'/resources/CryptexHyperlinkDecoder.js');
+        $js = file_get_contents(CRYPTEX_PLUGIN_PATH.'/resources/CryptexHyperlinkDecoder.min.js');
 
-        // drop trailing ;
-        $js = trim($js, "\r\n;");
+        // drop trailing ();
+        $js = substr($js, 0, -3);
 
         // output inline scripts - add function call
         echo '<script type="text/javascript">/* <![CDATA[ */', $js, '(window, document, "', KeyShiftingEncoder::getKey() , '"); /* ]]> */</script>';
