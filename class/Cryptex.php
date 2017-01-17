@@ -233,10 +233,11 @@ class Cryptex{
         }
     }
 
+    // Show Admin Notice for Successfull Plugin Upgrade
     public function showUpgradeMessage(){
         // styling
         echo '<div class="notice notice-success is-dismissible"><p>';
-        echo '<strong>Cryptex Plugin Upgrade:</strong> The Plugin has been upgraded to ', CRYPTEX_VERSION;
+        echo '<strong>Cryptex Plugin Upgrade:</strong> The Plugin has been upgraded to <strong>', CRYPTEX_VERSION, '</strong>';
         echo '</p></div>';
     }
 
