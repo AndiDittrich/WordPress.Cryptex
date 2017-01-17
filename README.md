@@ -11,21 +11,22 @@ Cryptex transforms plain-text E-Mail-Addresses into Images - automatically - No 
 
 ## Description ##
 
-The plugin is used to display email addresses - that are normally expressed in plain text - as an image automatically.
+The plugin is used to display Email addresses - that are normally expressed in plain text - **as an image** - automatically.
 This will stop harvesters and crawlers from gathering sensitive data from your website.
 It works with emails, telephone numbers, postal addresses or any other text-content.
 Just wrap your E-Mail-Address into a shortcode like `[email]youraddress@example.com[/email]` - that's it.
 Or use the **Autodetect** filter to transform every E-Mail-Address on your page automatically into an image!
 
 ### Plugin Features ###
+* Protects **Email Adresses**, **Telephone Numbers** or any other content
 * Fully customizable appearance: you can configure font-family, font-size and font-color - everything looks like your theme style
-* Retina/HD/High-Dpi Images - best appearance on all devices (2x, 3x or 4x resolution enhancement)
+* **Retina/HD/High-Dpi Images** - best appearance on all devices (2x, 3x or 4x resolution enhancement)
 * Shortcode and/or Autodetection usage!
-* Build-In E-Mail-Address-Autodetection - all addresses on your page are protected automatically (if you want it - you can also just use shortcodes!)
+* Build-In **E-Mail-Address-Autodetection** - all addresses on your page are protected automatically (if you want it - you can also just use shortcodes!)
 * Autodetection filters configurable for **the_content**, **the_excerpt**, **comments**, **comments_excerpt**, **text-widget**
 * Reversible Address-Autodetection Process - your content is modified as long as the plugin is activated
 * Postal-addresses, telephone-numbers, names and other sensitive information`s can be protected too
-* Protects E-Mail hyperlinks (mailto) by using javascript based key-shifting encryption/decryption with dynamic keys - but you can use images only
+* Protects E-Mail hyperlinks (mailto) by using javascript based **key-shifting encryption/decryption** with dynamic keys - but you can use images only
 * Suitable for high traffic sites - automated caching of dynamic generated images and CSS
 * Automatic font-search (standard system font-paths)
 * Supports the new modern UI style of WordPress 3.8

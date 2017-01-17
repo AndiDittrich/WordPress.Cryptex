@@ -97,31 +97,6 @@ class Cryptex{
             // autodetect emails ?
             if ($this->_settingsManager->getOption('email-autodetect')){
                 $this->_autodetectFilter = new Cryptex\AutodetectFilter($this->_settingsManager, $this->_shortcodeHandler);
-                
-                // filter content ?
-                if ($this->_settingsManager->getOption('email-autodetect-content')){
-                    add_filter('the_content', array($this->_autodetectFilter, 'filter'), 50, 1);
-                }
-                
-                // filter excerpt ?
-                if ($this->_settingsManager->getOption('email-autodetect-excerpt')){
-                    add_filter('get_the_excerpt', array($this->_autodetectFilter, 'filter'), 50, 1);
-                }
-                
-                // filter comment text ?
-                if ($this->_settingsManager->getOption('email-autodetect-comments')){
-                    add_filter('get_comment_text', array($this->_autodetectFilter, 'filterNoExclusion'), 50, 1);
-                }
-                
-                // filter comment excerpt ?
-                if ($this->_settingsManager->getOption('email-autodetect-comments-excerpt')){
-                    add_filter('get_comment_excerpt', array($this->_autodetectFilter, 'filterNoExclusion'), 50, 1);
-                }
-                
-                // filter widget text ? 
-                if ($this->_settingsManager->getOption('email-autodetect-widget-text')){
-                    add_filter('widget_text', array($this->_autodetectFilter, 'filterNoExclusion'), 50, 1);
-                }
             }
             
             // apply frontend resource loading hooks

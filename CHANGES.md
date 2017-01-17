@@ -3,7 +3,7 @@
 ### 6.0 ###
 * Added: [WordPress Multisite](https://codex.wordpress.org/Create_A_Network) support 
 * Added: New Environment Check to ensure Cryptex is working in a well configured environment
-* Added: Support for telephone numbers including uri scheme link `tel:`
+* Added: Support for telephone numbers including uri scheme `tel:`
 * Added: Shortcode `telephone`
 * Added: `href` Shortcode attribute to override the default behaviour
 * Changed: [WP-Skeleton](https://github.com/AndiDittrich/WP-Skeleton) is used as Plugin Backend Framework 

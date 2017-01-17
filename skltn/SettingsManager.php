@@ -49,65 +49,63 @@ class SettingsManager{
         foreach ($this->_defaultConfig as $key => $value){
 
             // key exists ?
-            if (isset($settings[$key])){
-
-                // extract value
-                $v = $settings[$key];
-
-                // invalid value ?
-                if (!is_scalar($v)){
-                    // use defaults
-                    $filteredValues[$key] = $value;
-                    continue;
-                }
-
-                // strip whitespaces
-                if (is_string($v)){
-                    $v = trim($v);
-                }
-
-                // validator available ?
-                if (isset($this->_configValidators[$key])){
-                    // get validator type
-                    $validator = $this->_configValidators[$key];
-
-                    // boolean value ?
-                    if ($validator == 'boolean'){
-                        $filteredValues[$key] = ($v === '1' || $v === true);
-
-                    // numeric int value
-                    }else if ($validator == 'int'){
-                        if (is_numeric($v)){
-                            $filteredValues[$key] = intval($v);
-
-                            // default value
-                        }else{
-                            $filteredValues[$key] = $value;
-                        }
-
-                    // numeric float value
-                    }else if ($validator == 'float'){
-                        if (is_numeric($v)){
-                            $filteredValues[$key] = floatval($v);
-
-                        // default value
-                        }else{
-                            $filteredValues[$key] = $value;
-                        }
-
-                    // default: string
-                    }else{
-                        $filteredValues[$key] = trim($v . '');
-                    }
-
-                // just assign string
-                }else{
-                    $filteredValues[$key] = trim($v . '');
-                }
-
-            // use default value
-            }else{
+            if (!isset($settings[$key])){
+                // use default value
                 $filteredValues[$key] = $value;
+                continue;
+            }
+
+            // extract value
+            $v = $settings[$key];
+
+            // invalid value ? only scalar option types are supported
+            if (!is_scalar($v)){
+                // use defaults
+                $filteredValues[$key] = $value;
+                continue;
+            }
+
+            // strip whitespaces in case it is a string value
+            if (is_string($v)){
+                $v = trim($v);
+            }
+
+            // validator available ?
+            if (!isset($this->_configValidators[$key])){
+                // just assign it as string
+                $filteredValues[$key] = trim($v . '');
+            }
+
+            // get validator type
+            $validator = $this->_configValidators[$key];
+
+            // boolean value ?
+            if ($validator == 'boolean'){
+                $filteredValues[$key] = ($v === '1' || $v === true);
+
+            // numeric int value
+            }else if ($validator == 'int'){
+                if (is_numeric($v)){
+                    $filteredValues[$key] = intval($v);
+
+                    // default value
+                }else{
+                    $filteredValues[$key] = $value;
+                }
+
+            // numeric float value
+            }else if ($validator == 'float'){
+                if (is_numeric($v)){
+                    $filteredValues[$key] = floatval($v);
+
+                // default value
+                }else{
+                    $filteredValues[$key] = $value;
+                }
+
+            // default: string
+            }else{
+                $filteredValues[$key] = trim($v . '');
             }
         }
 
