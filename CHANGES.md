@@ -6,6 +6,7 @@
 * Added: Support for telephone numbers including uri scheme `tel:`
 * Added: Shortcode `telephone`
 * Added: `href` Shortcode attribute to override the default behaviour
+* Added: PLugin Upgrade Notification
 * Changed: [WP-Skeleton](https://github.com/AndiDittrich/WP-Skeleton) is used as Plugin Backend Framework 
 * Changed: All settings are stored in serialized form in `cryptex-options` instead of single options
 * Changed: Settings Page URL to `wp-admin/options-general.php?page=Cryptex`

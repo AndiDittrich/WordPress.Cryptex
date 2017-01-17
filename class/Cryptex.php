@@ -56,7 +56,12 @@ class Cryptex{
         $this->_settingsManager = new Cryptex\skltn\SettingsManager($pluginConfig);
 
         // initialize cache-managemet
-        $this->_cacheManager = new Cryptex\skltn\CacheManager($this->_settingsManager);
+        $this->_cacheManager = new Cryptex\skltn\CacheManager();
+
+        // use custom cache path/url ?
+        if ($this->_settingsManager->getOption('cache-custom')){
+            $this->_cacheManager->setCacheLocation($this->_settingsManager->getOption('cache-path'), $this->_settingsManager->getOption('cache-url'));
+        }
     }
 
     public function _wp_init(){

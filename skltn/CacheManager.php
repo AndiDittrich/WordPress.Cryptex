@@ -39,6 +39,17 @@ class CacheManager{
         self::$__cacheHash = get_option('cryptex-cache-hash', '0A0B0C');
     }
 
+    // custm cache path/url
+    public function setCacheLocation($cachePath, $cacheUrl){
+        if (self::isPathAccessible($cachePath)){
+            $this->_cachePath = trailingslashit($cachePath);
+            $this->_cacheUrl = trailingslashit($cacheUrl);
+
+            // generate static url
+            self::$__url = $this->_cacheUrl . $this->_prefix;
+        }
+    }
+
     // file_put_contents wrapper
     public function writeFile($filename, $content){
         // ensure that the cache is accessible
