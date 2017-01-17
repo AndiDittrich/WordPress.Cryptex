@@ -73,7 +73,7 @@ class Upgrade_to_6_0_0{
         }
 
         // validate settings
-        $newConfigValues = $settingsManager->validate($oldPluginConfig);
+        $newConfigValues = $settingsManager->validateSettings($oldPluginConfig);
 
         // store settings in new format
         $settingsManager->setOptions($newConfigValues);
