@@ -86,7 +86,17 @@ class Cryptex{
             add_action('admin_menu', array($this, 'setupBackend'));
 
             // add plugin upgrade notification
-            add_action('in_plugin_update_message-cryptex/Cryptex.php', array($this, 'showUpgradeNotification'), 10, 2);
+            add_action('in_plugin_update_message-cryptex/Cryptex.php', array($this, 'showUpgradeAvailabilityNotification'), 10, 2);
+
+            // plugin upgraded ?
+            if (get_option('cryptex-upgrade', null) === true){
+                // add admin message handler
+                add_action('admin_notices', array($this, 'showUpgradeMessage'));
+                add_action('network_admin_notices', array($this, 'showUpgradeMessage'));
+
+                // clear flag
+                update_option('cryptex-upgrade', false);
+            }
 
             // initialize settings view helper
             $this->_settingsUtility = new Cryptex\skltn\SettingsViewHelper($this->_settingsManager);
@@ -213,12 +223,20 @@ class Cryptex{
         return true;
     }
 
-    public function showUpgradeNotification($currentPluginMetadata, $newPluginMetadata){
+    // Show Upgrade Notification in Plugin List for an available new Version
+    public function showUpgradeAvailabilityNotification($currentPluginMetadata, $newPluginMetadata){
         // check "upgrade_notice"
         if (isset($newPluginMetadata->upgrade_notice) && strlen(trim($newPluginMetadata->upgrade_notice)) > 0){
             echo '<p style="background-color: #d54e21; padding: 10px; color: #f9f9f9; margin-top: 10px"><strong>Important Upgrade Notice:</strong> ';
             echo esc_html($newPluginMetadata->upgrade_notice), '</p>';
         }
+    }
+
+    public function showUpgradeMessage(){
+        // styling
+        echo '<div class="notice notice-success is-dismissible"><p>';
+        echo '<strong>Cryptex Plugin Upgrade:</strong> The Plugin has been upgraded to ', CRYPTEX_VERSION;
+        echo '</p></div>';
     }
 
 
@@ -245,6 +263,9 @@ class Cryptex{
                 if ($i->_wp_plugin_upgrade($version)){
                     // store new version
                     update_option('cryptex-version', '6.0-BETA1');
+
+                    // set flag
+                    update_option('cryptex-upgrade', true);
                 }
             }
         }
