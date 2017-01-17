@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2016-08-05 07:54:48+00:00\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2017-01-17 15:42:36+00:00\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
-"Project-Id-Version: Cryptex  5.2\n"
+"Project-Id-Version: Cryptex  6.0\n"
 "Report-Msgid-Bugs-To: andi DOT dittrich AT a3non DOT org\n"
 "Last-Translator:  Andi Dittrich\n"
 
@@ -25,11 +25,11 @@ msgstr ""
 msgid "Cryptex | E-Mail-Address Protection"
 msgstr ""
 
-#: class/Cryptex.php:240
+#: class/Cryptex.php:170
 msgid "Settings"
 msgstr ""
 
-#: class/Cryptex.php:241
+#: class/Cryptex.php:171
 msgid "News & Updates"
 msgstr ""
 
@@ -46,7 +46,7 @@ msgid "Miscellaneous"
 msgstr ""
 
 #: views/admin/Advanced.phtml:10
-msgid "Should the shortcode [email] added as alias for cryptex? Kindly note that this can influence other plugins because of identical names!"
+msgid "Should the shortcodes [email] and [telephone] added as alias for cryptex? Kindly note that this can influence other plugins because of identical names!"
 msgstr ""
 
 #: views/admin/Advanced.phtml:12
@@ -54,170 +54,174 @@ msgid "Use [email] Shortcode"
 msgstr ""
 
 #: views/admin/Advanced.phtml:15
-msgid "Should the full font-paths be displayed on this settings page or only their file names ?"
-msgstr ""
-
-#: views/admin/Advanced.phtml:16
-msgid "Show the full font-paths."
+msgid "Use [telephone] Shortcode"
 msgstr ""
 
 #: views/admin/Advanced.phtml:18
+msgid "Should the full font-paths be displayed on this settings page or only their file names ?"
+msgstr ""
+
+#: views/admin/Advanced.phtml:19
+msgid "Show the full font-paths."
+msgstr ""
+
+#: views/admin/Advanced.phtml:21
 msgid "CSS Options"
 msgstr ""
 
-#: views/admin/Advanced.phtml:20
+#: views/admin/Advanced.phtml:23
 msgid "An optional prefix added to the generated css classes to match your content-container and retain cryptex styles."
 msgstr ""
 
-#: views/admin/Advanced.phtml:21
+#: views/admin/Advanced.phtml:24
 msgid "CSS Prefix"
 msgstr ""
 
-#: views/admin/Advanced.phtml:21
+#: views/admin/Advanced.phtml:24
 msgid "e.g. #content, .mycontentarea"
 msgstr ""
 
-#: views/admin/Advanced.phtml:24
+#: views/admin/Advanced.phtml:27
 msgid "Additional css classes added to the outer span-tag - maybe used to add icons."
 msgstr ""
 
-#: views/admin/Advanced.phtml:25
+#: views/admin/Advanced.phtml:28
 msgid "Additional Classes"
 msgstr ""
 
-#: views/admin/Advanced.phtml:25
+#: views/admin/Advanced.phtml:28
 msgid "e.g. email mailicon"
 msgstr ""
 
-#: views/admin/Advanced.phtml:28
+#: views/admin/Advanced.phtml:31
 msgid "Nested Shortcodes"
 msgstr ""
 
-#: views/admin/Advanced.phtml:29
+#: views/admin/Advanced.phtml:32
 msgid "In some cases it can be necessary to process nested-shortcodes (shortcodes within a cryptex/email tag) - maybe the inner shortcode fetches some content from your database, etc. Only enable this option if you exactly know what your doing!"
 msgstr ""
 
-#: views/admin/Advanced.phtml:30
+#: views/admin/Advanced.phtml:33
 msgid "Enable Nested-Shortcodes"
 msgstr ""
 
-#: views/admin/Advanced.phtml:33
+#: views/admin/Advanced.phtml:36
 msgid "Enlighter Plugin Support"
 msgstr ""
 
-#: views/admin/Advanced.phtml:34
+#: views/admin/Advanced.phtml:37
 msgid "To protect Email Addresses within highlighted sourcecode (Enlighter Plugin) each cryptex address has to be surrounded with invisible HTML comments."
 msgstr ""
 
-#: views/admin/Advanced.phtml:35
+#: views/admin/Advanced.phtml:38
 msgid "Add placeholder"
 msgstr ""
 
-#: views/admin/Advanced.phtml:38
+#: views/admin/Advanced.phtml:41
 msgid "I18n (Internationalization)"
 msgstr ""
 
-#: views/admin/Advanced.phtml:39
+#: views/admin/Advanced.phtml:42
 msgid "Should the plugin load the language files (if available) to translate the settings page ?"
 msgstr ""
 
-#: views/admin/Advanced.phtml:40
+#: views/admin/Advanced.phtml:43
 msgid "Enable I18n"
 msgstr ""
 
-#: views/admin/Advanced.phtml:47
+#: views/admin/Advanced.phtml:50
 msgid "Font Rendering"
 msgstr ""
 
-#: views/admin/Advanced.phtml:50
+#: views/admin/Advanced.phtml:53
 msgid "Rendering"
 msgstr ""
 
-#: views/admin/Advanced.phtml:51
+#: views/admin/Advanced.phtml:54
 msgid "Anti-aliasing is enabled by default to provide smooth font-edges."
 msgstr ""
 
-#: views/admin/Advanced.phtml:53
+#: views/admin/Advanced.phtml:56
 msgid "Enable Anti-aliasing"
 msgstr ""
 
-#: views/admin/Advanced.phtml:56
+#: views/admin/Advanced.phtml:59
 msgid "Which library should be used to render the fonts ? FreeType2 supports TrueType + OpenType fonts, GD-Lib just TrueType. This option influences the file extension filter of the fontlist."
 msgstr ""
 
-#: views/admin/Advanced.phtml:57
+#: views/admin/Advanced.phtml:60
 msgid "Font-Renderer"
 msgstr ""
 
-#: views/admin/Advanced.phtml:57
+#: views/admin/Advanced.phtml:60
 msgid "FreeType2 (if available)"
 msgstr ""
 
-#: views/admin/Advanced.phtml:57
+#: views/admin/Advanced.phtml:60
 msgid "GD-Lib TTF"
 msgstr ""
 
-#: views/admin/Advanced.phtml:64
+#: views/admin/Advanced.phtml:67
 msgid "Cache Settings"
 msgstr ""
 
-#: views/admin/Advanced.phtml:66
+#: views/admin/Advanced.phtml:69
 msgid "You can define a custom cache-directory which should be used to store the generated images and css files. This directory has to be web-accessable!"
 msgstr ""
 
-#: views/admin/Advanced.phtml:67
+#: views/admin/Advanced.phtml:70
 msgid "In case of invalid path settings/unaccesable cache, the default values will be used!"
 msgstr ""
 
-#: views/admin/Advanced.phtml:70
+#: views/admin/Advanced.phtml:73
 msgid "Enable custom cache"
 msgstr ""
 
-#: views/admin/Advanced.phtml:72
+#: views/admin/Advanced.phtml:75
 msgid "Public-Accessable-Cache"
 msgstr ""
 
-#: views/admin/Advanced.phtml:73
+#: views/admin/Advanced.phtml:76
 msgid "Path: "
 msgstr ""
 
-#: views/admin/Advanced.phtml:74
+#: views/admin/Advanced.phtml:77
 msgid "Url: "
 msgstr ""
 
-#: views/admin/Advanced.phtml:78
+#: views/admin/Advanced.phtml:81
 msgid "Custom cache path/url"
 msgstr ""
 
-#: views/admin/Advanced.phtml:79
+#: views/admin/Advanced.phtml:82
 msgid "Attention:"
 msgstr ""
 
-#: views/admin/Advanced.phtml:79
+#: views/admin/Advanced.phtml:82
 msgid "All files within the cache-path will be removed each time you update cryptex-settings!"
 msgstr ""
 
-#: views/admin/Advanced.phtml:82 views/admin/Advanced.phtml:92
+#: views/admin/Advanced.phtml:85 views/admin/Advanced.phtml:95
 msgid "Default: "
 msgstr ""
 
-#: views/admin/Advanced.phtml:86
-msgid "Warning: cache-path is not accessable!"
+#: views/admin/Advanced.phtml:89
+msgid "Warning: cache-path is not accessible!"
 msgstr ""
 
-#: views/admin/Advanced.phtml:89
+#: views/admin/Advanced.phtml:92
 msgid "Store files in this directory"
 msgstr ""
 
-#: views/admin/Advanced.phtml:89
+#: views/admin/Advanced.phtml:92
 msgid "e.g. /home/user/wordpress/cache/"
 msgstr ""
 
-#: views/admin/Advanced.phtml:93
+#: views/admin/Advanced.phtml:96
 msgid "Full URL path to files"
 msgstr ""
 
-#: views/admin/Advanced.phtml:93
+#: views/admin/Advanced.phtml:96
 msgid "e.g. http://cache.yourdomain.tld/i/"
 msgstr ""
 
@@ -309,192 +313,136 @@ msgstr ""
 msgid "E-Mail Settings"
 msgstr ""
 
-#: views/admin/Appearance.phtml:40
-msgid "Should E-Mail-Addresses clickable ? (mailto:youremail@example.com)"
-msgstr ""
-
-#: views/admin/Appearance.phtml:41
-msgid "Cryptex provides an integrated key-shifting based encryption/decryption of hyperlinks to ensure maximum protection."
-msgstr ""
-
-#: views/admin/Appearance.phtml:43
-msgid "Enable-Hyperlinks"
-msgstr ""
-
-#: views/admin/Appearance.phtml:46
+#: views/admin/Appearance.phtml:42
 msgid "E-Mail-addresses can be displayed as a single image or, in case of higher security, as a multipart-image."
 msgstr ""
 
-#: views/admin/Appearance.phtml:47
+#: views/admin/Appearance.phtml:43
 msgid "The address will be splitted into 2 parts (before and after the @ sign). Each part is displayed as a single image, the @ sign as plain text. This feature provides an improved protection against ocr-grabbing spambots, which will analyze page images."
 msgstr ""
 
-#: views/admin/Appearance.phtml:48
+#: views/admin/Appearance.phtml:44
 msgid "Note: This option will only influence E-Mail-addresses, other content will be still displayed as a single image!"
 msgstr ""
 
-#: views/admin/Appearance.phtml:50
+#: views/admin/Appearance.phtml:46
 msgid "E-Mail Security Level"
 msgstr ""
 
-#: views/admin/Appearance.phtml:50
+#: views/admin/Appearance.phtml:46
 msgid "Text (not recommended)"
 msgstr ""
 
-#: views/admin/Appearance.phtml:50
+#: views/admin/Appearance.phtml:46
 msgid "Single Image"
 msgstr ""
 
-#: views/admin/Appearance.phtml:50
+#: views/admin/Appearance.phtml:46
 msgid "Multipart Image (2 Images, seperated by @ sign)"
 msgstr ""
 
-#: views/admin/Appearance.phtml:50
+#: views/admin/Appearance.phtml:46
 msgid "Advanced Multipart Image (Multiple Images, seperated by dot AND @ sign)"
 msgstr ""
 
+#: views/admin/Appearance.phtml:53
+msgid "Hyperlinks"
+msgstr ""
+
+#: views/admin/Appearance.phtml:56
+msgid "Should E-Mail-Addresses and Telephone Numbers clickable ? (mailto:youremail@example.com)"
+msgstr ""
+
 #: views/admin/Appearance.phtml:57
-msgid "Image Offsets"
+msgid "Cryptex provides an integrated key-shifting based encryption/decryption of hyperlinks to ensure maximum protection."
 msgstr ""
 
-#: views/admin/Appearance.phtml:60
-msgid "Sometimes the generated text, depending on the selected font family, won`t fit into his image box - it is possible to configure the following offsets (in px) to fix this issue:"
-msgstr ""
-
-#: views/admin/Appearance.phtml:61
-msgid "Offsets can also be used to adjust the font baseline (use Offset A and Offset B)."
-msgstr ""
-
-#: views/admin/Appearance.phtml:64
-msgid "Offset Values"
-msgstr ""
-
-#: views/admin/Appearance.phtml:65
-msgid "Offset X (width)"
+#: views/admin/Appearance.phtml:59
+msgid "Enable-Hyperlinks"
 msgstr ""
 
 #: views/admin/Appearance.phtml:66
-msgid "Offset Y (height)"
+msgid "Image Offsets"
 msgstr ""
 
-#: views/admin/Appearance.phtml:67
-msgid "Offset A (font position x)"
+#: views/admin/Appearance.phtml:69
+msgid "Sometimes the generated text, depending on the selected font family, won`t fit into his image box - it is possible to configure the following offsets (in px) to fix this issue:"
 msgstr ""
 
-#: views/admin/Appearance.phtml:68
-msgid "Offset B (font position y)"
+#: views/admin/Appearance.phtml:70
+msgid "Offsets can also be used to adjust the font baseline (use Offset A and Offset B)."
+msgstr ""
+
+#: views/admin/Appearance.phtml:73
+msgid "Offset Values"
+msgstr ""
+
+#: views/admin/Appearance.phtml:74
+msgid "Offset X (width)"
 msgstr ""
 
 #: views/admin/Appearance.phtml:75
-msgid "High DPI/Retina Support"
+msgid "Offset Y (height)"
+msgstr ""
+
+#: views/admin/Appearance.phtml:76
+msgid "Offset A (font position x)"
 msgstr ""
 
 #: views/admin/Appearance.phtml:77
-msgid "Several modern devices like tablets, smartphones or notebooks using high-dpi screens better known as \"retina displays\" which results in blurred E-Mail-Addresses."
-msgstr ""
-
-#: views/admin/Appearance.phtml:78
-msgid "The High-DPI mode will generate optional high-resolution images to fix such issues. High-Dpi devices will automatically access these images."
-msgstr ""
-
-#: views/admin/Appearance.phtml:81
-msgid "Enable High DPI/Retina"
+msgid "Offset B (font position y)"
 msgstr ""
 
 #: views/admin/Appearance.phtml:84
-msgid "Hdpi Options"
-msgstr ""
-
-#: views/admin/Appearance.phtml:85
-msgid "The scaling factor is multiplied with the image-parameters (width, height, font-size, ..) to create high-resolution images - e.g. a value of 2 will double the image dimensions."
+msgid "High DPI/Retina Support"
 msgstr ""
 
 #: views/admin/Appearance.phtml:86
-msgid "A value of 3 is good choice and provides great looking results on an iPad4 (Retina, 2048x1536) or Sony-Tablet (FullHD, 1920x1080)."
+msgid "Several modern devices like tablets, smartphones or notebooks using high-dpi screens better known as \"retina displays\" which results in blurred E-Mail-Addresses."
 msgstr ""
 
-#: views/admin/Appearance.phtml:86
-msgid "Scaling Factor Comparision"
-msgstr ""
-
-#: views/admin/Appearance.phtml:88
-msgid "Hdpi scaling factor"
+#: views/admin/Appearance.phtml:87
+msgid "The High-DPI mode will generate optional high-resolution images to fix such issues. High-Dpi devices will automatically access these images."
 msgstr ""
 
 #: views/admin/Appearance.phtml:90
-msgid "Select the HDPI renderer which should used to display high density images. Most modern HTML5 browser support the srcset attribute - otherwise the standard images are displayed."
-msgstr ""
-
-#: views/admin/Appearance.phtml:90
-msgid "Current srcset browser support."
-msgstr ""
-
-#: views/admin/Appearance.phtml:91
-msgid "Instead of an img tag with the srcset attribute, cryptex can use css-based images which are based on inline styles in the html-body. This is not valid html5 but will perfectly work in all common browsers and provides the currently best appearance!"
+msgid "Enable High DPI/Retina"
 msgstr ""
 
 #: views/admin/Appearance.phtml:93
+msgid "Hdpi Options"
+msgstr ""
+
+#: views/admin/Appearance.phtml:94
+msgid "The scaling factor is multiplied with the image-parameters (width, height, font-size, ..) to create high-resolution images - e.g. a value of 2 will double the image dimensions."
+msgstr ""
+
+#: views/admin/Appearance.phtml:95
+msgid "A value of 3 is good choice and provides great looking results on an iPad4 (Retina, 2048x1536) or Sony-Tablet (FullHD, 1920x1080)."
+msgstr ""
+
+#: views/admin/Appearance.phtml:95
+msgid "Scaling Factor Comparision"
+msgstr ""
+
+#: views/admin/Appearance.phtml:97
+msgid "Hdpi scaling factor"
+msgstr ""
+
+#: views/admin/Appearance.phtml:99
+msgid "Select the HDPI renderer which should used to display high density images. Most modern HTML5 browser support the srcset attribute - otherwise the standard images are displayed."
+msgstr ""
+
+#: views/admin/Appearance.phtml:99
+msgid "Current srcset browser support."
+msgstr ""
+
+#: views/admin/Appearance.phtml:100
+msgid "Instead of an img tag with the srcset attribute, cryptex can use css-based images which are based on inline styles in the html-body. This is not valid html5 but will perfectly work in all common browsers and provides the currently best appearance!"
+msgstr ""
+
+#: views/admin/Appearance.phtml:102
 msgid "Hdpi Renderer"
-msgstr ""
-
-#: views/admin/EnvironmentError.phtml:27
-msgid "Cryptex related:"
-msgstr ""
-
-#: views/admin/Related.phtml:10
-msgid "Cryptex on GitHub"
-msgstr ""
-
-#: views/admin/Related.phtml:11
-msgid "Cryptex on WordPress.org"
-msgstr ""
-
-#: views/admin/Related.phtml:12
-msgid "Report a Bug"
-msgstr ""
-
-#: views/admin/EnvironmentError.phtml:35
-msgid "Environment Error"
-msgstr ""
-
-#: views/admin/SystemInfo.phtml:9
-msgid "PHP Version:"
-msgstr ""
-
-#: views/admin/SystemInfo.phtml:12
-msgid "Server Software:"
-msgstr ""
-
-#: views/admin/SystemInfo.phtml:15
-msgid "Cryptex Plugin Version:"
-msgstr ""
-
-#: views/admin/EnvironmentError.phtml:54 views/admin/EnvironmentError.phtml:68
-msgid "GD library installed:"
-msgstr ""
-
-#: views/admin/SystemInfo.phtml:60
-msgid "true"
-msgstr ""
-
-#: views/admin/SystemInfo.phtml:23
-msgid "GD version:"
-msgstr ""
-
-#: views/admin/SystemInfo.phtml:23
-msgid " (supported)"
-msgstr ""
-
-#: views/admin/SystemInfo.phtml:27 views/admin/SystemInfo.phtml:29
-msgid "PNG support:"
-msgstr ""
-
-#: views/admin/SystemInfo.phtml:62
-msgid "false"
-msgstr ""
-
-#: views/admin/SystemInfo.phtml:60 views/admin/SystemInfo.phtml:62
-msgid "Cache writeable"
 msgstr ""
 
 #: views/admin/Options.phtml:5
@@ -601,55 +549,55 @@ msgstr ""
 msgid "Transform the_excerpt"
 msgstr ""
 
-#: views/admin/Options.phtml:52
+#: views/admin/Options.phtml:51
 msgid "Transform comments"
 msgstr ""
 
-#: views/admin/Options.phtml:55
+#: views/admin/Options.phtml:54
 msgid "Transform comments-excerpt"
 msgstr ""
 
-#: views/admin/Options.phtml:58
+#: views/admin/Options.phtml:57
 msgid "Transform widget-text"
 msgstr ""
 
-#: views/admin/Options.phtml:66
+#: views/admin/Options.phtml:65
 msgid "CDN (Content Delivery Network)"
 msgstr ""
 
-#: views/admin/Options.phtml:68
+#: views/admin/Options.phtml:67
 msgid "These options might be required when using a Content-Delivery-Network (CDN) or another server/location which outsources your CSS or Javascript files."
 msgstr ""
 
-#: views/admin/Options.phtml:69
+#: views/admin/Options.phtml:68
 msgid "In this case you have to manually include Cryptex.js and Cryptex.css into your page!"
 msgstr ""
 
-#: views/admin/Options.phtml:70
+#: views/admin/Options.phtml:69
 msgid "The generated styles are"
 msgstr ""
 
-#: views/admin/Options.phtml:70
+#: views/admin/Options.phtml:69
 msgid "available here"
 msgstr ""
 
-#: views/admin/Options.phtml:73
+#: views/admin/Options.phtml:72
 msgid "Stylesheet/CSS"
 msgstr ""
 
-#: views/admin/Options.phtml:76
+#: views/admin/Options.phtml:75
 msgid "Include Cryptex-CSS"
 msgstr ""
 
-#: views/admin/Options.phtml:79
+#: views/admin/Options.phtml:78
 msgid "Javascript"
 msgstr ""
 
-#: views/admin/Options.phtml:80
+#: views/admin/Options.phtml:79
 msgid "The javascript files are only required for hyperlink-decoding - if disabled, no javascript files will be included!"
 msgstr ""
 
-#: views/admin/Options.phtml:83
+#: views/admin/Options.phtml:82
 msgid "Include Cryptex-Javascript"
 msgstr ""
 
@@ -663,6 +611,18 @@ msgstr ""
 
 #: views/admin/Related.phtml:9
 msgid "Support Forum"
+msgstr ""
+
+#: views/admin/Related.phtml:10
+msgid "Cryptex on GitHub"
+msgstr ""
+
+#: views/admin/Related.phtml:11
+msgid "Cryptex on WordPress.org"
+msgstr ""
+
+#: views/admin/Related.phtml:12
+msgid "Report a Bug"
 msgstr ""
 
 #: views/admin/Related.phtml:13
@@ -698,15 +658,29 @@ msgid "Includes:"
 msgstr ""
 
 #: views/admin/SettingsPage.phtml:84 views/admin/SettingsPage.phtml:86
+#: views/admin/SettingsPage.phtml:87
 msgid "by"
 msgstr ""
 
 #: views/admin/SettingsPage.phtml:84 views/admin/SettingsPage.phtml:86
+#: views/admin/SettingsPage.phtml:87
 msgid "License"
 msgstr ""
 
 #: views/admin/SystemInfo.phtml:4
 msgid "System Info"
+msgstr ""
+
+#: views/admin/SystemInfo.phtml:9
+msgid "PHP Version:"
+msgstr ""
+
+#: views/admin/SystemInfo.phtml:12
+msgid "Server Software:"
+msgstr ""
+
+#: views/admin/SystemInfo.phtml:15
+msgid "Cryptex Plugin Version:"
 msgstr ""
 
 #: views/admin/SystemInfo.phtml:19 views/admin/SystemInfo.phtml:40
@@ -715,6 +689,18 @@ msgstr ""
 
 #: views/admin/SystemInfo.phtml:19
 msgid "installed"
+msgstr ""
+
+#: views/admin/SystemInfo.phtml:23
+msgid "GD version:"
+msgstr ""
+
+#: views/admin/SystemInfo.phtml:23
+msgid " (supported)"
+msgstr ""
+
+#: views/admin/SystemInfo.phtml:27 views/admin/SystemInfo.phtml:29
+msgid "PNG support:"
 msgstr ""
 
 #: views/admin/SystemInfo.phtml:27 views/admin/SystemInfo.phtml:34
@@ -744,4 +730,16 @@ msgstr ""
 
 #: views/admin/SystemInfo.phtml:54
 msgid "not found"
+msgstr ""
+
+#: views/admin/SystemInfo.phtml:59 views/admin/SystemInfo.phtml:61
+msgid "Cache writeable"
+msgstr ""
+
+#: views/admin/SystemInfo.phtml:59
+msgid "true"
+msgstr ""
+
+#: views/admin/SystemInfo.phtml:61
+msgid "false"
 msgstr ""

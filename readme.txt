@@ -1,9 +1,9 @@
-=== Cryptex | Email Address Obfuscation ===
+=== Cryptex | E-Mail Address Protection ===
 Contributors: Andi Dittrich
 Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, retina, highdpi, responsive, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses, filter, automatically
-Requires at least: 3.8
-Tested up to: 4.6
-Stable tag: 5.2
+Requires at least: 3.9
+Tested up to: 4.7
+Stable tag: 6.0
 License: MIT X11-License
 License URI: http://opensource.org/licenses/MIT
 
@@ -11,21 +11,22 @@ Cryptex transforms plain-text E-Mail-Addresses into Images - automatically - No 
 
 == Description ==
 
-The plugin is used to display email addresses - that are normally expressed in plain text - as an image automatically.
+The plugin is used to display Email addresses **as an image** - automatically.
 This will stop harvesters and crawlers from gathering sensitive data from your website.
 It works with emails, telephone numbers, postal addresses or any other text-content.
 Just wrap your E-Mail-Address into a shortcode like `[email]youraddress@example.com[/email]` - that's it.
 Or use the **Autodetect** filter to transform every E-Mail-Address on your page automatically into an image!
 
 = Plugin Features =
+* Protects **Email Adresses**, **Telephone Numbers** or any other content
 * Fully customizable appearance: you can configure font-family, font-size and font-color - everything looks like your theme style
-* Retina/HD/High-Dpi Images - best appearance on all devices (2x, 3x or 4x resolution enhancement)
+* **Retina/HD/High-Dpi Images** - best appearance on all devices (2x, 3x or 4x resolution enhancement)
 * Shortcode and/or Autodetection usage!
-* Build-In E-Mail-Address-Autodetection - all addresses on your page are protected automatically (if you want it - you can also just use shortcodes!)
+* Build-In **E-Mail-Address-Autodetection** - all addresses on your page are protected automatically (if you want it - you can also just use shortcodes!)
 * Autodetection filters configurable for **the_content**, **the_excerpt**, **comments**, **comments_excerpt**, **text-widget**
 * Reversible Address-Autodetection Process - your content is modified as long as the plugin is activated
 * Postal-addresses, telephone-numbers, names and other sensitive information`s can be protected too
-* Protects E-Mail hyperlinks (mailto) by using javascript based key-shifting encryption/decryption with dynamic keys - but you can use images only
+* Protects E-Mail hyperlinks (mailto) by using javascript based **key-shifting encryption/decryption** with dynamic keys - but you can use images only
 * Suitable for high traffic sites - automated caching of dynamic generated images and CSS
 * Automatic font-search (standard system font-paths)
 * Supports the new modern UI style of WordPress 3.8
@@ -110,6 +111,22 @@ After upgrading, go to the Cryptex settings page, check all options and click "A
 
 == Changelog ==
 
+= 6.0 =
+* Added: [WordPress Multisite](https://codex.wordpress.org/Create_A_Network) support 
+* Added: New Environment Check to ensure Cryptex is working in a well configured environment
+* Added: Support for telephone numbers including uri scheme `tel:`
+* Added: Shortcode `telephone`
+* Added: `href` Shortcode attribute to override the default behaviour
+* Added: PLugin Upgrade Notification
+* Changed: [WP-Skeleton](https://github.com/AndiDittrich/WP-Skeleton) is used as Plugin Backend Framework 
+* Changed: All settings are stored in serialized form in `cryptex-options` instead of single options
+* Changed: Settings Page URL to `wp-admin/options-general.php?page=Cryptex`
+* Changed: Base64 Filename hashes are used instead of hexadecimal ones
+* Replaced: PHP-Version-Errorpage by global admin_notice - ensure that **PHP 5.3 or greater** is used to avoid weird errors
+* Bugfix: The cache accessibility check did not work on WIN platform
+* Bugfix: Fixed some CSS rules used in Settings-Page
+* Cleaned up the internal Plugin Structure
+
 = 5.2 =
 * Changed: the default font-file to `LiberationSans-Regular.ttf`
 * Replaced: the low-level PHP based ObjectCache by the [WordPress Transient API](https://codex.wordpress.org/Transients_API)
@@ -118,7 +135,7 @@ After upgrading, go to the Cryptex settings page, check all options and click "A
 = 5.1 =
 * Added: Plugin Upgrade notifications fo major releases to the admins plugin page
 * Added: Some unit testcases (development only)
-* Bugfix: Email Address autodetection failed in some cases - thanks to [topotato on GitHub)(https://github.com/AndiDittrich/WordPress.Cryptex/issues/1)
+* Bugfix: Email Address autodetection failed in some cases - thanks to [topotato on GitHub](https://github.com/AndiDittrich/WordPress.Cryptex/issues/1)
 
 = 5.0 =
 * Added: New Javascript decryption engine (size optimized - 827bytes)
