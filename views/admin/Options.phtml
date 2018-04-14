@@ -13,14 +13,20 @@
         
         <h4><?php _e('Font Location', 'cryptex'); ?></h4>
         <!-- Font Source -->
-        <?php $this->_settingsUtility->displaySelect(__('Font-Source', 'cryptex'), 'font-source', array(__('System Fonts + Plugin Directory', 'cryptex') =>   'system+plugin', __('System Fonts', 'cryptex') => 'system', __('Plugin Directory', 'cryptex') => 'plugin', __('Custom Directory', 'cryptex') => 'custom')); ?>
+        <?php $this->_settingsUtility->displaySelect(__('Font-Source', 'cryptex'), 'font-source', 
+        array( 
+            'system+plugin' => __('System Fonts + Plugin Directory', 'cryptex'), 
+            'system' => __('System Fonts', 'cryptex'),
+            'plugin' => __('Plugin Directory', 'cryptex'), 
+            'custom' => __('Custom Directory', 'cryptex'))
+        ); ?>
         
         <!-- Custom Font Path -->
         <div id="CryptexCustomFontpath">
-        <?php $this->_settingsUtility->displayInput(__('Font-Path', 'cryptex'), 'custom-font-path', __('e.g.', 'cryptex').' /usr/share/fonts'); ?>
+        <?php $this->_settingsUtility->displayInput(__('Font-Path', 'cryptex'), 'custom-font-path', array('label' => __('e.g.', 'cryptex').' /usr/share/fonts')); ?>
         </div>
                 
-    <!-- // System Font Source -->    
+    <!-- // System Font Source -->
     </div></div>
     
     <!-- EMail Autodetection !-->

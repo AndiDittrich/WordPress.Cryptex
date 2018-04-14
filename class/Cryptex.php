@@ -212,6 +212,10 @@ class Cryptex{
     public function _wp_plugin_deactivate(){
     }
 
+    public function _wp_lateinit(){
+        
+    }
+
     public function _wp_plugin_upgrade($currentVersion){
         // upgrade from < 6.0 ? use v5.99 condition to ensure that beta versions are not altered!
         if (version_compare($currentVersion, '5.99', '<')){

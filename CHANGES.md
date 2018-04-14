@@ -2,6 +2,7 @@
 
 ### 6.1 ###
 * Bugfix: telephone/email shortcodes caused a php warning in case no attributes were set - thanks to [jotazzu on GitHub](https://github.com/AndiDittrich/WordPress.Cryptex/issues/4)
+* Changed: wp-skltn library updated to **0.9.0**
 
 ### 6.0 ###
 * Added: [WordPress Multisite](https://codex.wordpress.org/Create_A_Network) support 

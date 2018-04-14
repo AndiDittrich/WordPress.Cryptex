@@ -21,11 +21,11 @@
         <h4><?php _e('CSS Options', 'cryptex'); ?></h4>
         <!-- css prefix -->
         <p><?php _e('An optional prefix added to the generated css classes to match your content-container and retain cryptex styles.', 'cryptex'); ?></p>
-        <?php $this->_settingsUtility->displayInput(__('CSS Prefix', 'cryptex'), 'css-prefix', __('e.g. #content, .mycontentarea', 'cryptex')); ?>
+        <?php $this->_settingsUtility->displayInput(__('CSS Prefix', 'cryptex'), 'css-prefix', array('label' => __('e.g. #content, .mycontentarea', 'cryptex'))); ?>
         
         <!-- css classes -->
         <p><?php _e('Additional css classes added to the outer span-tag - maybe used to add icons.', 'cryptex')?></p>
-        <?php $this->_settingsUtility->displayInput(__('Additional Classes', 'cryptex'), 'css-classes', __('e.g. email mailicon', 'cryptex')); ?>
+        <?php $this->_settingsUtility->displayInput(__('Additional Classes', 'cryptex'), 'css-classes', array('label' => __('e.g. email mailicon', 'cryptex'))); ?>
         
         <!-- Nested Shortcodes -->
         <h4><?php _e('Nested Shortcodes', 'cryptex'); ?></h4>
@@ -57,7 +57,11 @@
     
         <!-- Font Rendering Lib -->
         <p><?php _e('Which library should be used to render the fonts ? FreeType2 supports TrueType + OpenType fonts, GD-Lib just TrueType. This option influences the file extension filter of the fontlist.', 'cryptex'); ?></p>
-        <?php $this->_settingsUtility->displaySelect(__('Font-Renderer', 'cryptex'), 'font-renderer', array(__('FreeType2 (if available)',  'cryptex') => 'freetype', __('GD-Lib TTF',  'cryptex') => 'gdttf')); ?>
+        <?php $this->_settingsUtility->displaySelect(__('Font-Renderer', 'cryptex'), 'font-renderer', 
+            array(
+                'freetype' => __('FreeType2 (if available)',  'cryptex'),
+                'gdttf' => __('GD-Lib TTF',  'cryptex'))
+        ); ?>
     
     <!-- FONT RENDERING -->    
     </div></div>
@@ -89,11 +93,11 @@
                     echo '<p class="CryptexFALSE">', __('Warning: cache-path is not accessible!'), '</p>';
                 }
             ?>
-            <?php $this->_settingsUtility->displayInput(__('Store files in this directory', 'cryptex'), 'cache-path', __('e.g. /home/user/wordpress/cache/', 'cryptex')); ?>
+            <?php $this->_settingsUtility->displayInput(__('Store files in this directory', 'cryptex'), 'cache-path', array('label' => __('e.g. /home/user/wordpress/cache/', 'cryptex'))); ?>
         
             <!-- cache URL !-->
             <p><?php _e('Default: ', 'cryptex'); ?><code><?php echo plugins_url('/cryptex/cache/'); ?></code></p>
-            <?php $this->_settingsUtility->displayInput(__('Full URL path to files', 'cryptex'), 'cache-url', __('e.g. http://cache.yourdomain.tld/i/', 'cryptex')); ?>
+            <?php $this->_settingsUtility->displayInput(__('Full URL path to files', 'cryptex'), 'cache-url', array('label' => __('e.g. http://cache.yourdomain.tld/i/', 'cryptex'))); ?>
         </div>
     <!-- // CACHE SETTINGS -->    
     </div></div>

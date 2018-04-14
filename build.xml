@@ -26,7 +26,7 @@
     </target>
 
     <!-- Plugin Test - DEVELOPMENT ONLY -->
-    <target name="devcopy" depends="js-min">
+    <target name="devcopy" depends="">
         <!-- Credentials, Host Settings !-->
         <loadproperties srcFile=".credentials/account.conf" prefix="dev"/>
 

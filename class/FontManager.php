@@ -82,7 +82,7 @@ class FontManager{
                 // common name
                 $cname = preg_replace('/\.[^.]+$/','', basename($item));
                 
-                $fontlist[$cname] = $item;
+                $fontlist[$item] = $cname;
             }
         }
         
