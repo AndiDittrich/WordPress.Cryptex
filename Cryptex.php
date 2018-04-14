@@ -3,7 +3,7 @@
     Plugin Name: Cryptex - E-Mail Address Protection
     Plugin URI: https://andidittrich.de/go/cryptex
     Description: Advanced Graphical E-Mail Obfuscator which provides image based email address protection using wordpress shortcode and integrated encryption/decryption of addresses
-    Version: 6.0
+    Version: 6.1-BETA1
     Author: Andi Dittrich
     Author URI: https://andidittrich.de
     License: MIT X11 License
@@ -23,7 +23,7 @@
     Plugin Bootstrap Operation
 */
 define('CRYPTEX_INIT', true);
-define('CRYPTEX_VERSION', '6.0');
+define('CRYPTEX_VERSION', '6.1-BETA1');
 define('CRYPTEX_PLUGIN_PATH', dirname(__FILE__));
 define('CRYPTEX_PLUGIN_URL', plugins_url('/cryptex/'));
 define('CRYPTEX_DEFAULT_FONT_PATH', CRYPTEX_PLUGIN_PATH.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR);
@@ -32,21 +32,25 @@ define('CRYPTEX_DEFAULT_FONT_PATH', CRYPTEX_PLUGIN_PATH.DIRECTORY_SEPARATOR.'fon
 // PHP Version Error Notice
 function Cryptex_PhpEnvironmentError(){
     // error message
-    $message = '<strong>Cryptex Plugin Error:</strong> Your PHP Version <strong style="color: #cc0a00">('. phpversion() .')</strong> is outdated! <strong>PHP 5.3 or greater</strong> is required to run this plugin!';
+    $message = '<strong>Cryptex Plugin Error:</strong> Your PHP Version <strong style="color: #cc0a00">('. phpversion() .')</strong> is outdated! <strong>PHP 5.4 or greater</strong> is required to run this plugin!';
 
     // styling
     echo '<div class="notice notice-error is-dismissible"><p>', $message, '</p></div>';
 }
 
 // check php version
-if (version_compare(phpversion(), '5.3', '>=')){
+if (version_compare(phpversion(), '5.4', '>=')){
     // load classes
     require_once(CRYPTEX_PLUGIN_PATH.'/skltn/HtmlUtil.php');
     require_once(CRYPTEX_PLUGIN_PATH.'/skltn/SettingsManager.php');
     require_once(CRYPTEX_PLUGIN_PATH.'/skltn/SettingsViewHelper.php');
     require_once(CRYPTEX_PLUGIN_PATH.'/skltn/CacheManager.php');
+    require_once(CRYPTEX_PLUGIN_PATH.'/skltn/ResourceManager.php');
     require_once(CRYPTEX_PLUGIN_PATH.'/skltn/PluginConfig.php');
+    require_once(CRYPTEX_PLUGIN_PATH.'/skltn/CssBuilder.php');
     require_once(CRYPTEX_PLUGIN_PATH.'/skltn/Hash.php');
+    require_once(CRYPTEX_PLUGIN_PATH.'/skltn/VirtualPageManager.php');
+    require_once(CRYPTEX_PLUGIN_PATH.'/skltn/RewriteRuleHelper.php');
     require_once(CRYPTEX_PLUGIN_PATH.'/class/AutodetectFilter.php');
     require_once(CRYPTEX_PLUGIN_PATH.'/class/ClassicRenderer.php');
     require_once(CRYPTEX_PLUGIN_PATH.'/class/ContextualHelp.php');

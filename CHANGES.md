@@ -1,5 +1,8 @@
 ## Changelog ##
 
+### 6.1 ###
+* Bugfix: telephone/email shortcodes caused a php warning in case no attributes were set - thanks to [jotazzu on GitHub](https://github.com/AndiDittrich/WordPress.Cryptex/issues/4)
+
 ### 6.0 ###
 * Added: [WordPress Multisite](https://codex.wordpress.org/Create_A_Network) support 
 * Added: New Environment Check to ensure Cryptex is working in a well configured environment

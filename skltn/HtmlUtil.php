@@ -22,9 +22,9 @@ class HtmlUtil{
         if ($selfClosing === true){
 
             // add content ?
-            if ($content === true){
+            if ($content !== false){
 
-                $html .= esc_html($content) . '</'.strtolower($name) . '>';
+                $html .= '>' . esc_html($content) . '</'.strtolower($name) . '>';
 
             // just close it
             }else{
@@ -32,7 +32,7 @@ class HtmlUtil{
             }
         }else{
             // add content ?
-            if ($content === true){
+            if ($content !== false){
                 $html .= '>' . esc_html($content);
             }else{
                 $html .= '>';

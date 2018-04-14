@@ -89,5 +89,5 @@ class AutodetectFilter{
     public function filterMatchCallback($matches){
         // render email by shortcode handler
         return $this->_shortcodeHandler->cryptex(null, $matches[0], '');
-    }    
+    }
 }

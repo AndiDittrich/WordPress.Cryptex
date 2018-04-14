@@ -264,19 +264,25 @@ class Cryptex{
             register_activation_hook($pluginName, array($i, '_wp_plugin_activate'));
             register_deactivation_hook($pluginName, array($i, '_wp_plugin_deactivate'));
             add_action('init', array($i, '_wp_init'));
+            add_action('init', array($i, '_wp_lateinit'), 9999);
 
             // fetch plugin version
             $version = get_option('cryptex-version', '0.0.0');
 
+            // plugin installed ?
+            if ($version == '0.0.0'){
+                // store new version
+                update_option('cryptex-version', '6.1-BETA1');
+
             // plugin upgraded ?
-            if (version_compare('6.0', $version, '>')){
+            }else if (version_compare('6.1-BETA1', $version, '>')){
                 // run upgrade hook
                 if ($i->_wp_plugin_upgrade($version)){
                     // store new version
-                    update_option('cryptex-version', '6.0');
+                    update_option('cryptex-version', '6.1-BETA1');
 
-                    // set flag
-                    update_option('cryptex-upgrade', true);
+                    // set flag (string!)
+                    update_option('cryptex-upgrade', 'true');
                 }
             }
         }

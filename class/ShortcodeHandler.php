@@ -88,14 +88,26 @@ class ShortcodeHandler{
 
     // handle email shortcode - just set the type and pass to cryptex generic handler
     public function email($shortcodeAttributes=NULL, $content='', $code=''){
-        $shortcodeAttributes['type'] = 'email';
-        return $this->cryptex($shortcodeAttributes, $content, $code);
+        // defaults
+        $options = shortcode_atts(array(), $shortcodeAttributes);
+
+        // override type
+        $options['type'] = 'email';
+
+        // passthrough
+        return $this->cryptex($options, $content, $code);
     }
 
     // handle telephone shortcode - just set the type and pass to cryptex generic handler
     public function telephone($shortcodeAttributes=NULL, $content='', $code=''){
-        $shortcodeAttributes['type'] = 'telephone';
-        return $this->cryptex($shortcodeAttributes, $content, $code);
+        // defaults
+        $options = shortcode_atts(array(), $shortcodeAttributes);
+
+        // override type
+        $options['type'] = 'telephone';
+
+        // passthrough
+        return $this->cryptex($options, $content, $code);
     }
     
     /**
