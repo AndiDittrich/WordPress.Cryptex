@@ -58,7 +58,7 @@ class ShortcodeHandler{
     }
     
     // handle cryptex shortcode
-    public function cryptex($shortcodeAttributes=NULL, $content='', $code=''){
+    public function cryptex($shortcodeAttributes, $content='', $code=''){
         // default attribute settings
         $options = shortcode_atts(
                 array(
@@ -87,9 +87,9 @@ class ShortcodeHandler{
     }
 
     // handle email shortcode - just set the type and pass to cryptex generic handler
-    public function email($shortcodeAttributes=NULL, $content='', $code=''){
-        // defaults
-        $options = shortcode_atts(array(), $shortcodeAttributes);
+    public function email($shortcodeAttributes, $content='', $code=''){
+        // attributes given ?
+        $options = is_array($shortcodeAttributes) ? $shortcodeAttributes : array();
 
         // override type
         $options['type'] = 'email';
@@ -99,9 +99,9 @@ class ShortcodeHandler{
     }
 
     // handle telephone shortcode - just set the type and pass to cryptex generic handler
-    public function telephone($shortcodeAttributes=NULL, $content='', $code=''){
-        // defaults
-        $options = shortcode_atts(array(), $shortcodeAttributes);
+    public function telephone($shortcodeAttributes, $content='', $code=''){
+        // attributes given ?
+        $options = is_array($shortcodeAttributes) ? $shortcodeAttributes : array();
 
         // override type
         $options['type'] = 'telephone';

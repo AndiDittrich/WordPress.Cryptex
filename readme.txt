@@ -2,8 +2,8 @@
 Contributors: Andi Dittrich, aenondynamics
 Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, retina, highdpi, responsive, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses, filter, automatically
 Requires at least: 3.9
-Tested up to: 4.7
-Stable tag: 6.0
+Tested up to: 4.9
+Stable tag: 6.1
 License: MIT X11-License
 License URI: http://opensource.org/licenses/MIT
 
