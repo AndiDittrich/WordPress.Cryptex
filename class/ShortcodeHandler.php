@@ -20,14 +20,18 @@ namespace Cryptex;
 class ShortcodeHandler{
     
     // store registered shortcodes
-    private $_registeredShortcodes = array('cryptex');
+    private $_registeredShortcodes = array();
     
     // renderer
     private $_renderer;
     
     public function __construct($settingsManager, $imageGenerator){
-        // add shotcode handlers
-        add_shortcode('cryptex', array($this, 'cryptex'));
+
+        // use cryptex shortcode ?
+        if ($settingsManager->getOption('shortcode-cryptex')){
+            $this->_registeredShortcodes[] = 'cryptex';
+            add_shortcode('cryptex', array($this, 'cryptex'));
+        }        
         
         // use email shortcode ?
         if ($settingsManager->getOption('shortcode-email')){

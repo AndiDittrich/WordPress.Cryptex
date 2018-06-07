@@ -1,0 +1,18 @@
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+    
+    <!-- EXTENSIONS SETTINGS -->
+    <div class="postbox cryptex-postbox">
+    <h3 class="hndle"><span><?php _e('Extensions', 'cryptex'); ?></span></h3>
+    <div class="inside cryptex-setting-section">
+    
+        <!-- Placeholders -->
+        <h4><?php _e('Enlighter Plugin Support', 'cryptex'); ?></h4>
+        <?php $this->_settingsUtility->displayCheckbox(__('Enlighter Support', 'cryptex'), 'placeholder-enabled', array(
+            'label' => 'Enable',
+            'description' => __('Protect Email Addresses within highlighted sourcecode. Each cryptex address block will be surrounded by invisible HTML comments', 'cryptex'),
+            'readmore' => 'https://wordpress.org/plugins/enlighter/'
+        )); ?>
+    
+    
+    <!-- // ADVANCED SETTINGS -->
+    </div></div>

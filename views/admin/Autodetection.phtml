@@ -1,0 +1,61 @@
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+
+    <!-- EMail Autodetection !-->
+    <div class="postbox cryptex-postbox">
+    <h3 class="hndle"><span><?php _e('E-Mail-Address Autodetection', 'cryptex'); ?></span></h3>
+    <div class="inside cryptex-setting-section">
+        <p><?php _e('Note: <strong>ALL</strong> E-Mail-Addresses on your page will be transformed. This will be a usefull functionality on most blogs but can cause problems when posting sourcecode.', 'cryptex'); ?></p>
+        
+        <!-- Enable Detection -->
+        <?php $this->_settingsUtility->displayCheckbox(__('Autodetection', 'cryptex'), 'email-autodetect', array(
+            'label' => 'Enable',
+            'description' => __('Should E-Mail-Addresses automatically transformed into images ? No need for shortcode!', 'cryptex')
+        )); ?>
+
+        <div class="cryptex-selective-section" data-trigger="#cryptex-email-autodetect" data-condition="checked">
+            <!-- Exclude post/pages from autodetection -->
+            <?php $this->_settingsUtility->displayInput(__('Exclude Post/Pages', 'cryptex'), 'email-autodetect-excludeid', array(
+                'label' => __('e.g. 17, 18, 45', 'cryptex'),
+                'description' => __('You can exclude several post/pages from beeing autodetected by adding their IDs to the following list (comma separated)', 'cryptex')
+            )); ?>
+                    
+            <h4><?php _e('Filter Targets', 'cryptex'); ?></h4>
+            <p><?php _e('Choose the content-sections to which the autodetect-filter should be applied.', 'cryptex'); ?></p>
+            <!-- Enable the_content filter -->
+            <?php $this->_settingsUtility->displayCheckbox(__('the_content', 'cryptex'), 'email-autodetect-content', array(
+                'label' => 'Enable autodetection',
+                'description' => 'Detect E-Mail adresses in standard content.',
+                'readmore' => 'https://developer.wordpress.org/reference/functions/the_content/'
+            )); ?>
+            
+            <!-- Enable the_excerpt filter -->
+            <?php $this->_settingsUtility->displayCheckbox(__('the_excerpt', 'cryptex'), 'email-autodetect-excerpt', array(
+                'label' => 'Enable autodetection',
+                'description' => 'Detect E-Mail adresses in content excerpt.',
+                'readmore' => 'https://developer.wordpress.org/reference/functions/the_excerpt/'
+            )); ?>
+
+            <!-- Enable comment-text filter -->
+            <?php $this->_settingsUtility->displayCheckbox(__('comments', 'cryptex'), 'email-autodetect-comments', array(
+                'label' => 'Enable autodetection',
+                'description' => 'Detect E-Mail adresses in text comments.',
+                'readmore' => 'https://codex.wordpress.org/Function_Reference/comment_text'
+            )); ?>
+
+            <!-- Enable comment-excerpt filter -->
+            <?php $this->_settingsUtility->displayCheckbox(__('comments-excerpt', 'cryptex'), 'email-autodetect-comments-excerpt', array(
+                'label' => 'Enable autodetection',
+                'description' => 'Detect E-Mail adresses in comment excerpt.',
+                'readmore' => 'https://codex.wordpress.org/Function_Reference/comment_excerpt'
+            )); ?>
+
+            <!-- Enable Widget-text filter -->
+            <?php $this->_settingsUtility->displayCheckbox(__('widget-text', 'cryptex'), 'email-autodetect-widget-text', array(
+                'label' => 'Enable autodetection',
+                'description' => 'Detect E-Mail adresses in text widgets.',
+                'readmore' => 'https://codex.wordpress.org/Plugin_API/Filter_Reference/widget_text'
+            )); ?>
+        </div>
+    
+    <!-- // EMail Autodetection !-->
+    </div></div>

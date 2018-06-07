@@ -1,4 +1,1757 @@
 <?php
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
 /**
     Cryptex Class
     Version: 6.0
@@ -123,7 +1876,7 @@ class Cryptex{
     public function setupBackend(){
         if (current_user_can('manage_options')){
             // add options page
-            $optionsPage = add_options_page(__('Cryptex | E-Mail-Address Protection', 'cryptex'), 'Cryptex', 'administrator', 'Cryptex', array($this, 'settingsPage'));
+            $optionsPage = add_menu_page(CRYPTEX_PLUGIN_TITLE, 'Cryptex', 'administrator', 'Cryptex', array($this, 'settingsPage'), 'dashicons-shield');
 
             // add links
             add_filter('plugin_row_meta', array($this, 'addPluginPageLinks'), 10, 2);
@@ -257,7 +2010,9 @@ class Cryptex{
 
 //!WP::SKELETON
 
-    // static entry/initialize singleton instance
+// AUTO GENERATED CODE - DO NOT EDIT !!!
+
+// static entry/initialize singleton instance
     public static function run($pluginName){
         // check if singleton instance is available
         if (self::$__instance==null){
@@ -276,14 +2031,14 @@ class Cryptex{
             // plugin installed ?
             if ($version == '0.0.0'){
                 // store new version
-                update_option('cryptex-version', '6.1-BETA1');
+                update_option('cryptex-version', '7.0-BETA1');
 
             // plugin upgraded ?
-            }else if (version_compare('6.1-BETA1', $version, '>')){
+            }else if (version_compare('7.0-BETA1', $version, '>')){
                 // run upgrade hook
                 if ($i->_wp_plugin_upgrade($version)){
                     // store new version
-                    update_option('cryptex-version', '6.1-BETA1');
+                    update_option('cryptex-version', '7.0-BETA1');
 
                     // set flag (string!)
                     update_option('cryptex-upgrade', 'true');

@@ -1,11 +1,24 @@
-/*! AUTO GENERATED FILE - DO NOT EDIT !!
-    WP-SKELEKTON | MIT X11 License | https://github.com/AndiDittrich/WP-Skeleton
-    ------------------------------------
-    Corporate Plugin Settings Page Styles
+/*
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
 */
-
 /* Page Layout
 -------------------------------- */
+#cryptex-settings {
+    max-width: 1500px;
+    margin: auto;
+}
+
 #cryptex-settings .maintitle {
     margin: 15px 0px 15px 0px;
 }
@@ -42,17 +55,30 @@
     line-height: 20px;
 }
 
+.cryptex-postbox p{
+    padding: 5px 15px 5px 15px;
+    border-left: solid 10px #e5e5e5;
+    background-color: #fafafc;
+}
+
+/* Column Layout
+-------------------------------- */
+.cryptex-postbox h3 {
+    background-color: #23282d !important;
+    color: #ffffff !important;
+    cursor: default;
+    font-style: italic;
+}
+
 /* Form Structure
 -------------------------------- */
 .cryptex-setting-section h4 {
-    color: #0074a2;
     display: block;
     text-indent: 15px;
-    border-bottom: solid 4px #efefef;
     line-height: 2em;
-    max-width: 1000px;
     text-transform: uppercase;
-    font-style: italic;
+    font-size: 1.2em;
+    border-bottom: solid 2px #23282d;
 }
 
 .cryptex-setting-section img {
@@ -101,9 +127,7 @@
 }
 
 .cryptex-setting label {
-    height: 30px;
     line-height: 30px;
-    padding: 0px 5px 0px 0px;
 }
 
 .cryptex-setting select{
@@ -151,15 +175,6 @@
     background-color: #ffffff;
 }
 
-/* Column Layout
--------------------------------- */
-#cryptex-settings .postbox h3 {
-    background-color: #23282d !important;
-    color: #ffffff !important;
-    cursor: default;
-    font-style: italic;
-}
-
 /* Footer
 -------------------------------- */
 #cryptex-settings .credits {
@@ -170,7 +185,6 @@
 /* Tab Nav
 -------------------------------- */
 #cryptex-tabnav {
-    display: none;
     position: relative !important;
 }
 
@@ -192,4 +206,72 @@
     padding: 5px;
     display: inline-block;
     margin: 0px !important;
+}
+
+/* Form Checkbox
+-------------------------------- */
+
+/* outer container */
+.cryptex-type-checkbox{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* outer switch container */
+.cryptex-type-checkbox label{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    margin-bottom: 5px;
+}
+
+/* hide checkbox */
+.cryptex-type-checkbox input{
+    display: none;
+}
+
+/* labels text */
+.cryptex-type-checkbox .cryptex-label-text{
+    position: absolute;
+    display: block;
+    width: 250px;
+    left: 60px;
+}
+
+/* slider knob */
+.cryptex-ui-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: #c0c0c0;
+    transition: .4s;
+    border-radius: 28px;
+}
+
+.cryptex-ui-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    top: 3px;
+    background-color: #ffffff;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.cryptex-type-checkbox input:checked + .cryptex-ui-slider {
+    background-color: #0074a2;
+}
+
+.cryptex-type-checkbox input:focus + .cryptex-ui-slider {
+    box-shadow: 0 0 1px #0074a2;
+}
+
+.cryptex-type-checkbox input:checked + .cryptex-ui-slider:before {
+    transform: translateX(22px);
 }

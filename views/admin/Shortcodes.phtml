@@ -1,0 +1,36 @@
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+
+    <!-- SHORTCODE SETTINGS -->
+    <div class="postbox cryptex-postbox">
+    <h3 class="hndle"><span><?php _e('Shortcodes', 'cryptex'); ?></span></h3>
+    <div class="inside cryptex-setting-section">
+
+        <h4><?php _e('Types', 'cryptex'); ?></h4>
+    
+        <!-- cryptex shortcode !-->
+        <?php $this->_settingsUtility->displayCheckbox(__('Shortcode [cryptex]', 'cryptex'), 'shortcode-cryptex', array(
+            'label' => 'Enable',
+            'description' => 'This is the generic shortcode used by cryptex. It handles all types of data.'
+        )); ?>
+
+        <!-- email shortcode !-->
+        <?php $this->_settingsUtility->displayCheckbox(__('Shortcode [email]', 'cryptex'), 'shortcode-email', array(
+            'label' => 'Enable',
+            'description' => 'Shortcut for cryptex type "email". Overrides the type attribute.'
+        )); ?>
+
+        <!-- telephone shortcode !-->
+        <?php $this->_settingsUtility->displayCheckbox(__('Shortcode [telephone]', 'cryptex'), 'shortcode-telephone', array(
+            'label' => 'Enable',
+            'description' => 'Shortcut for cryptex type "telephone". Overrides the type attribute.'
+        )); ?>
+    
+        <!-- Nested Shortcodes -->
+        <h4><?php _e('Nested Shortcodes', 'cryptex'); ?></h4>
+        <?php $this->_settingsUtility->displayCheckbox(__('Nested-Shortcodes', 'cryptex'), 'nestedShortcodes', array(
+            'label' => 'Enable',
+            'description' => __('In some cases it can be necessary to process nested-shortcodes (shortcodes within a cryptex/email tag) - maybe the inner shortcode fetches some content from your database, etc. Only enable this option if you exactly know what your doing!', 'cryptex')
+        )); ?>
+    
+    <!-- // SHORTCODE SETTINGS -->
+    </div></div>

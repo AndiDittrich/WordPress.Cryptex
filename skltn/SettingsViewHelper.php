@@ -1,9 +1,19 @@
 <?php
-/*  AUTO GENERATED FILE - DO NOT EDIT !!
-    WP-SKELEKTON | MIT X11 License | https://github.com/AndiDittrich/WP-Skeleton
-    ------------------------------------
-    Renders the settings page input elements
-*/
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// Renders the settings page input elements
+
 namespace Cryptex\skltn;
 
 class SettingsViewHelper{
@@ -21,7 +31,7 @@ class SettingsViewHelper{
     public function displaySelect($title, $optionName, $values, $options=array()){
         
         // open setting block
-        $this->settingsHeader($optionName, $title);
+        $this->settingsHeader($optionName, $title, 'select');
 
         // element attributes
         $attb = array(
@@ -32,7 +42,7 @@ class SettingsViewHelper{
 
         // wrap into label
         echo HtmlUtil::generateTag('label', array(
-            'for' => 'cryptex[' . $optionName . ']'
+            'for' => 'cryptex-' . $optionName
         ), false);
 
         // generate tag, escape attributes
@@ -61,7 +71,7 @@ class SettingsViewHelper{
     // Generates a checkbox based on the settings-name
     public function displayCheckbox($title, $optionName, $options=array()){
         // open setting block
-        $this->settingsHeader($optionName, $title);
+        $this->settingsHeader($optionName, $title, 'checkbox');
 
         // dummy element attributes
         $attb = array(
@@ -75,7 +85,7 @@ class SettingsViewHelper{
 
         // wrap into label
         echo HtmlUtil::generateTag('label', array(
-            'for' => 'cryptex[' . $optionName . ']'
+            'for' => 'cryptex-' . $optionName,
         ), false);
 
         // element attributes
@@ -94,9 +104,16 @@ class SettingsViewHelper{
         // generate tag, escape attributes
         echo HtmlUtil::generateTag('input', $attb, true);
 
+        // add slider element
+        echo HtmlUtil::generateTag('span', array(
+            'class' => 'cryptex-ui-slider'
+        ), false);
+
         // add label text ?
         if (isset($options['label'])){
-            echo esc_html($options['label']);
+            echo HtmlUtil::generateTag('span', array(
+                'class' => 'cryptex-label-text'
+            ), true, esc_html($options['label']));
         }
 
         // close label
@@ -111,11 +128,11 @@ class SettingsViewHelper{
     public function displayInput($title, $optionName, $options = array()){
 
         // open setting block
-        $this->settingsHeader($optionName, $title);
+        $this->settingsHeader($optionName, $title, 'input');
 
         // wrap into label
         echo HtmlUtil::generateTag('label', array(
-            'for' => 'cryptex[' . $optionName . ']'
+            'for' => 'cryptex-' . $optionName
         ), false);
 
         // element attributes
@@ -144,9 +161,9 @@ class SettingsViewHelper{
         $this->settingsFooter($options);
     }
 
-    private function settingsHeader($optionName, $title){
-        echo '<!-- SETTING [', $optionName , '] -->';   
-        echo '<div class="cryptex-setting"><div class="cryptex-setting-title">', esc_html($title), '</div><div class="cryptex-setting-input">';
+    private function settingsHeader($optionName, $title, $type='input'){
+        echo '<!-- SETTING [', $optionName , '] -->';
+        echo '<div class="cryptex-setting cryptex-type-', esc_html($type), '"><div class="cryptex-setting-title">', esc_html($title), '</div><div class="cryptex-setting-input">';
     }
 
     private function settingsFooter($options = array()){

@@ -1,8 +1,19 @@
 ## Changelog ##
 
-### 6.1 ###
+### 7.0 ###
+* Added: option to disable generic `cryptex` shortcode
+* Added: cryptex icon batch to settings page
+* Changed: moved settings page to top-level menu
+* Changed: new settings page
+* Changed: `wp-skltn` library updated to **0.13.0**
+* Changed: sessionStorage is used to store the current active tab instead of cookies
+* Changed: updated the UI components
+* Changed; email/telephone shortcodes are enabled by default
+* Changed: 3rd party plugin support (placeholders) are disabled by default
+* Removed: `jquery-cookie` dependency
 * Bugfix: telephone/email shortcodes caused a php warning in case no attributes were set - thanks to [jotazzu on GitHub](https://github.com/AndiDittrich/WordPress.Cryptex/issues/4)
-* Changed: wp-skltn library updated to **0.9.0**
+* Bugfix: colorpicker sets wrong foreground color which caused unreadable input fields (color lightness calculation)
+* Bugfix: settings label (checkboxes) were not linked to the input elements
 
 ### 6.0 ###
 * Added: [WordPress Multisite](https://codex.wordpress.org/Create_A_Network) support 
@@ -10,7 +21,7 @@
 * Added: Support for telephone numbers including uri scheme `tel:`
 * Added: Shortcode `telephone`
 * Added: `href` Shortcode attribute to override the default behaviour
-* Added: PLugin Upgrade Notification
+* Added: Plugin Upgrade Notification
 * Changed: [WP-Skeleton](https://github.com/AndiDittrich/WP-Skeleton) is used as Plugin Backend Framework 
 * Changed: All settings are stored in serialized form in `cryptex-options` instead of single options
 * Changed: Settings Page URL to `wp-admin/options-general.php?page=Cryptex`

@@ -19,9 +19,6 @@ namespace Cryptex;
 
 class ImageGenerator{
 
-    // plugin options
-    private $_options;
-
     // selected fontsize in px
     private $_fontsize;
 
@@ -40,6 +37,9 @@ class ImageGenerator{
     // use freetype rendering
     private $_useFreetype = false;
 
+    // use font antialiasing ?
+    private $_fontAntialiasing = false;
+
     // image offsets A,B,X,Y
     // X:width offset
     // Y:height offset
@@ -54,37 +54,38 @@ class ImageGenerator{
     // image size storage
     private $_imageSizeCache;
 
-    // antialiasing supported ?
+    // antialiasing supported by gd ?
     private $_antialiasingSupport = false;
 
+    // fallback ttf font
+    private $_ttfFallbackFont = 'liberation-fonts-ttf-2.00.1/LiberationSerif-Regular.ttf';
+
     public function __construct($settingsUtil, $cacheManager){
-        $this->_options = $settingsUtil->getOptions();
 
         // extract cache paths
         $this->_cachePath = $cacheManager->getCachePath();
         $this->_cacheURL = $cacheManager->getCacheUrl();
 
         // populate global options
-        $this->_fontsize = $this->_options['font-size'];
-        $this->_fontcolor = $this->_options['font-color'];
-        $this->_salt = $this->_options['salt'];
-        $this->_fontfile = $this->_options['font-file'];
-        $this->_offsets[0] = intval($this->_options['offset-x']);
-        $this->_offsets[1] = intval($this->_options['offset-y']);
-        $this->_offsets[2] = intval($this->_options['offset-a']);
-        $this->_offsets[3] = intval($this->_options['offset-b']);
+        $this->_fontsize = $settingsUtil->getOption('font-size');
+        $this->_fontcolor = $settingsUtil->getOption('font-color');
+        $this->_salt = $settingsUtil->getOption('salt');
+        $this->_fontfile = $settingsUtil->getOption('font-file');
+        $this->_offsets[0] = $settingsUtil->getOption('offset-x');
+        $this->_offsets[1] = $settingsUtil->getOption('offset-y');
+        $this->_offsets[2] = $settingsUtil->getOption('offset-a');
+        $this->_offsets[3] = $settingsUtil->getOption('offset-b');
 
         // antialiasing supported ?
-        if ($this->_options['font-antialiasing'] && function_exists('imageantialias')){
+        if ($settingsUtil->getOption('font-antialiasing') && function_exists('imageantialias')){
             $this->_antialiasingSupport = true;
         }
 
         // manual line-height ?
-        if (strlen(trim($this->_options['line-height'])) > 0){
-            $this->_lineheight = intval($this->_options['line-height']);
-        }else{
-            $this->_lineheight = 0;
-        }
+        $this->_lineheight = $settingsUtil->getOption('line-height');
+
+        // font antialiasing ?
+        $this->_fontAntialiasing = $settingsUtil->getOption('font-antialiasing');
 
         // try to load dimension cache
         if (($this->_imageSizeCache = get_transient('cryptex_imgsize')) === false){
@@ -97,18 +98,15 @@ class ImageGenerator{
             $info = gd_info();
 
             // freetype enabled ?
-            $this->_useFreetype = ($this->_options['font-renderer'] == 'freetype') && $info['FreeType Support'];
+            $this->_useFreetype = ($settingsUtil->getOption('font-renderer') == 'freetype') && isset($info['FreeType Support']);
         }
     }
-
 
     public function isFreeTypeEnabled(){
         return $this->_useFreetype;
     }
 
-    /**
-     * Store Image Dimensions
-     */
+    // Store Image Dimensions
     public function updateCache(){
         // store data; 1day cache expire
         set_transient('cryptex_imgsize', $this->_imageSizeCache, DAY_IN_SECONDS);
@@ -129,8 +127,8 @@ class ImageGenerator{
         // parse font color
         $fontcolor = hexdec($fontcolor);
 
-        // antialiasing
-        $fontcolor = ($this->_options['font-antialiasing'] ? $fontcolor : -$fontcolor);
+        // font antialiasing ? controlled by fontsize!
+        $fontcolor = ($this->_fontAntialiasing ? $fontcolor : -$fontcolor);
 
         // high-dpi scaling
         $fontsize = $fontsize*$scale;
@@ -143,14 +141,14 @@ class ImageGenerator{
         $imagehash = \Cryptex\skltn\Hash::filename($this->_salt.sha1($txt.$this->_salt.$configHash));
         $filename = $imagehash.'.png';
 
-        // generate storage path
+        // generate image storage path
         $storagePath = $this->_cachePath.$filename;
 
         // try to load image dimensions
         $dim = (isset($this->_imageSizeCache[$imagehash]) ? $this->_imageSizeCache[$imagehash] : null);
 
-        // cached version not available ? // generate new image
-        if (!file_exists($storagePath) || $dim==null){
+        // cached version not available ? generate new image
+        if (!file_exists($storagePath) || $dim === null){
 
             // ttf font file available ?
             if (is_file($font) && is_readable($font)){
@@ -159,6 +157,11 @@ class ImageGenerator{
             }else{
                 // use gd fallback font
                 $dim = $this->generateFallbackImage($txt, $storagePath, $fontcolor, $offset, $scale);
+            }
+
+            // image generation error ?
+            if ($dim === null){
+                return null;
             }
 
             // store dimension
@@ -203,12 +206,13 @@ class ImageGenerator{
 
     // true type font based image
     private function generateTTFImage($txt, $filename, $font, $fontsize, $fontcolor, $offset, $scale){
-        // calculate size
-        $boundaries = array(0, 0, 0, 0, 0, 0, 0, 0);
-        if ($this->_useFreetype){
-            $boundaries = imageftbbox($fontsize, 0, $font, $txt);
-        }else{
-            $boundaries = imagettfbbox($fontsize, 0, $font, $txt);
+
+        // pre-calculate box size
+        $boundaries = ($this->_useFreetype) ? imageftbbox($fontsize, 0, $font, $txt) : imagettfbbox($fontsize, 0, $font, $txt);
+
+        // valid box ?
+        if ($boundaries === false){
+            return null;
         }
 
         // calculate boundaries
@@ -222,7 +226,7 @@ class ImageGenerator{
         // manual height or automatic height based on font size ! - solves problems with font base lines..
         $height = ($this->_lineheight == 0 ? $this->pt2px($fontsize) : $this->_lineheight* $scale);
 
-        // dimension offsets
+        // add dimension offsets
         $width = $width + $offset[0];
         $height = $height + $offset[1];
 

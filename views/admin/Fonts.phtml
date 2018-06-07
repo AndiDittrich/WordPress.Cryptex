@@ -1,0 +1,66 @@
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+
+    <!-- System Font Source -->
+    <div class="postbox cryptex-postbox">
+    <h3 class="hndle"><span><?php _e('Font Source', 'cryptex'); ?></span></h3>
+    <div class="inside cryptex-setting-section">
+        <p>
+        <?php _e('<strong>System Fonts</strong> - the default font location of your server', 'cryptex'); ?> (<code><?php echo implode(';', Cryptex\FontManager::$WindowsFontPaths); ?></code> <?php _e('on Windows', 'cryptex'); ?>; <code><?php echo implode(';', Cryptex\FontManager::$LinuxFontPaths); ?></code> <?php _e('on Linux', 'cryptex'); ?><br />
+        <?php _e('<strong>Plugin Directory</strong> - the <code>fonts</code> directory within the cryptex plugin path', 'cryptex'); ?> (<code><?php echo CRYPTEX_DEFAULT_FONT_PATH ?></code>)<br />
+        <?php _e('<strong>Custom Directory</strong> - enter a custom directory of your choice', 'cryptex'); ?>
+        </p>
+        
+        <h4><?php _e('Font Location', 'cryptex'); ?></h4>
+        <!-- Font Source -->
+        <?php $this->_settingsUtility->displaySelect(__('Font-Source', 'cryptex'), 'font-source', 
+            array( 
+                'system+plugin' => __('System Fonts + Plugin Directory', 'cryptex'), 
+                'system' => __('System Fonts', 'cryptex'),
+                'plugin' => __('Plugin Directory', 'cryptex'), 
+                'custom' => __('Custom Directory', 'cryptex')
+            ),
+            array(
+                'description' => __('Cryptex requires server-side stored TrueType/OpenType Fonts to generate the images. Select the font location which should be used. The location will be recursivly scanned by the plugin, including all subdirectories.', 'cryptex')
+            )
+        ); ?>
+        
+        <!-- Custom Font Path -->
+        <div class="cryptex-selective-section" data-trigger="#cryptex-font-source" data-condition="==custom">
+        <?php $this->_settingsUtility->displayInput(__('Font-Path', 'cryptex'), 'custom-font-path', array('label' => __('e.g.', 'cryptex').' /usr/share/fonts')); ?>
+        </div>
+
+        <h4><?php _e('Display', 'cryptex'); ?></h4>
+
+        <!-- font filenames -->
+        <?php $this->_settingsUtility->displayCheckbox(__('Cannocial paths', 'cryptex'), 'show-full-paths', array(
+            'label' => 'Show full font-paths',
+            'description' => __('Should the full font-paths be displayed on this settings page or only their file names ?')
+        )); ?>
+                
+    <!-- // System Font Source -->
+    </div></div>
+
+    <!-- FONT RENDERING -->
+    <div class="postbox cryptex-postbox">
+    <h3 class="hndle"><span><?php _e('Font Rendering', 'cryptex'); ?></span></h3>
+    <div class="inside cryptex-setting-section">
+    
+        <!-- Enable Antialiasing -->
+        <?php $this->_settingsUtility->displayCheckbox(__('Anti-aliasing', 'cryptex'), 'font-antialiasing', array(
+            'label' => 'Enable',
+            'description' => __('Anti-aliasing is enabled by default to provide smooth font-edges.')
+        )); ?>
+    
+        <!-- Font Rendering Lib -->
+        <?php $this->_settingsUtility->displaySelect(__('Font-Renderer', 'cryptex'), 'font-renderer', 
+            array(
+                'freetype' => __('FreeType2 (recommended)',  'cryptex'),
+                'gdttf' => __('GD-Lib TTF',  'cryptex')
+            ),
+            array(
+                'description' => __('Which library should be used to render the fonts ? FreeType2 supports TrueType + OpenType fonts, GD-Lib just TrueType. This option influences the file extension filter of the fontlist.')
+            )
+        ); ?>
+    
+    <!-- FONT RENDERING -->
+    </div></div>

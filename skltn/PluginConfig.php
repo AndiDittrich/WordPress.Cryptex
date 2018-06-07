@@ -1,45 +1,56 @@
 <?php
-/*  AUTO GENERATED FILE - DO NOT EDIT !!
-    WP-SKELEKTON | MIT X11 License | https://github.com/AndiDittrich/WP-Skeleton
-    ------------------------------------
-    Plugin Config Defaults
-*/
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2018 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+
+// Plugin Config Defaults
+
 namespace Cryptex\skltn;
 
 class PluginConfig{
     
     // config keys with default values
     private $_defaultConfig = array(
+        'embed-css' => true,
+        'embed-js' => true,
+        'salt' => 'ABCDEF1234567890',
+        'translation-enabled' => true,
+        'css-prefix' => '',
+        'css-classes' => '',
+        'hdpi-enabled' => false,
+        'hdpi-factor' => 3,
+        'hdpi-renderer' => 'css',
         'custom-font-path' => '',
+        'font-source' => 'system+plugin',
+        'show-full-paths' => false,
+        'font-color' => '#000000',
+        'font-antialiasing' => true,
+        'font-renderer' => 'freetype',
         'enable-hyperlink' => true,
         'email-divider' => '@',
         'email-replacement-dot' => '.',
-        'embed-css' => true,
-        'embed-js' => true,
+        'security-level' => 2,
         'font-file' => 'LiberationSans-Regular.ttf',
         'font-family' => 'inherit',
         'font-size' => '12px',
         'line-height' => 0,
-        'font-color' => '#000000',
-        'font-antialiasing' => true,
-        'font-renderer' => 'freetype',
-        'security-level' => 2,
-        'hdpi-enabled' => false,
-        'hdpi-factor' => 3,
-        'hdpi-renderer' => 'css',
-        'placeholder-enabled' => true,
-        'css-prefix' => '',
-        'salt' => 'ABCDEF1234567890',
-        'css-classes' => '',
-        'font-source' => 'system+plugin',
-        'shortcode-email' => true,
-        'shortcode-telephone' => true,
-        'show-full-paths' => false,
         'offset-a' => 2,
         'offset-b' => 2,
         'offset-x' => 2,
         'offset-y' => 0,
-        'translation-enabled' => true,
+        'shortcode-email' => true,
+        'shortcode-telephone' => true,
+        'shortcode-cryptex' => true,
+        'nestedShortcodes' => false,
         'email-autodetect' => false,
         'email-autodetect-content' => true,
         'email-autodetect-excerpt' => true,
@@ -47,44 +58,45 @@ class PluginConfig{
         'email-autodetect-comments-excerpt' => true,
         'email-autodetect-widget-text' => true,
         'email-autodetect-excludeid' => '',
-        'nestedShortcodes' => false,
         'cache-custom' => false,
         'cache-path' => '',
-        'cache-url' => ''
+        'cache-url' => '',
+        'placeholder-enabled' => false
     );
 
     // validation
     private $_validators = array(
+        'embed-css' => 'boolean',
+        'embed-js' => 'boolean',
+        'salt' => 'string',
+        'translation-enabled' => 'boolean',
+        'css-prefix' => 'string',
+        'css-classes' => 'string',
+        'hdpi-enabled' => 'boolean',
+        'hdpi-factor' => 'int',
+        'hdpi-renderer' => 'string',
         'custom-font-path' => 'string',
+        'font-source' => 'string',
+        'show-full-paths' => 'boolean',
+        'font-color' => 'string',
+        'font-antialiasing' => 'boolean',
+        'font-renderer' => 'string',
         'enable-hyperlink' => 'boolean',
         'email-divider' => 'string',
         'email-replacement-dot' => 'string',
-        'embed-css' => 'boolean',
-        'embed-js' => 'boolean',
+        'security-level' => 'int',
         'font-file' => 'string',
         'font-family' => 'string',
         'font-size' => 'string',
         'line-height' => 'int',
-        'font-color' => 'string',
-        'font-antialiasing' => 'boolean',
-        'font-renderer' => 'string',
-        'security-level' => 'int',
-        'hdpi-enabled' => 'boolean',
-        'hdpi-factor' => 'int',
-        'hdpi-renderer' => 'string',
-        'placeholder-enabled' => 'boolean',
-        'css-prefix' => 'string',
-        'salt' => 'string',
-        'css-classes' => 'string',
-        'font-source' => 'string',
-        'shortcode-email' => 'boolean',
-        'shortcode-telephone' => 'boolean',
-        'show-full-paths' => 'boolean',
         'offset-a' => 'int',
         'offset-b' => 'int',
         'offset-x' => 'int',
         'offset-y' => 'int',
-        'translation-enabled' => 'boolean',
+        'shortcode-email' => 'boolean',
+        'shortcode-telephone' => 'boolean',
+        'shortcode-cryptex' => 'boolean',
+        'nestedShortcodes' => 'boolean',
         'email-autodetect' => 'boolean',
         'email-autodetect-content' => 'boolean',
         'email-autodetect-excerpt' => 'boolean',
@@ -92,10 +104,10 @@ class PluginConfig{
         'email-autodetect-comments-excerpt' => 'boolean',
         'email-autodetect-widget-text' => 'boolean',
         'email-autodetect-excludeid' => 'string',
-        'nestedShortcodes' => 'boolean',
         'cache-custom' => 'boolean',
         'cache-path' => 'string',
-        'cache-url' => 'string'
+        'cache-url' => 'string',
+        'placeholder-enabled' => 'boolean'
     );
 
     // get the default plugin config
