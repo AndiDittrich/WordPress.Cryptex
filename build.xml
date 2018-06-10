@@ -123,6 +123,7 @@
                 <copy todir="${svn.tag.path}">
                     <fileset dir="dist"/>
                 </copy>
+                
             </else>
         </if>
     </target>
