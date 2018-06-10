@@ -58,7 +58,9 @@ class SettingsViewHelper{
 
         // add label text ?
         if (isset($options['label'])){
-            echo esc_html($options['label']);
+            echo HtmlUtil::generateTag('span', array(
+                'class' => 'cryptex-label-text'
+            ), true, esc_html($options['label']));
         }
 
         // close label
@@ -151,7 +153,9 @@ class SettingsViewHelper{
 
         // add label text ?
         if (isset($options['label'])){
-            echo esc_html($options['label']);
+            echo HtmlUtil::generateTag('span', array(
+                'class' => 'cryptex-label-text'
+            ), true, esc_html($options['label']));
         }
 
         // close label

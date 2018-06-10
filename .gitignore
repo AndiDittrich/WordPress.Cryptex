@@ -2,9 +2,11 @@
 .project
 .idea*
 .gitignore
+.tmp/
 gfx*
 PublicHtml*
 .buildpath
 .credentials
 node_modules*
 .hidden*
+dist/

@@ -3,7 +3,7 @@
     "name": "Cryptex",
     "namespace": "Cryptex",
     "version": "7.0-BETA1",
-    "license": "MIT X11 License",
+    "license": "GPL-2.0",
     "licenseFile": "LICENSE.txt",
     "constants": {
         "CRYPTEX_DEFAULT_FONT_PATH": "CRYPTEX_PLUGIN_PATH.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR"

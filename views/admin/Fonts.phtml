@@ -10,7 +10,6 @@
         <?php _e('<strong>Custom Directory</strong> - enter a custom directory of your choice', 'cryptex'); ?>
         </p>
         
-        <h4><?php _e('Font Location', 'cryptex'); ?></h4>
         <!-- Font Source -->
         <?php $this->_settingsUtility->displaySelect(__('Font-Source', 'cryptex'), 'font-source', 
             array( 
@@ -28,8 +27,6 @@
         <div class="cryptex-selective-section" data-trigger="#cryptex-font-source" data-condition="==custom">
         <?php $this->_settingsUtility->displayInput(__('Font-Path', 'cryptex'), 'custom-font-path', array('label' => __('e.g.', 'cryptex').' /usr/share/fonts')); ?>
         </div>
-
-        <h4><?php _e('Display', 'cryptex'); ?></h4>
 
         <!-- font filenames -->
         <?php $this->_settingsUtility->displayCheckbox(__('Cannocial paths', 'cryptex'), 'show-full-paths', array(

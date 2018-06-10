@@ -30,7 +30,7 @@ class PluginConfig{
         'hdpi-factor' => 3,
         'hdpi-renderer' => 'css',
         'custom-font-path' => '',
-        'font-source' => 'system+plugin',
+        'font-source' => 'plugin',
         'show-full-paths' => false,
         'font-color' => '#000000',
         'font-antialiasing' => true,

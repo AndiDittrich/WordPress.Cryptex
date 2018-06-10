@@ -3,9 +3,9 @@ Contributors: Andi Dittrich, aenondynamics
 Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, retina, highdpi, responsive, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses, filter, automatically
 Requires at least: 3.9
 Tested up to: 4.9
-Stable tag: 6.0
-License: MIT X11-License
-License URI: http://opensource.org/licenses/MIT
+Stable tag: 7.0
+License: GPL-2.0
+License URI: https://opensource.org/licenses/GPL-2.0
 
 Cryptex transforms plain-text E-Mail-Addresses into Images - automatically - No scrapers. No harvesters. No spambots. That's our goal!
 
@@ -55,7 +55,7 @@ Cryptex provides various obfuscation modes for E-Mail-Addresses:
 * Accessible cache directory (`/wp-content/plugins/cryptex/cache/` or a custom one)
 
 ### WordPress Theme requirements ###
-* The `wp_footer` and `wp_head` action have to be used
+* The `wp_footer` and `wp_head` action have to be used (enqueue js+css resources)
 
 ### Installation ###
 1. Upload the complete `cryptex` folder (Wordpress Plugin) to the `/wp-content/plugins/` directory
@@ -102,6 +102,9 @@ Send an email to Andi Dittrich (andi _D0T dittrich At a3non .dOT org) or or open
 6. Settings Page - Image Offsets & Retina/HighDpi Options
 
 ## Upgrade Notice ##
+
+### 7.0 ###
+License changed to GNU GENERAL PUBLIC LICENSE Version 2 (GPL-2.0)
 
 ### 5.0 ###
 A new Javascript decoder is used - this will **break custom user modifications**! Please test it before upgrading

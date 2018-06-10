@@ -3,9 +3,9 @@ Contributors: Andi Dittrich, aenondynamics
 Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, retina, highdpi, responsive, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses, filter, automatically
 Requires at least: 3.9
 Tested up to: 4.9
-Stable tag: 6.1
-License: MIT X11-License
-License URI: http://opensource.org/licenses/MIT
+Stable tag: 7.0
+License: GPL-2.0
+License URI: https://opensource.org/licenses/GPL-2.0
 
 Cryptex transforms plain-text E-Mail-Addresses into Images - automatically - No scrapers. No harvesters. No spambots. That's our goal!
 
@@ -55,7 +55,7 @@ Cryptex provides various obfuscation modes for E-Mail-Addresses:
 * Accessible cache directory (`/wp-content/plugins/cryptex/cache/` or a custom one)
 
 = WordPress Theme requirements =
-* The `wp_footer` and `wp_head` action have to be used
+* The `wp_footer` and `wp_head` action have to be used (enqueue js+css resources)
 
 = Installation =
 1. Upload the complete `cryptex` folder (Wordpress Plugin) to the `/wp-content/plugins/` directory
@@ -103,6 +103,9 @@ Send an email to Andi Dittrich (andi _D0T dittrich At a3non .dOT org) or or open
 
 == Upgrade Notice ==
 
+= 7.0 =
+License changed to GNU GENERAL PUBLIC LICENSE Version 2 (GPL-2.0)
+
 = 5.0 =
 A new Javascript decoder is used - this will **break custom user modifications**! Please test it before upgrading
 
@@ -111,13 +114,32 @@ After upgrading, go to the Cryptex settings page, check all options and click "A
 
 == Changelog ==
 
+= 7.0 =
+
+**License changed to GNU GENERAL PUBLIC LICENSE Version 2 (GPL-2.0)**
+
+* Added: option to disable generic `cryptex` shortcode
+* Added: cryptex icon batch to settings page
+* Added: docker based development mode
+* Changed: moved settings page to top-level menu
+* Changed: new settings page
+* Changed: `wp-skltn` library updated to **0.13.0** - MPL 2.0 License
+* Changed: sessionStorage is used to store the current active tab instead of cookies
+* Changed: updated the UI components
+* Changed; email/telephone shortcodes are enabled by default
+* Changed: 3rd party plugin support (placeholders) are disabled by default
+* Removed: `jquery-cookie` dependency
+* Bugfix: telephone/email shortcodes caused a php warning in case no attributes were set - thanks to [jotazzu on GitHub](https://github.com/AndiDittrich/WordPress.Cryptex/issues/4)
+* Bugfix: colorpicker sets wrong foreground color which caused unreadable input fields (color lightness calculation)
+* Bugfix: settings label (checkboxes) were not linked to the input elements
+
 = 6.0 =
 * Added: [WordPress Multisite](https://codex.wordpress.org/Create_A_Network) support 
 * Added: New Environment Check to ensure Cryptex is working in a well configured environment
 * Added: Support for telephone numbers including uri scheme `tel:`
 * Added: Shortcode `telephone`
 * Added: `href` Shortcode attribute to override the default behaviour
-* Added: PLugin Upgrade Notification
+* Added: Plugin Upgrade Notification
 * Changed: [WP-Skeleton](https://github.com/AndiDittrich/WP-Skeleton) is used as Plugin Backend Framework 
 * Changed: All settings are stored in serialized form in `cryptex-options` instead of single options
 * Changed: Settings Page URL to `wp-admin/options-general.php?page=Cryptex`

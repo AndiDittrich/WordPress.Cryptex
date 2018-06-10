@@ -57,10 +57,12 @@
         <?php $this->_settingsUtility->displayCheckbox(__('Custom cache', 'cryptex'), 'cache-custom', array(
             'label' => 'Enable'
         )); ?>
-            
-        <h4><?php _e('Public-Accessable-Cache', 'cryptex'); ?></h4>
-        <p><?php _e('Path: ', 'cryptex'); ?><code><?php echo $this->_cacheManager->getCachePath();?></code>
-        <p><?php _e('Url: ', 'cryptex'); ?><code><?php echo $this->_cacheManager->getCacheURL();?></code>
+
+        <h4><?php _e('Current Settings', 'cryptex'); ?></h4>
+        <p>
+            <?php _e('Path: ', 'cryptex'); ?><code><?php echo $this->_cacheManager->getCachePath();?></code><br />
+            <?php _e('Url: ', 'cryptex'); ?><code><?php echo $this->_cacheManager->getCacheURL();?></code>
+        </p>
     
         <div class="cryptex-selective-section" data-trigger="#cryptex-cache-custom" data-condition="checked">
             <h4><?php _e('Custom cache path/url', 'cryptex'); ?></h4>

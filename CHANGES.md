@@ -1,11 +1,15 @@
 ## Changelog ##
 
 ### 7.0 ###
+
+**License changed to GNU GENERAL PUBLIC LICENSE Version 2 (GPL-2.0)**
+
 * Added: option to disable generic `cryptex` shortcode
 * Added: cryptex icon batch to settings page
+* Added: docker based development mode
 * Changed: moved settings page to top-level menu
 * Changed: new settings page
-* Changed: `wp-skltn` library updated to **0.13.0**
+* Changed: `wp-skltn` library updated to **0.13.0** - MPL 2.0 License
 * Changed: sessionStorage is used to store the current active tab instead of cookies
 * Changed: updated the UI components
 * Changed; email/telephone shortcodes are enabled by default
