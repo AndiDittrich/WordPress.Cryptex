@@ -2,7 +2,7 @@
     "slug": "cryptex",
     "name": "Cryptex",
     "namespace": "Cryptex",
-    "version": "7.0-BETA1",
+    "version": "7.0",
     "license": "GPL-2.0",
     "licenseFile": "LICENSE.txt",
     "constants": {

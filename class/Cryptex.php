@@ -269,14 +269,14 @@ class Cryptex{
             // plugin installed ?
             if ($version == '0.0.0'){
                 // store new version
-                update_option('cryptex-version', '7.0-BETA1');
+                update_option('cryptex-version', '7.0');
 
             // plugin upgraded ?
-            }else if (version_compare('7.0-BETA1', $version, '>')){
+            }else if (version_compare('7.0', $version, '>')){
                 // run upgrade hook
                 if ($i->_wp_plugin_upgrade($version)){
                     // store new version
-                    update_option('cryptex-version', '7.0-BETA1');
+                    update_option('cryptex-version', '7.0');
 
                     // set flag (string!)
                     update_option('cryptex-upgrade', 'true');
