@@ -1,0 +1,18 @@
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+
+    <!-- Hyperlinks !-->
+    <div class="postbox cryptex-postbox">
+    <h3 class="hndle"><span><?php _e('Hyperlinks', 'cryptex'); ?></span></h3>
+    <div class="inside cryptex-setting-section">
+        <!-- hyperlinks !-->
+        <p>
+            <?php _e('Cryptex provides an integrated key-shifting based encryption/decryption of hyperlinks to ensure maximum protection.', 'cryptex'); ?><br />
+            <strong><?php _e('Note: this feature requires enabled javascript on the client-side - otherwise the hyperlinks won\'t work.', 'cryptex'); ?></strong>
+        </p>
+        <?php $this->_settingsUtility->displayCheckbox(__('Hyperlinks', 'cryptex'), 'enable-hyperlink', array(
+            'label' => 'Enable',
+            'description' => __('Should E-Mail-Addresses and Telephone Numbers clickable ? (mailto:youremail@example.com)', 'cryptex')
+        )); ?>
+
+    <!-- // Hyperlinks !-->
+    </div></div>

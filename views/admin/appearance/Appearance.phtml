@@ -1,0 +1,90 @@
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+    <!-- Appearance !-->
+    <div class="postbox cryptex-postbox">
+    <h3 class="hndle"><span><?php _e('Appearance', 'cryptex'); ?></span></h3>
+    <div class="inside cryptex-setting-section">
+        <h4><?php _e('Font Styles', 'cryptex'); ?></h4>
+        <p><?php _e('Change these settings to match your current theme styles.', 'cryptex'); ?> <br />
+        <?php _e('The CSS Font-Family is used to change the font of the cryptex divider text (non image). Set it to "inherit" to use your standard page font!', 'cryptex'); ?>
+        </p>
+
+        <!-- Font List -->
+        <?php $this->_settingsUtility->displaySelect(__('Image Font-Family', 'cryptex'), 'font-file', $V_fontlist); ?>
+
+        <!-- CSS Font Family -->
+        <?php $this->_settingsUtility->displayInput(__('CSS Font-Family', 'cryptex'), 'font-family', array(
+            'label' => __('e.g. Arial, Verdana, sans-serif', 'cryptex')
+        )); ?>
+        
+        <!-- Font Size -->
+        <?php $this->_settingsUtility->displayInput(__('Font-Size (px or pt)', 'cryptex'), 'font-size', array(
+            'label' => __('e.g. 12px, 14pt', 'cryptex')
+        )); ?>
+        
+        <!-- Font Color -->
+        <?php $this->_settingsUtility->displayInput(__('Font-Color', 'cryptex'), 'font-color', array(
+            'cssClass' => 'cryptex-colorpicker', 
+            'label' => __('e.g. #000000, #ff00c1', 'cryptex')
+        )); ?>
+        
+        <!-- Line-Height -->
+        <?php $this->_settingsUtility->displayInput(__('Image-Height (px)', 'cryptex'), 'line-height', array(
+            'label' => __('e.g. 12px - use 0 for auto', 'cryptex')
+        )); ?>
+        
+    <!-- // Appearance !-->
+    </div></div>
+    
+    <!-- EMAIL !-->
+    <div class="postbox cryptex-postbox">
+    <h3 class="hndle"><span><?php _e('E-Mail', 'cryptex'); ?></span></h3>
+    <div class="inside cryptex-setting-section">
+        <h4><?php _e('E-Mail Text Transformations', 'cryptex'); ?></h4>
+        <p><?php _e('These replacements are only applied to E-Mail-Addresses - this may increase the protection level against spiders/bots using OCR.', 'cryptex'); ?></p>
+        
+        <?php $this->_settingsUtility->displaySelect(__('@Sign-Replacement', 'cryptex'), 'email-divider', 
+            array(
+                '@' => __('No Replacement',  'cryptex'),
+                '(at)' => '(at)', 
+                '[at]' => '[at]', 
+                '{at}' => '{at}', 
+                '/AT/' => '/AT/'
+            ),
+            array(
+                'description' => __('Use ALWAYS the @ sign in the cryptex shortcode!', 'cryptex')
+            )
+        ); ?>
+        
+        <?php $this->_settingsUtility->displaySelect(__('Dot-Replacement', 'cryptex'), 'email-replacement-dot', 
+            array(
+                '.' => __('No Replacement',  'cryptex'), 
+                '(dot)' => '(dot)',
+                '[dot]' => '[dot]',
+                '{dot}' => '{dot}',
+                '(.)' => '(.)',
+                '[.]' => '[.]'
+            ),
+            array(
+                'description' => __('Use ALWAYS the . in the cryptex shortcode!', 'cryptex')
+            )
+        ); ?>
+        
+                
+        <h4><?php _e('E-Mail Settings', 'cryptex'); ?></h4>
+       
+        
+        <!-- EMail Security Level -->
+        <p><?php _e('E-Mail-addresses can be displayed as a single image or, in case of higher security, as a multipart-image.', 'cryptex'); ?><br />
+        <?php _e('The address will be splitted into 2 parts (before and after the @ sign). Each part is displayed as a single image, the @ sign as plain text. This feature provides an improved protection against ocr-grabbing spambots, which will analyze page images.', 'cryptex'); ?><br />
+        <?php _e('Note: This option will only influence E-Mail-addresses, other content will be still displayed as a single image!', 'cryptex'); ?>
+        </p>
+        <?php $this->_settingsUtility->displaySelect(__('E-Mail Security Level', 'cryptex'), 'security-level', 
+            array(
+                '0' => __('Text (not recommended)', 'cryptex'),
+                '1' => __('Single Image', 'cryptex'), 
+                '2' => __('Multipart Image (2 Images, seperated by @ sign)', 'cryptex'), 
+                '3' => __('Advanced Multipart Image (Multiple Images, seperated by dot AND @ sign)', 'cryptex'))
+            ); ?>
+    
+    <!-- // EMAIL !-->
+    </div></div>

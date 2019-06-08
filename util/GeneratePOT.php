@@ -21,11 +21,6 @@ $meta = A3nonMetadataExtractor::extract('Cryptex.php');
 $generator = new A3nonPOTGenerator('lang', null, array(
 			'package-name' => 'Cryptex',
 			'package-version' => $meta['Version'],
-			'msgid-bugs-address' => 'andi DOT dittrich AT a3non DOT org',
 			'translator-name' => $meta['Author']
 ));
 $generator->generate();
-
-		
-
-?>

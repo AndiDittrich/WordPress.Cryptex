@@ -2,7 +2,7 @@
 Contributors: Andi Dittrich, aenondynamics
 Tags: email, e-mail, privacy, robots, grabbing, spam, spambots, retina, highdpi, responsive, obfuscation, protection, image, javascript, encryption, decryption, jquery, mootools, customizable, design, appearance, security, telephone, numbers, addresses, filter, automatically
 Requires at least: 3.9
-Tested up to: 4.9
+Tested up to: 5.2
 Stable tag: 7.0
 License: GPL-2.0
 License URI: https://opensource.org/licenses/GPL-2.0
@@ -10,6 +10,8 @@ License URI: https://opensource.org/licenses/GPL-2.0
 Cryptex transforms plain-text E-Mail-Addresses into Images - automatically - No scrapers. No harvesters. No spambots. That's our goal!
 
 == Description ==
+
+**NOTE: this plugin is targeted to advanced users and professionals - it requires some configuration tasks and won't work out-of-the-box!**
 
 The plugin is used to display Email addresses **as an image** - automatically.
 This will stop harvesters and crawlers from gathering sensitive data from your website.
@@ -48,7 +50,7 @@ Cryptex provides various obfuscation modes for E-Mail-Addresses:
 == Installation ==
 
 = System requirements =
-* PHP 5.3 or greater
+* PHP 5.4 or greater
 * GD library (v2.0.28 or greater)
 * GD PNG support
 * FreeType2 (optional, required for OpenType fonts)
@@ -113,6 +115,24 @@ A new Javascript decoder is used - this will **break custom user modifications**
 After upgrading, go to the Cryptex settings page, check all options and click "Apply Settings" to force an update of the generated CSS files!
 
 == Changelog ==
+
+
+= 7.1 =
+
+* Added: Full `srcset` highdpi support (all images generated in the required resolution)
+* Added: Number of cached files to the settings page
+* Added: about-page inlcuding html changelog
+* Added: redirect to about-page on plugin activation/upgrade
+* Added: debug tab to the about-page containing the full plugin configuration
+* Changed: replaced dedicated colorpicker by build-in WordPress [iris](http://automattic.github.io/Iris/) picker
+* Changed: plugin settings splitted into multiple pages
+* Changed: image dimensions of high resolution images are not cached anymore (performance)
+* Changed: HTML5 srcset based HDPI renderer is set as prefered option
+* Changed: moved plugin files into `modules/` directory as required by `wp-skltn`
+* Changed: set default line-height to 20px instead of auto
+* Changed: set default padding to 4px
+* Changed: `wp-skltn` library updated to **0.17.0** - MPL 2.0 License
+* Bugfix: added `width` attribute to html-srcset highdpi images (causes invalid dimension on iOS devices)
 
 = 7.0 =
 

@@ -1,0 +1,64 @@
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+
+    <!-- Offsets !-->
+    <div class="postbox cryptex-postbox">
+    <h3 class="hndle"><span><?php _e('Image Offsets', 'cryptex'); ?></span></h3>
+    <div class="inside cryptex-setting-section">
+         <!-- Image Offsets -->
+        <p><?php _e('Sometimes the generated text, depending on the selected font family, won`t fit into his image box - it is possible to configure the following offsets (in px) to fix this issue:', 'cryptex')?><br />
+        <?php _e('Offsets can also be used to adjust the font baseline (use Offset A and Offset B).', 'cryptex'); ?>
+        </p>
+        <p><img src="<?php echo plugins_url('/cryptex/resources/admin/offsets.png'); ?>" alt="offsets" /></p>
+        <h4><?php _e('Offset Values', 'cryptex'); ?></h4>
+        <?php $this->_settingsUtility->displayInput(__('Offset X', 'cryptex'), 'offset-x', array(
+            'label' => 'width',
+            'description' => __('Image width offset in px (numeric value)', 'cryptex')
+        )); ?>
+        <?php $this->_settingsUtility->displayInput(__('Offset Y', 'cryptex'), 'offset-y', array(
+            'label' => 'height',
+            'description' => __('Image height offset in px (numeric value)', 'cryptex')
+        )); ?>
+        <?php $this->_settingsUtility->displayInput(__('Offset A', 'cryptex'), 'offset-a', array(
+            'label' => 'position x',
+            'description' => __('Font baseline position x-direction in px (numeric value)', 'cryptex')
+        )); ?>
+        <?php $this->_settingsUtility->displayInput(__('Offset B', 'cryptex'), 'offset-b', array(
+            'label' => 'position y',
+            'description' => __('Font baseline position y-direction in px (numeric value)', 'cryptex')
+        )); ?>
+    
+    <!-- // Offsets !-->
+    </div></div>
+        
+    <!-- HDPI !-->
+    <div class="postbox cryptex-postbox">
+    <h3 class="hndle"><span><?php _e('High DPI/Retina Support', 'cryptex'); ?></span></h3>
+    <div class="inside cryptex-setting-section">
+         <p><?php _e('Several modern devices like tablets, smartphones or notebooks using high-dpi screens better known as "retina displays" which results in blurred E-Mail-Addresses.', 'cryptex'); ?>
+         </p>
+
+        <?php $this->_settingsUtility->displayCheckbox(__('High DPI/Retina', 'cryptex'), 'hdpi-enabled', array(
+            'label' => 'Enable',
+            'description' => __('The High-DPI mode will generate optional high-resolution images to fix such issues. High-Dpi devices will automatically access these images.', 'cryptex')
+        )); ?>
+    
+        <div class="cryptex-selective-section" data-trigger="#cryptex-hdpi-enabled" data-condition="checked">
+
+            <h4><?php _e('Hdpi Options', 'cryptex'); ?></h4>
+            <p><?php _e('The scaling factor is multiplied with the image-parameters (width, height, font-size, ..) to create high-resolution images - e.g. a value of 2 will double the image dimensions.', 'cryptex'); ?><br />
+            <?php _e('A value of 3 is good choice and provides great looking results on an iPad4 (Retina, 2048x1536) or Sony-Tablet (FullHD, 1920x1080).', 'cryptex'); ?> <a href="http://andidittrich.de/2014/09/cryptex-4-0-with-retinahighdpi-support.html" target="_blank"><?php _e('Scaling Factor Comparision', 'cryptex'); ?></a>
+            </p>
+            <?php $this->_settingsUtility->displaySelect(__('Hdpi scaling factor', 'cryptex'), 'hdpi-factor', 
+                array(
+                    '2' => 'Factor 2', 
+                    '3' => 'Factor 3',
+                    '4' => 'Factor 4')
+            ); ?>
+
+            <p><?php _e('Select the HDPI renderer which should used to display high density images. Most modern HTML5 browser support the srcset attribute - otherwise the standard images are displayed.', 'cryptex'); ?> <a href="http://caniuse.com/#feat=srcset" target="_blank"><?php _e('Current srcset browser support.', 'cryptex'); ?></a> <br />
+            <?php _e('Instead of an img tag with the srcset attribute, cryptex can use css-based images which are based on inline styles in the html-body. This is not valid html5 but will perfectly work in all common browsers and provides the currently best appearance!', 'cryptey'); ?></strong></p>
+
+            <?php $this->_settingsUtility->displaySelect(__('Hdpi Renderer', 'cryptex'), 'hdpi-renderer', array('srcset' => 'HTML5 srcset', 'css' => 'CSS Images')); ?>
+        </div>
+    <!-- // HDPI !-->
+    </div></div>

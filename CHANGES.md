@@ -1,5 +1,23 @@
 ## Changelog ##
 
+
+### 7.1 ###
+
+* Added: Full `srcset` highdpi support (all images generated in the required resolution)
+* Added: Number of cached files to the settings page
+* Added: about-page inlcuding html changelog
+* Added: redirect to about-page on plugin activation/upgrade
+* Added: debug tab to the about-page containing the full plugin configuration
+* Changed: replaced dedicated colorpicker by build-in WordPress [iris](http://automattic.github.io/Iris/) picker
+* Changed: plugin settings splitted into multiple pages
+* Changed: image dimensions of high resolution images are not cached anymore (performance)
+* Changed: HTML5 srcset based HDPI renderer is set as prefered option
+* Changed: moved plugin files into `modules/` directory as required by `wp-skltn`
+* Changed: set default line-height to 20px instead of auto
+* Changed: set default padding to 4px
+* Changed: `wp-skltn` library updated to **0.17.0** - MPL 2.0 License
+* Bugfix: added `width` attribute to html-srcset highdpi images (causes invalid dimension on iOS devices)
+
 ### 7.0 ###
 
 **License changed to GNU GENERAL PUBLIC LICENSE Version 2 (GPL-2.0)**

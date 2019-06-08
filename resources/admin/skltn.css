@@ -1,0 +1,402 @@
+/*
+// ---------------------------------------------------------------------------------------------------------------
+// -- WP-SKELETON AUTO GENERATED FILE - DO NOT EDIT !!!
+// --
+// -- Copyright (c) 2016-2019 Andi Dittrich
+// -- https://github.com/AndiDittrich/WP-Skeleton
+// --
+// ---------------------------------------------------------------------------------------------------------------
+// --
+// -- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// -- If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// --
+// ---------------------------------------------------------------------------------------------------------------
+*/
+/* Page Layout
+-------------------------------- */
+#cryptex-settings {
+    max-width: 1500px;
+    margin: auto;
+}
+
+#cryptex-settings .maintitle {
+    margin: 15px 0px 15px 0px;
+}
+
+.cryptex-title-badge {
+    display: inline-block;
+    padding: 0px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    background-image: url(badge40.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+}
+
+/* HighDPI Badge */
+@media  only screen and (-webkit-min-device-pixel-ratio: 1.3),
+        only screen and (-o-min-device-pixel-ratio: 13/10),
+        only screen and (min-resolution: 120dpi){
+
+        .cryptex-title-badge {
+            background-image: url(badge80.png);
+        }
+}
+
+#cryptex-settings #post-body-content ul {
+    padding-left: 30px;
+    list-style: square;
+}
+
+#cryptex-settings #post-body-content li {
+    line-height: 20px;
+}
+
+.cryptex-postbox p{
+    padding: 5px 15px 5px 15px;
+    border-left: solid 10px #e5e5e5;
+    background-color: #fafafc;
+}
+
+/* Color Picker
+-------------------------------- */
+/* overlay positioning */
+#cryptex-settings .iris-border{
+    position: absolute;
+    z-index: 100;
+    box-shadow: 0px 0px 10px #23282d;
+}
+
+/* hide clear button */
+#cryptex-settings .wp-picker-clear{
+    display: none;
+}
+
+#cryptex-settings .wp-color-result-text{
+    color: #f9f9f9;
+}
+
+/* Column Layout
+-------------------------------- */
+.cryptex-postbox h3 {
+    background-color: #23282d !important;
+    color: #ffffff !important;
+    cursor: default;
+    font-style: italic;
+}
+
+/* Form Structure
+-------------------------------- */
+.cryptex-setting-section h4 {
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 2em;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    color: #23282d;
+    
+    border-bottom: solid 5px #e5e5e5;
+    font-style: italic;
+    text-transform: none;
+}
+.cryptex-setting-section img {
+    padding-left: 15px;
+}
+
+.cryptex-setting {
+    display: block;
+    padding: 5px 10px 5px 15px;
+}
+
+.cryptex-setting-title {
+    float: left;
+    width: 250px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+}
+
+.cryptex-setting-input{
+    width: auto;
+    margin-left: 250px;
+}
+
+/* Form Elements
+-------------------------------- */
+.cryptex-setting input[type="text"] {
+    margin: 0px 20px 0px 0px;
+    width: 150px;
+}
+
+.cryptex-setting input[type="text"].input-large, .cryptex-setting select.input-large{
+    width: 300px;
+}
+
+.cryptex-setting input[type="checkbox"] {
+    padding-top: 5px;
+}
+
+.cryptex-setting:after{
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+.cryptex-setting label {
+    line-height: 30px;
+}
+
+.cryptex-setting select{
+    margin: 0px 20px 0px 0px;
+}
+
+.cryptex-setting-description{
+    font-style: italic;
+    color: #909090;
+    max-width: 700px;
+}
+
+/* Text Helper
+-------------------------------- */
+
+.cryptex-text-true {
+    font-weight: bold;
+    color: #7ad03a;
+}
+
+.cryptex-text-false {
+    font-weight: bold;
+    color: #d03a3a;
+}
+
+/* Error Messages
+-------------------------------- */
+.cryptex-error {
+    color: #d03a3a;
+    background-color: #fff1f1;
+    padding: 10px;
+    border: dotted 1px #d03a3a;
+    border-left: solid 3px #d03a3a;
+}
+
+.cryptex-warning {
+    color: #a56d06;
+    background-color: #fff8e3;
+    padding: 10px;
+    border: dotted 1px #d69621;
+    border-left: solid 3px #d69621;
+}
+
+.cryptex-error code, .cryptex-warning code {
+    background-color: #ffffff;
+}
+
+/* Footer
+-------------------------------- */
+#cryptex-settings .credits {
+    color: #333333;
+    font-style: italic;
+}
+
+/* Tab Nav
+-------------------------------- */
+#cryptex-tabnav {
+    position: relative !important;
+}
+
+#cryptex-tabnav a {
+    cursor: pointer;
+}
+
+/* Contextual Help
+-------------------------------- */
+
+/* Fix the Contextual Help Link */
+#screen-meta-links, #contextual-help-link-wrap, #contextual-help-link {
+    z-index: 100 !important;
+}
+
+/* Highlight pre tags like code tags */
+.contextual-help-tabs-wrap pre{
+    background: rgba(0,0,0,0.07) !important;
+    padding: 5px;
+    display: inline-block;
+    margin: 0px !important;
+}
+
+/* Form Checkbox
+-------------------------------- */
+
+/* outer container */
+.cryptex-type-checkbox{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* outer switch container */
+.cryptex-type-checkbox label{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    margin-bottom: 5px;
+}
+
+/* hide checkbox */
+.cryptex-type-checkbox input{
+    display: none;
+}
+
+/* labels text */
+.cryptex-type-checkbox .cryptex-label-text{
+    position: absolute;
+    display: block;
+    min-width: 300px;
+    left: 60px;
+}
+
+/* slider knob */
+.cryptex-ui-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: #c0c0c0;
+    transition: .4s;
+    border-radius: 28px;
+}
+
+.cryptex-ui-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    top: 3px;
+    background-color: #ffffff;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.cryptex-type-checkbox input:checked + .cryptex-ui-slider {
+    background-color: #0074a2;
+}
+
+.cryptex-type-checkbox input:focus + .cryptex-ui-slider {
+    box-shadow: 0 0 1px #0074a2;
+}
+
+.cryptex-type-checkbox input:checked + .cryptex-ui-slider:before {
+    transform: translateX(22px);
+}
+
+/* About Page
+-------------------------------- */
+
+#cryptex-badge{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 150px;
+    height: 150px;
+    background-image: url(badge150.png);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+}
+
+#cryptex-about hr{
+    margin-top: 50px;
+}
+
+#cryptex-about .headline-title{
+    font-size: 2em;
+    font-weight: normal;
+    line-height: 1.4;
+    margin: 1.25em 0 0.6em;
+    text-align: center;
+}
+
+#cryptex-about .featured-image img,
+#cryptex-about .news-image img{
+    box-shadow: 4px 4px 18px 0px rgba(0,0,0,0.39);
+    border: solid 1px #c0c0c0;
+}
+
+/* Changelog Tab
+-------------------------------- */
+#cryptex-tab-changelog li{
+    list-style: disc outside;
+    margin-left: 2em;
+}
+
+#cryptex-tab-changelog .changelog-more{
+    font-size: 0.8em;
+    margin-top: 2em;
+}
+
+/* News Tab
+-------------------------------- */
+#cryptex-tab-news .headline{
+    text-align: center;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+#cryptex-tab-news p{
+    font-size: 1em;
+}
+#cryptex-tab-news .introduction{
+    margin-top: 2em;
+    font-weight: bold;
+}
+
+/* Column Layout */
+#cryptex-about .col-md-2{
+    min-width: 350px;
+    width: 49%;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#cryptex-about .news-section{
+    padding: 10px 10px 20px 10px;
+}
+
+#cryptex-about .news-section p{
+    text-align: center;
+}
+
+#cryptex-about .news-section h4{
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#cryptex-about .news-image{
+    display: block;
+    width: auto;
+}
+
+#cryptex-about .news-image img{
+    display: block;
+    margin: auto;
+}
+
+/* Debug Tab
+-------------------------------- */
+#cryptex-tab-debug pre{
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}

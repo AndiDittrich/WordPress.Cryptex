@@ -1,0 +1,74 @@
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+<?php add_thickbox(); ?>
+
+<!-- CryptexSettings:wrap -->
+<div class="wrap" id="cryptex-settings" data-cryptex-page="appearance">
+
+<!-- Settings Tabs -->
+<h2 class="nav-tab-wrapper" id="cryptex-tabnav">
+    <a data-tab="CryptexTabAppearance" class="nav-tab"><?php _e('Appearance', 'cryptex'); ?></a>
+    <a data-tab="CryptexTabHyperlinks" class="nav-tab"><?php _e('Hyperlinks', 'cryptex'); ?></a>
+    <a data-tab="CryptexTabImages" class="nav-tab"><?php _e('Images', 'cryptex'); ?></a>
+    <a data-tab="CryptexTabFonts" class="nav-tab"><?php _e('Fonts', 'cryptex'); ?></a>
+</h2>
+
+<!-- Main Title -->
+<h1 class="maintitle"><span class="cryptex-title-badge"></span><?php echo CRYPTEX_PLUGIN_TITLE; ?></h1>
+<p><?php echo CRYPTEX_PLUGIN_HEADLINE; ?></p>
+
+<!-- settings !-->
+<form method="post" action="options.php">
+    <?php settings_fields('cryptex-settings-group' ); ?>
+    <!-- #poststuff -->
+    <div id="poststuff">
+
+<!-- 2 Column Layout -->
+<div id="post-body" class="metabox-holder columns-2">
+    <div id="post-body-content" class="cryptex-tab-container">
+     
+        <div id="CryptexTabAppearance">
+        <?php require (CRYPTEX_PLUGIN_PATH.'/views/admin/appearance/Appearance.phtml'); ?>
+        </div>
+
+        <div id="CryptexTabHyperlinks">
+        <?php require (CRYPTEX_PLUGIN_PATH.'/views/admin/appearance/Hyperlinks.phtml'); ?>
+        </div>
+
+        <div id="CryptexTabImages">
+        <?php require (CRYPTEX_PLUGIN_PATH.'/views/admin/appearance/Images.phtml'); ?>
+        </div>
+
+        <div id="CryptexTabFonts">
+        <?php require (CRYPTEX_PLUGIN_PATH.'/views/admin/appearance/Fonts.phtml'); ?>
+        </div>
+        
+        <!-- submit !-->
+        <?php submit_button(); ?>
+
+    </div>
+    <!-- // MAIN COLUMN -->
+    
+    <!-- Right Column -->
+    <div id="postbox-container-1" class="postbox-container">
+        <?php require(CRYPTEX_PLUGIN_PATH.'/views/admin/SystemInfo.phtml'); ?>
+        
+        <?php require(CRYPTEX_PLUGIN_PATH.'/views/admin/Related.phtml'); ?>
+    </div>
+    <!-- // Right Column -->
+    
+</div>
+<!-- // 2 Column Layout -->
+
+</div>
+<!-- // #poststuff -->
+
+</form>
+<div class="clear"></div>
+
+<?php require(CRYPTEX_PLUGIN_PATH.'/views/admin/Credits.phtml'); ?>
+<?php require(CRYPTEX_PLUGIN_PATH.'/views/admin/License.phtml'); ?>
+
+</div>
+<!-- // CryptexSettings:wrap -->
+
+<div class="clear"></div>

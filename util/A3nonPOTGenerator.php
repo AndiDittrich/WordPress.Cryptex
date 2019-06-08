@@ -41,9 +41,8 @@ class A3nonPOTGenerator{
 
 	// default source pathes (used by Cryptex and Enligher)
 	private $_sourcePaths = array(
-			'class',
+			'modules',
 			'views',
-			'views/admin'
 	);
 
 	// pot output location
@@ -112,7 +111,7 @@ class A3nonPOTGenerator{
 		$pot->set_header('PO-Revision-Date', date( 'Y').'-MO-DA HO:MI+ZONE');
 		$pot->set_header('MIME-Version', '1.0' );
 		$pot->set_header('Project-Id-Version', $this->_metadata['package-name'].' '.$this->_metadata['package-version'] );
-		$pot->set_header('Report-Msgid-Bugs-To', $this->_metadata['msgid-bugs-address'] );
+		//$pot->set_header('Report-Msgid-Bugs-To', $this->_metadata['msgid-bugs-address'] );
 		$pot->set_header('Last-Translator', $this->_metadata['translator-name']);
 
 		// store file into output directory; use given plugin-name as filename
@@ -129,7 +128,8 @@ class A3nonPOTGenerator{
 		// get all files on given paths
 		foreach ($this->_sourcePaths as $path){
 			$files = array_merge($files, self::getSourceFilesFromDirectory($path));
-		}
+        }
+
 		return $files;
 	}
 
@@ -139,15 +139,45 @@ class A3nonPOTGenerator{
 	}
 
 	// scan directory for php source files
-	public static function getSourceFilesFromDirectory($dir){
-		$files = scandir($dir);
-		$output = array();
-		foreach ($files as $file){
-			if ($file != '..' && $file != '.' && (self::getExtension($file)=='php' || self::getExtension($file) == 'phtml')){
-				$output[] = $dir.'/'.$file;
-			}
-		}
-		return $output;
-	}
+	public static function getSourceFilesFromDirectory($dirname){
+        if (!is_dir($dirname)){
+            return array();
+        }
+        
+        // stack of scanning directories
+        $dirStack = array($dirname);
+        
+        // output file list
+        $fileList = array();
+        
+        // iterative walk through
+        while (count($dirStack)>0){
+            // get current dir (first element of stack)
+            $currentDir = array_shift($dirStack);
+            
+            // get file list of current dir 
+            $currentFiles = scandir($currentDir);
+            
+            // iterate over current files
+            foreach ($currentFiles as $file){
+                if ($file != '.' && $file != '..'){
+                    // check if current file is a directory
+                    if (is_dir($currentDir.DIRECTORY_SEPARATOR.$file)){
+                        // push it on stack
+                        $dirStack[] = $currentDir.DIRECTORY_SEPARATOR.$file;
+                        
+
+                    }else{
+                        // store it into output file list
+                        if (self::getExtension($file)=='php' || self::getExtension($file) == 'phtml'){
+                            $fileList[] = $currentDir.DIRECTORY_SEPARATOR.$file;
+                        }
+                    }
+                }
+            }
+        }
+        
+        // return filelist
+        return $fileList;
+    }
 }
-?>

@@ -2,7 +2,7 @@
     "slug": "cryptex",
     "name": "Cryptex",
     "namespace": "Cryptex",
-    "version": "7.0",
+    "version": "7.1",
     "license": "GPL-2.0",
     "licenseFile": "LICENSE.txt",
     "constants": {
@@ -15,5 +15,8 @@
         "author": "Andi Dittrich",
         "authorUrl": "https://andidittrich.de"
     },
-    "skltnVersion": "0.13.0"
+    "skltnVersion": "0.17.0",
+    "modules": {
+        "exclude": ["upgrade"]
+    }
 }

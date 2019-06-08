@@ -5,17 +5,12 @@
 <div class="inside">
 <!-- Metabox-Content -->
    <ul> 
+        <li><strong>Server</strong></li>
         <?php 
-        echo '<li>', __('PHP Version:', 'cryptex'), ' <span class="cryptex-text-true">', phpversion() , '</span></li>';
+        echo '<li>', __('PHP version:', 'cryptex'), ' <span class="cryptex-text-true">', phpversion() , '</span></li>';
         
         // server os
-        echo '<li>', __('Server Software:', 'cryptex'), ' <span class="cryptex-text-true">', PHP_OS, '</span></li>';
-        
-        // cryptex version
-        echo '<li>', __('Cryptex Plugin Version:', 'cryptex'), ' <span class="cryptex-text-true">', CRYPTEX_VERSION, '</span></li>';
-
-        // framework version
-        echo '<li>', __('WP-Skeleton Version:', 'cryptex'), ' <span class="cryptex-text-true">', CRYPTEX_WPSKLTN_VERSION, '</span></li>';
+        echo '<li>', __('Server software:', 'cryptex'), ' <span class="cryptex-text-true">', PHP_OS, '</span></li>';
 
         // check for gdlib
         if (function_exists('gd_info')){
@@ -42,34 +37,60 @@
         }else{
             echo '<li>', __('GD library:', 'cryptex'), ' <span class="cryptex-text-false">', __('not installed', 'cryptex'), '</span></li>';
         }
-        
+        ?>
+    </ul>
+    
+    <hr />
+    
+    <ul>
+
+        <li><strong>Components</strong></li>
+        <?php
+
+        // cryptex version
+        echo '<li>', __('Cryptex Plugin Version:', 'cryptex'), ' <span class="cryptex-text-true">', CRYPTEX_VERSION, '</span></li>';
+
+        // framework version
+        echo '<li>', __('WP-Skeleton Version:', 'cryptex'), ' <span class="cryptex-text-true">', CRYPTEX_WPSKLTN_VERSION, '</span></li>';
+
+        ?>
+    </ul>
+
+    <hr />
+
+    <ul>
+
+        <li><strong>Environment</strong></li>
+        <?php
+
         // used font renderer
         if ($this->_imageGenerator->isFreeTypeEnabled()){
-            echo '<li>', __('Font Renderer:', 'cryptex'),' <span class="cryptex-text-true">FreeType 2</span></li>';
+            echo '<li>', __('Font renderer:', 'cryptex'),' <span class="cryptex-text-true">FreeType 2</span></li>';
         }else{
-            echo '<li>', __('Font Renderer:', 'cryptex'),' <span class="cryptex-text-true">GD-TTF</span></li>';
+            echo '<li>', __('Font renderer:', 'cryptex'),' <span class="cryptex-text-true">GD-TTF</span></li>';
         }
-        
+
         // check for available fonts
-        if (count($fontlist)>0){
-            echo '<li>', __('Fonts:', 'cryptex'),' <span class="cryptex-text-true">', count($fontlist), ' ', __('fonts found', 'cryptex'), '</span></li>';    
+        if (count($V_fontlist)>0){
+            echo '<li>', __('Fonts:', 'cryptex'),' <span class="cryptex-text-true">', count($V_fontlist), ' ', __('fonts found', 'cryptex'), '</span></li>';    
         }else{
             echo '<li>', __('Fonts:', 'cryptex'),' <span class="cryptex-text-false">', __('not found', 'cryptex'), '</span></li>';
         }
         
         // plugin cache path writeable ?
         if ($this->_cacheManager->isCacheAccessible()){
-            echo '<li>', __('Cache', 'cryptex'),': <span class="cryptex-text-true">', __('writeable', 'cryptex'), '</span></li>';
+            echo '<li>', __('Cache access', 'cryptex'),': <span class="cryptex-text-true">', __('writeable', 'cryptex'), '</span></li>';
         }else{
-            echo '<li>', __('Cache', 'cryptex'),': <span class="cryptex-text-false">', __('not writeable', 'cryptex'), '</span></li>';
+            echo '<li>', __('Cache access', 'cryptex'),': <span class="cryptex-text-false">', __('not writeable', 'cryptex'), '</span></li>';
         }
-        
+
+        // number of files in cache
+        echo '<li>', __('Cached files:', 'cryptex'), ' <span class="cryptex-text-true">', $this->_cacheManager->getNumFiles(), '</span></li>';
+
         // image or hdpi css renderer used ?
-  
 
         ?>
-    </ul>    
-
+    </ul>
 
 <!-- // Metabox-Content -->
 </div></div>

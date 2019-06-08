@@ -1,0 +1,64 @@
+<?php if (!defined('CRYPTEX_INIT')) die('DIRECT ACCESS PROHIBITED'); ?>
+
+<div class="wrap about-wrap" id="cryptex-about" data-cryptex-page="about">
+
+    <!-- News Title !-->
+    <h1>Welcome to Cryptex <?php echo CRYPTEX_VERSION ?></h1>
+
+    <!-- News Subtext !-->
+    <div class="about-text">
+        Thanks for upgrading! Many new features and improvements are available that you will enjoy.
+    </div>
+
+    <!-- Logo on the right !-->
+    <div id="cryptex-badge"></div>
+
+    <!-- Settings Tabs -->
+    <h2 class="nav-tab-wrapper" id="cryptex-tabnav">
+        <a data-tab="cryptex-tab-changelog" class="nav-tab"><?php _e('Changelog', 'cryptex'); ?></a>
+        <a data-tab="cryptex-tab-debug" class="nav-tab"><?php _e('Debug', 'cryptex'); ?></a>
+    </h2>
+
+    <div class="cryptex-tab-container">
+        <!-- Changelog Tab !-->
+        <div id="cryptex-tab-changelog">
+            <h3 class="changelog-title">What have been changed in <?php echo CRYPTEX_VERSION ?></h3>
+
+            <?php include(CRYPTEX_PLUGIN_PATH.'/views/admin/about/Changelog.html'); ?>
+
+            <p class="changelog-more">Need more ? View the <a href="https://github.com/AndiDittrich/WordPress.Cryptex/blob/master/CHANGES.md">full history on GitHub</a></p>
+
+        </div>
+
+        <!-- Debug Tab !-->
+        <div id="cryptex-tab-debug">
+            <h3 class="changelog-title">DEBUG Informations</h3>
+
+            <p>Please attach the following informations to your issue/bug report!</p>
+
+            <p><strong>Plugin Configuration</strong></p>
+            <p>
+                <?php
+                    echo '<pre>', esc_html(json_encode($this->_settingsManager->getOptions(), JSON_PRETTY_PRINT)), '</pre>';
+                ?>
+            </p>
+        </div>
+
+    </div>
+    
+    <hr />
+
+    <!-- Footer NAV !-->
+    <p class="related"><strong>Related:</strong>
+        <a href="https://twitter.com/andidittrich/">@AndiDittrich</a> &bullet;
+        <a href="https:/andidittrich.de">Author's Page</a>
+    </p>
+    <p class="related"><strong>GitHub:</strong>
+        <a href="https://github.com/AndiDittrich/WordPress.Cryptex">Development</a> &bullet;
+        <a href="https://github.com/AndiDittrich/WordPress.Cryptex/issues">Report Bugs</a> &bullet;
+        <a href="https://github.com/AndiDittrich/WordPress.Cryptex/commits/master">Commits</a> &bullet;
+        <a href="https://github.com/AndiDittrich/WordPress.Cryptex/blob/master/CHANGES.md">Changelog</a> &bullet;
+        <a href="https://github.com/AndiDittrich/WordPress.Cryptex/releases">Releases</a>
+    </p>
+
+</div>
